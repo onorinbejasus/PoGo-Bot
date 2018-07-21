@@ -1,5 +1,5 @@
 {
-  "001": {
+  "001_": {
     "attack": 118,
     "defense": 118,
     "stamina": 90,
@@ -10,7 +10,7 @@
     "weight": 6.9,
     "height": 0.71
   },
-  "002": {
+  "002_": {
     "attack": 151,
     "defense": 151,
     "stamina": 120,
@@ -21,7 +21,7 @@
     "weight": 13,
     "height": 0.99
   },
-  "003": {
+  "003_": {
     "attack": 198,
     "defense": 198,
     "stamina": 160,
@@ -32,7 +32,7 @@
     "weight": 100,
     "height": 2.01
   },
-  "004": {
+  "004_": {
     "attack": 116,
     "defense": 96,
     "stamina": 78,
@@ -42,7 +42,7 @@
     "weight": 8.5,
     "height": 0.61
   },
-  "005": {
+  "005_": {
     "attack": 158,
     "defense": 129,
     "stamina": 116,
@@ -52,7 +52,7 @@
     "weight": 19,
     "height": 1.09
   },
-  "006": {
+  "006_": {
     "attack": 223,
     "defense": 176,
     "stamina": 156,
@@ -63,7 +63,7 @@
     "weight": 90.5,
     "height": 1.7
   },
-  "007": {
+  "007_": {
     "attack": 94,
     "defense": 122,
     "stamina": 88,
@@ -73,7 +73,7 @@
     "weight": 9,
     "height": 0.51
   },
-  "008": {
+  "008_": {
     "attack": 126,
     "defense": 155,
     "stamina": 118,
@@ -83,7 +83,7 @@
     "weight": 22.5,
     "height": 0.99
   },
-  "009": {
+  "009_": {
     "attack": 171,
     "defense": 210,
     "stamina": 158,
@@ -93,7 +93,7 @@
     "weight": 85.5,
     "height": 1.6
   },
-  "010": {
+  "010_": {
     "attack": 55,
     "defense": 62,
     "stamina": 90,
@@ -103,7 +103,7 @@
     "weight": 2.9,
     "height": 0.3
   },
-  "011": {
+  "011_": {
     "attack": 45,
     "defense": 94,
     "stamina": 100,
@@ -113,7 +113,7 @@
     "weight": 9.9,
     "height": 0.71
   },
-  "012": {
+  "012_": {
     "attack": 167,
     "defense": 151,
     "stamina": 120,
@@ -124,7 +124,7 @@
     "weight": 32,
     "height": 1.09
   },
-  "013": {
+  "013_": {
     "attack": 63,
     "defense": 55,
     "stamina": 80,
@@ -135,7 +135,7 @@
     "weight": 3.2,
     "height": 0.3
   },
-  "014": {
+  "014_": {
     "attack": 46,
     "defense": 86,
     "stamina": 90,
@@ -146,7 +146,7 @@
     "weight": 10,
     "height": 0.61
   },
-  "015": {
+  "015_": {
     "attack": 169,
     "defense": 150,
     "stamina": 130,
@@ -157,7 +157,7 @@
     "weight": 29.5,
     "height": 0.99
   },
-  "016": {
+  "016_": {
     "attack": 85,
     "defense": 76,
     "stamina": 80,
@@ -168,7 +168,7 @@
     "weight": 1.8,
     "height": 0.3
   },
-  "017": {
+  "017_": {
     "attack": 117,
     "defense": 108,
     "stamina": 126,
@@ -179,7 +179,7 @@
     "weight": 30,
     "height": 1.09
   },
-  "018": {
+  "018_": {
     "attack": 166,
     "defense": 157,
     "stamina": 166,
@@ -190,7 +190,7 @@
     "weight": 39.5,
     "height": 1.5
   },
-  "019": {
+  "019_": {
     "attack": 103,
     "defense": 70,
     "stamina": 60,
@@ -200,7 +200,7 @@
     "weight": 3.5,
     "height": 0.3
   },
-  "020": {
+  "020_": {
     "attack": 161,
     "defense": 144,
     "stamina": 110,
@@ -210,7 +210,7 @@
     "weight": 18.5,
     "height": 0.71
   },
-  "021": {
+  "021_": {
     "attack": 112,
     "defense": 61,
     "stamina": 80,
@@ -221,7 +221,7 @@
     "weight": 2,
     "height": 0.3
   },
-  "022": {
+  "022_": {
     "attack": 182,
     "defense": 135,
     "stamina": 130,
@@ -232,7 +232,7 @@
     "weight": 38,
     "height": 1.19
   },
-  "023": {
+  "023_": {
     "attack": 110,
     "defense": 102,
     "stamina": 70,
@@ -242,7 +242,7 @@
     "weight": 6.9,
     "height": 2.01
   },
-  "024": {
+  "024_": {
     "attack": 185,
     "defense": 158,
     "stamina": 120,
@@ -252,7 +252,7 @@
     "weight": 65,
     "height": 3.51
   },
-  "025": {
+  "025_": {
     "attack": 112,
     "defense": 101,
     "stamina": 70,
@@ -262,7 +262,7 @@
     "weight": 6,
     "height": 0.41
   },
-  "026": {
+  "026_": {
     "attack": 193,
     "defense": 165,
     "stamina": 120,
@@ -272,7 +272,19 @@
     "weight": 30,
     "height": 0.79
   },
-  "027": {
+  "026_a": {
+    "name": "Alolan Raichu", 
+    "attack": 201,
+    "defense": 172,
+    "stamina": 120,
+    "type1": 13,
+    "type2": 17,
+    "legendary": false,
+    "generation": 1,
+    "weight": 30,
+    "height": 0.79
+  },
+  "027_": {
     "attack": 126,
     "defense": 145,
     "stamina": 100,
@@ -282,7 +294,7 @@
     "weight": 12,
     "height": 0.61
   },
-  "028": {
+  "028_": {
     "attack": 182,
     "defense": 202,
     "stamina": 150,
@@ -292,7 +304,7 @@
     "weight": 29.5,
     "height": 0.99
   },
-  "029": {
+  "029_": {
     "attack": 86,
     "defense": 94,
     "stamina": 110,
@@ -302,7 +314,7 @@
     "weight": 7,
     "height": 0.41
   },
-  "030": {
+  "030_": {
     "attack": 117,
     "defense": 126,
     "stamina": 140,
@@ -312,7 +324,7 @@
     "weight": 20,
     "height": 0.79
   },
-  "031": {
+  "031_": {
     "attack": 180,
     "defense": 174,
     "stamina": 180,
@@ -323,7 +335,7 @@
     "weight": 60,
     "height": 1.3
   },
-  "032": {
+  "032_": {
     "attack": 105,
     "defense": 76,
     "stamina": 92,
@@ -333,7 +345,7 @@
     "weight": 9,
     "height": 0.51
   },
-  "033": {
+  "033_": {
     "attack": 137,
     "defense": 112,
     "stamina": 122,
@@ -343,7 +355,7 @@
     "weight": 19.5,
     "height": 0.89
   },
-  "034": {
+  "034_": {
     "attack": 204,
     "defense": 157,
     "stamina": 162,
@@ -354,7 +366,7 @@
     "weight": 62,
     "height": 1.4
   },
-  "035": {
+  "035_": {
     "attack": 107,
     "defense": 116,
     "stamina": 140,
@@ -364,7 +376,7 @@
     "weight": 7.5,
     "height": 0.61
   },
-  "036": {
+  "036_": {
     "attack": 178,
     "defense": 171,
     "stamina": 190,
@@ -374,7 +386,7 @@
     "weight": 40,
     "height": 1.3
   },
-  "037": {
+  "037_": {
     "attack": 96,
     "defense": 122,
     "stamina": 76,
@@ -384,7 +396,7 @@
     "weight": 9.9,
     "height": 0.61
   },
-  "038": {
+  "038_": {
     "attack": 169,
     "defense": 204,
     "stamina": 146,
@@ -394,7 +406,7 @@
     "weight": 19.9,
     "height": 1.09
   },
-  "039": {
+  "039_": {
     "attack": 80,
     "defense": 44,
     "stamina": 230,
@@ -405,7 +417,7 @@
     "weight": 5.5,
     "height": 0.51
   },
-  "040": {
+  "040_": {
     "attack": 156,
     "defense": 93,
     "stamina": 280,
@@ -416,7 +428,7 @@
     "weight": 12,
     "height": 0.99
   },
-  "041": {
+  "041_": {
     "attack": 83,
     "defense": 76,
     "stamina": 80,
@@ -427,7 +439,7 @@
     "weight": 7.5,
     "height": 0.79
   },
-  "042": {
+  "042_": {
     "attack": 161,
     "defense": 153,
     "stamina": 150,
@@ -438,7 +450,7 @@
     "weight": 55,
     "height": 1.6
   },
-  "043": {
+  "043_": {
     "attack": 131,
     "defense": 116,
     "stamina": 90,
@@ -449,7 +461,7 @@
     "weight": 5.4,
     "height": 0.51
   },
-  "044": {
+  "044_": {
     "attack": 153,
     "defense": 139,
     "stamina": 120,
@@ -460,7 +472,7 @@
     "weight": 8.6,
     "height": 0.79
   },
-  "045": {
+  "045_": {
     "attack": 202,
     "defense": 170,
     "stamina": 150,
@@ -471,7 +483,7 @@
     "weight": 18.6,
     "height": 1.19
   },
-  "046": {
+  "046_": {
     "attack": 121,
     "defense": 99,
     "stamina": 70,
@@ -482,7 +494,7 @@
     "weight": 5.4,
     "height": 0.3
   },
-  "047": {
+  "047_": {
     "attack": 165,
     "defense": 146,
     "stamina": 120,
@@ -493,7 +505,7 @@
     "weight": 29.5,
     "height": 0.99
   },
-  "048": {
+  "048_": {
     "attack": 100,
     "defense": 102,
     "stamina": 120,
@@ -504,7 +516,7 @@
     "weight": 30,
     "height": 0.99
   },
-  "049": {
+  "049_": {
     "attack": 179,
     "defense": 150,
     "stamina": 140,
@@ -515,7 +527,7 @@
     "weight": 12.5,
     "height": 1.5
   },
-  "050": {
+  "050_": {
     "attack": 109,
     "defense": 88,
     "stamina": 20,
@@ -525,7 +537,7 @@
     "weight": 0.8,
     "height": 0.2
   },
-  "051": {
+  "051_": {
     "attack": 205,
     "defense": 147,
     "stamina": 70,
@@ -535,7 +547,7 @@
     "weight": 33.3,
     "height": 0.71
   },
-  "052": {
+  "052_": {
     "attack": 92,
     "defense": 81,
     "stamina": 80,
@@ -545,7 +557,7 @@
     "weight": 4.2,
     "height": 0.41
   },
-  "053": {
+  "053_": {
     "attack": 150,
     "defense": 139,
     "stamina": 130,
@@ -555,7 +567,7 @@
     "weight": 32,
     "height": 0.99
   },
-  "054": {
+  "054_": {
     "attack": 122,
     "defense": 96,
     "stamina": 100,
@@ -565,7 +577,7 @@
     "weight": 19.6,
     "height": 0.79
   },
-  "055": {
+  "055_": {
     "attack": 191,
     "defense": 163,
     "stamina": 160,
@@ -575,7 +587,7 @@
     "weight": 76.6,
     "height": 1.7
   },
-  "056": {
+  "056_": {
     "attack": 148,
     "defense": 87,
     "stamina": 80,
@@ -585,7 +597,7 @@
     "weight": 28,
     "height": 0.51
   },
-  "057": {
+  "057_": {
     "attack": 207,
     "defense": 144,
     "stamina": 130,
@@ -595,7 +607,7 @@
     "weight": 32,
     "height": 0.99
   },
-  "058": {
+  "058_": {
     "attack": 136,
     "defense": 96,
     "stamina": 110,
@@ -605,7 +617,7 @@
     "weight": 19,
     "height": 0.71
   },
-  "059": {
+  "059_": {
     "attack": 227,
     "defense": 166,
     "stamina": 180,
@@ -615,7 +627,7 @@
     "weight": 155,
     "height": 1.91
   },
-  "060": {
+  "060_": {
     "attack": 101,
     "defense": 82,
     "stamina": 80,
@@ -625,7 +637,7 @@
     "weight": 12.4,
     "height": 0.61
   },
-  "061": {
+  "061_": {
     "attack": 130,
     "defense": 130,
     "stamina": 130,
@@ -635,7 +647,7 @@
     "weight": 20,
     "height": 0.99
   },
-  "062": {
+  "062_": {
     "attack": 182,
     "defense": 187,
     "stamina": 180,
@@ -646,7 +658,7 @@
     "weight": 54,
     "height": 1.3
   },
-  "063": {
+  "063_": {
     "attack": 195,
     "defense": 103,
     "stamina": 50,
@@ -656,7 +668,7 @@
     "weight": 19.5,
     "height": 0.89
   },
-  "064": {
+  "064_": {
     "attack": 232,
     "defense": 138,
     "stamina": 80,
@@ -666,7 +678,7 @@
     "weight": 56.5,
     "height": 1.3
   },
-  "065": {
+  "065_": {
     "attack": 271,
     "defense": 194,
     "stamina": 110,
@@ -676,7 +688,7 @@
     "weight": 48,
     "height": 1.5
   },
-  "066": {
+  "066_": {
     "attack": 137,
     "defense": 88,
     "stamina": 140,
@@ -686,7 +698,7 @@
     "weight": 19.5,
     "height": 0.79
   },
-  "067": {
+  "067_": {
     "attack": 177,
     "defense": 130,
     "stamina": 160,
@@ -696,7 +708,7 @@
     "weight": 70.5,
     "height": 1.5
   },
-  "068": {
+  "068_": {
     "attack": 234,
     "defense": 162,
     "stamina": 180,
@@ -706,7 +718,7 @@
     "weight": 130,
     "height": 1.6
   },
-  "069": {
+  "069_": {
     "attack": 139,
     "defense": 64,
     "stamina": 100,
@@ -717,7 +729,7 @@
     "weight": 4,
     "height": 0.71
   },
-  "070": {
+  "070_": {
     "attack": 172,
     "defense": 95,
     "stamina": 130,
@@ -728,7 +740,7 @@
     "weight": 6.4,
     "height": 0.99
   },
-  "071": {
+  "071_": {
     "attack": 207,
     "defense": 138,
     "stamina": 160,
@@ -739,7 +751,7 @@
     "weight": 15.5,
     "height": 1.7
   },
-  "072": {
+  "072_": {
     "attack": 97,
     "defense": 182,
     "stamina": 80,
@@ -750,7 +762,7 @@
     "weight": 45.5,
     "height": 0.89
   },
-  "073": {
+  "073_": {
     "attack": 166,
     "defense": 237,
     "stamina": 160,
@@ -761,7 +773,7 @@
     "weight": 55,
     "height": 1.6
   },
-  "074": {
+  "074_": {
     "attack": 132,
     "defense": 163,
     "stamina": 80,
@@ -772,7 +784,7 @@
     "weight": 20,
     "height": 0.41
   },
-  "075": {
+  "075_": {
     "attack": 164,
     "defense": 196,
     "stamina": 110,
@@ -783,7 +795,7 @@
     "weight": 105,
     "height": 0.99
   },
-  "076": {
+  "076_": {
     "attack": 211,
     "defense": 229,
     "stamina": 160,
@@ -794,7 +806,7 @@
     "weight": 300,
     "height": 1.4
   },
-  "077": {
+  "077_": {
     "attack": 170,
     "defense": 132,
     "stamina": 100,
@@ -804,7 +816,7 @@
     "weight": 30,
     "height": 0.99
   },
-  "078": {
+  "078_": {
     "attack": 207,
     "defense": 167,
     "stamina": 130,
@@ -814,7 +826,7 @@
     "weight": 95,
     "height": 1.7
   },
-  "079": {
+  "079_": {
     "attack": 109,
     "defense": 109,
     "stamina": 180,
@@ -825,7 +837,7 @@
     "weight": 36,
     "height": 1.19
   },
-  "080": {
+  "080_": {
     "attack": 177,
     "defense": 194,
     "stamina": 190,
@@ -836,7 +848,7 @@
     "weight": 78.5,
     "height": 1.6
   },
-  "081": {
+  "081_": {
     "attack": 165,
     "defense": 128,
     "stamina": 50,
@@ -847,7 +859,7 @@
     "weight": 6,
     "height": 0.3
   },
-  "082": {
+  "082_": {
     "attack": 223,
     "defense": 182,
     "stamina": 100,
@@ -858,7 +870,7 @@
     "weight": 60,
     "height": 0.99
   },
-  "083": {
+  "083_": {
     "attack": 167,
     "defense": 118,
     "stamina": 104,
@@ -869,7 +881,7 @@
     "weight": 15,
     "height": 0.79
   },
-  "084": {
+  "084_": {
     "attack": 158,
     "defense": 88,
     "stamina": 70,
@@ -880,7 +892,7 @@
     "weight": 39.2,
     "height": 1.4
   },
-  "085": {
+  "085_": {
     "attack": 223,
     "defense": 148,
     "stamina": 120,
@@ -891,7 +903,7 @@
     "weight": 85.2,
     "height": 1.8
   },
-  "086": {
+  "086_": {
     "attack": 85,
     "defense": 128,
     "stamina": 130,
@@ -901,7 +913,7 @@
     "weight": 90,
     "height": 1.09
   },
-  "087": {
+  "087_": {
     "attack": 139,
     "defense": 184,
     "stamina": 180,
@@ -912,7 +924,7 @@
     "weight": 120,
     "height": 1.7
   },
-  "088": {
+  "088_": {
     "attack": 135,
     "defense": 90,
     "stamina": 160,
@@ -922,7 +934,7 @@
     "weight": 30,
     "height": 0.89
   },
-  "089": {
+  "089_": {
     "attack": 190,
     "defense": 184,
     "stamina": 210,
@@ -932,7 +944,7 @@
     "weight": 30,
     "height": 1.19
   },
-  "090": {
+  "090_": {
     "attack": 116,
     "defense": 168,
     "stamina": 60,
@@ -942,7 +954,7 @@
     "weight": 4,
     "height": 0.3
   },
-  "091": {
+  "091_": {
     "attack": 186,
     "defense": 323,
     "stamina": 100,
@@ -953,7 +965,7 @@
     "weight": 132.5,
     "height": 1.5
   },
-  "092": {
+  "092_": {
     "attack": 186,
     "defense": 70,
     "stamina": 60,
@@ -964,7 +976,7 @@
     "weight": 0.1,
     "height": 1.3
   },
-  "093": {
+  "093_": {
     "attack": 223,
     "defense": 112,
     "stamina": 90,
@@ -975,7 +987,7 @@
     "weight": 0.1,
     "height": 1.6
   },
-  "094": {
+  "094_": {
     "attack": 261,
     "defense": 156,
     "stamina": 120,
@@ -986,7 +998,7 @@
     "weight": 40.5,
     "height": 1.5
   },
-  "095": {
+  "095_": {
     "attack": 85,
     "defense": 288,
     "stamina": 70,
@@ -997,7 +1009,7 @@
     "weight": 210,
     "height": 8.79
   },
-  "096": {
+  "096_": {
     "attack": 89,
     "defense": 158,
     "stamina": 120,
@@ -1007,7 +1019,7 @@
     "weight": 32.4,
     "height": 0.99
   },
-  "097": {
+  "097_": {
     "attack": 144,
     "defense": 215,
     "stamina": 170,
@@ -1017,7 +1029,7 @@
     "weight": 75.6,
     "height": 1.6
   },
-  "098": {
+  "098_": {
     "attack": 181,
     "defense": 156,
     "stamina": 60,
@@ -1027,7 +1039,7 @@
     "weight": 6.5,
     "height": 0.41
   },
-  "099": {
+  "099_": {
     "attack": 240,
     "defense": 214,
     "stamina": 110,
@@ -1037,7 +1049,7 @@
     "weight": 60,
     "height": 1.3
   },
-  "100": {
+  "100_": {
     "attack": 109,
     "defense": 114,
     "stamina": 80,
@@ -1047,7 +1059,7 @@
     "weight": 10.4,
     "height": 0.51
   },
-  "101": {
+  "101_": {
     "attack": 176,
     "defense": 182,
     "stamina": 120,
@@ -1057,7 +1069,7 @@
     "weight": 66.6,
     "height": 1.19
   },
-  "102": {
+  "102_": {
     "attack": 107,
     "defense": 140,
     "stamina": 120,
@@ -1068,7 +1080,7 @@
     "weight": 2.5,
     "height": 0.41
   },
-  "103": {
+  "103_": {
     "attack": 233,
     "defense": 161,
     "stamina": 190,
@@ -1079,7 +1091,19 @@
     "weight": 120,
     "height": 2.01
   },
-  "104": {
+  "103_a": {
+    "name": "Alolan Exeggutor",
+    "attack": 233,
+    "defense": 161,
+    "stamina": 190,
+    "type1": 12,
+    "type2": 16,
+    "legendary": false,
+    "generation": 1,
+    "weight": 120,
+    "height": 2.01
+  },
+  "104_": {
     "attack": 90,
     "defense": 165,
     "stamina": 100,
@@ -1089,7 +1113,19 @@
     "weight": 6.5,
     "height": 0.41
   },
-  "105": {
+  "105_a": {
+    "name": "Alolan Marowak",
+    "attack": 144,
+    "defense": 200,
+    "stamina": 120,
+    "type1": 10,
+    "type2": 8,
+    "legendary": false,
+    "generation": 1,
+    "weight": 45,
+    "height": 0.99
+  },
+  "105_": {
     "attack": 144,
     "defense": 200,
     "stamina": 120,
@@ -1099,7 +1135,7 @@
     "weight": 45,
     "height": 0.99
   },
-  "106": {
+  "106_": {
     "attack": 224,
     "defense": 211,
     "stamina": 100,
@@ -1109,7 +1145,7 @@
     "weight": 49.8,
     "height": 1.5
   },
-  "107": {
+  "107_": {
     "attack": 193,
     "defense": 212,
     "stamina": 100,
@@ -1119,7 +1155,7 @@
     "weight": 50.2,
     "height": 1.4
   },
-  "108": {
+  "108_": {
     "attack": 108,
     "defense": 137,
     "stamina": 180,
@@ -1129,7 +1165,7 @@
     "weight": 65.5,
     "height": 1.19
   },
-  "109": {
+  "109_": {
     "attack": 119,
     "defense": 164,
     "stamina": 80,
@@ -1139,7 +1175,7 @@
     "weight": 1,
     "height": 0.61
   },
-  "110": {
+  "110_": {
     "attack": 174,
     "defense": 221,
     "stamina": 130,
@@ -1149,7 +1185,7 @@
     "weight": 9.5,
     "height": 1.19
   },
-  "111": {
+  "111_": {
     "attack": 140,
     "defense": 157,
     "stamina": 160,
@@ -1160,7 +1196,7 @@
     "weight": 115,
     "height": 0.99
   },
-  "112": {
+  "112_": {
     "attack": 222,
     "defense": 206,
     "stamina": 210,
@@ -1171,7 +1207,7 @@
     "weight": 120,
     "height": 1.91
   },
-  "113": {
+  "113_": {
     "attack": 60,
     "defense": 176,
     "stamina": 500,
@@ -1181,7 +1217,7 @@
     "weight": 34.6,
     "height": 1.09
   },
-  "114": {
+  "114_": {
     "attack": 183,
     "defense": 205,
     "stamina": 130,
@@ -1191,7 +1227,7 @@
     "weight": 35,
     "height": 0.99
   },
-  "115": {
+  "115_": {
     "attack": 181,
     "defense": 165,
     "stamina": 210,
@@ -1201,7 +1237,7 @@
     "weight": 80,
     "height": 2.21
   },
-  "116": {
+  "116_": {
     "attack": 129,
     "defense": 125,
     "stamina": 60,
@@ -1211,7 +1247,7 @@
     "weight": 8,
     "height": 0.41
   },
-  "117": {
+  "117_": {
     "attack": 187,
     "defense": 182,
     "stamina": 110,
@@ -1221,7 +1257,7 @@
     "weight": 25,
     "height": 1.19
   },
-  "118": {
+  "118_": {
     "attack": 123,
     "defense": 115,
     "stamina": 90,
@@ -1231,7 +1267,7 @@
     "weight": 15,
     "height": 0.61
   },
-  "119": {
+  "119_": {
     "attack": 175,
     "defense": 154,
     "stamina": 160,
@@ -1241,7 +1277,7 @@
     "weight": 39,
     "height": 1.3
   },
-  "120": {
+  "120_": {
     "attack": 137,
     "defense": 112,
     "stamina": 60,
@@ -1251,7 +1287,7 @@
     "weight": 34.5,
     "height": 0.79
   },
-  "121": {
+  "121_": {
     "attack": 210,
     "defense": 184,
     "stamina": 120,
@@ -1262,7 +1298,7 @@
     "weight": 80,
     "height": 1.09
   },
-  "122": {
+  "122_": {
     "attack": 192,
     "defense": 233,
     "stamina": 80,
@@ -1273,7 +1309,7 @@
     "weight": 54.5,
     "height": 1.3
   },
-  "123": {
+  "123_": {
     "attack": 218,
     "defense": 170,
     "stamina": 140,
@@ -1284,7 +1320,7 @@
     "weight": 56,
     "height": 1.5
   },
-  "124": {
+  "124_": {
     "attack": 223,
     "defense": 182,
     "stamina": 130,
@@ -1295,7 +1331,7 @@
     "weight": 40.6,
     "height": 1.4
   },
-  "125": {
+  "125_": {
     "attack": 198,
     "defense": 173,
     "stamina": 130,
@@ -1305,7 +1341,7 @@
     "weight": 30,
     "height": 1.09
   },
-  "126": {
+  "126_": {
     "attack": 206,
     "defense": 169,
     "stamina": 130,
@@ -1315,7 +1351,7 @@
     "weight": 44.5,
     "height": 1.3
   },
-  "127": {
+  "127_": {
     "attack": 238,
     "defense": 197,
     "stamina": 130,
@@ -1325,7 +1361,7 @@
     "weight": 55,
     "height": 1.5
   },
-  "128": {
+  "128_": {
     "attack": 198,
     "defense": 197,
     "stamina": 150,
@@ -1335,7 +1371,7 @@
     "weight": 88.4,
     "height": 1.4
   },
-  "129": {
+  "129_": {
     "attack": 29,
     "defense": 102,
     "stamina": 40,
@@ -1345,7 +1381,7 @@
     "weight": 10,
     "height": 0.89
   },
-  "130": {
+  "130_": {
     "attack": 237,
     "defense": 197,
     "stamina": 190,
@@ -1356,7 +1392,7 @@
     "weight": 235,
     "height": 6.5
   },
-  "131": {
+  "131_": {
     "attack": 165,
     "defense": 180,
     "stamina": 260,
@@ -1367,7 +1403,7 @@
     "weight": 220,
     "height": 2.49
   },
-  "132": {
+  "132_": {
     "attack": 91,
     "defense": 91,
     "stamina": 96,
@@ -1377,7 +1413,7 @@
     "weight": 4,
     "height": 0.3
   },
-  "133": {
+  "133_": {
     "attack": 104,
     "defense": 121,
     "stamina": 110,
@@ -1387,7 +1423,7 @@
     "weight": 6.5,
     "height": 0.3
   },
-  "134": {
+  "134_": {
     "attack": 205,
     "defense": 177,
     "stamina": 260,
@@ -1397,7 +1433,7 @@
     "weight": 29,
     "height": 0.99
   },
-  "135": {
+  "135_": {
     "attack": 232,
     "defense": 201,
     "stamina": 130,
@@ -1407,7 +1443,7 @@
     "weight": 24.5,
     "height": 0.79
   },
-  "136": {
+  "136_": {
     "attack": 246,
     "defense": 204,
     "stamina": 130,
@@ -1417,7 +1453,7 @@
     "weight": 25,
     "height": 0.89
   },
-  "137": {
+  "137_": {
     "attack": 153,
     "defense": 139,
     "stamina": 130,
@@ -1427,7 +1463,7 @@
     "weight": 36.5,
     "height": 0.79
   },
-  "138": {
+  "138_": {
     "attack": 155,
     "defense": 174,
     "stamina": 70,
@@ -1438,7 +1474,7 @@
     "weight": 7.5,
     "height": 0.41
   },
-  "139": {
+  "139_": {
     "attack": 207,
     "defense": 227,
     "stamina": 140,
@@ -1449,7 +1485,7 @@
     "weight": 35,
     "height": 0.99
   },
-  "140": {
+  "140_": {
     "attack": 148,
     "defense": 162,
     "stamina": 60,
@@ -1460,7 +1496,7 @@
     "weight": 11.5,
     "height": 0.51
   },
-  "141": {
+  "141_": {
     "attack": 220,
     "defense": 203,
     "stamina": 120,
@@ -1471,7 +1507,7 @@
     "weight": 40.5,
     "height": 1.3
   },
-  "142": {
+  "142_": {
     "attack": 221,
     "defense": 164,
     "stamina": 160,
@@ -1482,7 +1518,7 @@
     "weight": 59,
     "height": 1.8
   },
-  "143": {
+  "143_": {
     "attack": 190,
     "defense": 190,
     "stamina": 320,
@@ -1492,7 +1528,7 @@
     "weight": 460,
     "height": 2.11
   },
-  "144": {
+  "144_": {
     "attack": 192,
     "defense": 249,
     "stamina": 180,
@@ -1503,7 +1539,7 @@
     "weight": 55.4,
     "height": 1.7
   },
-  "145": {
+  "145_": {
     "attack": 253,
     "defense": 188,
     "stamina": 180,
@@ -1514,7 +1550,7 @@
     "weight": 52.6,
     "height": 1.6
   },
-  "146": {
+  "146_": {
     "attack": 251,
     "defense": 184,
     "stamina": 180,
@@ -1525,7 +1561,7 @@
     "weight": 60,
     "height": 2.01
   },
-  "147": {
+  "147_": {
     "attack": 119,
     "defense": 94,
     "stamina": 82,
@@ -1535,7 +1571,7 @@
     "weight": 3.3,
     "height": 1.8
   },
-  "148": {
+  "148_": {
     "attack": 163,
     "defense": 138,
     "stamina": 122,
@@ -1545,7 +1581,7 @@
     "weight": 16.5,
     "height": 3.99
   },
-  "149": {
+  "149_": {
     "attack": 263,
     "defense": 201,
     "stamina": 182,
@@ -1556,7 +1592,7 @@
     "weight": 210,
     "height": 2.21
   },
-  "150": {
+  "150_": {
     "attack": 300,
     "defense": 182,
     "stamina": 193,
@@ -1566,7 +1602,7 @@
     "weight": 122,
     "height": 2.01
   },
-  "151": {
+  "151_": {
     "attack": 210,
     "defense": 210,
     "stamina": 200,
@@ -1576,7 +1612,7 @@
     "weight": 4,
     "height": 0.41
   },
-  "152": {
+  "152_": {
     "attack": 92,
     "defense": 122,
     "stamina": 90,
@@ -1586,7 +1622,7 @@
     "weight": 6.4,
     "height": 0.89
   },
-  "153": {
+  "153_": {
     "attack": 122,
     "defense": 155,
     "stamina": 120,
@@ -1596,7 +1632,7 @@
     "weight": 15.8,
     "height": 1.19
   },
-  "154": {
+  "154_": {
     "attack": 168,
     "defense": 202,
     "stamina": 160,
@@ -1606,7 +1642,7 @@
     "weight": 100.5,
     "height": 1.8
   },
-  "155": {
+  "155_": {
     "attack": 116,
     "defense": 96,
     "stamina": 78,
@@ -1616,7 +1652,7 @@
     "weight": 7.9,
     "height": 0.51
   },
-  "156": {
+  "156_": {
     "attack": 158,
     "defense": 129,
     "stamina": 116,
@@ -1626,7 +1662,7 @@
     "weight": 19,
     "height": 0.89
   },
-  "157": {
+  "157_": {
     "attack": 223,
     "defense": 176,
     "stamina": 156,
@@ -1636,7 +1672,7 @@
     "weight": 79.5,
     "height": 1.7
   },
-  "158": {
+  "158_": {
     "attack": 117,
     "defense": 116,
     "stamina": 100,
@@ -1646,7 +1682,7 @@
     "weight": 9.5,
     "height": 0.61
   },
-  "159": {
+  "159_": {
     "attack": 150,
     "defense": 151,
     "stamina": 130,
@@ -1656,7 +1692,7 @@
     "weight": 25,
     "height": 1.09
   },
-  "160": {
+  "160_": {
     "attack": 205,
     "defense": 197,
     "stamina": 170,
@@ -1666,7 +1702,7 @@
     "weight": 88.8,
     "height": 2.31
   },
-  "161": {
+  "161_": {
     "attack": 79,
     "defense": 77,
     "stamina": 70,
@@ -1676,7 +1712,7 @@
     "weight": 6,
     "height": 0.79
   },
-  "162": {
+  "162_": {
     "attack": 148,
     "defense": 130,
     "stamina": 170,
@@ -1686,7 +1722,7 @@
     "weight": 32.5,
     "height": 1.8
   },
-  "163": {
+  "163_": {
     "attack": 67,
     "defense": 101,
     "stamina": 120,
@@ -1697,7 +1733,7 @@
     "weight": 21.2,
     "height": 0.71
   },
-  "164": {
+  "164_": {
     "attack": 161,
     "defense": 179,
     "stamina": 200,
@@ -1708,7 +1744,7 @@
     "weight": 40.8,
     "height": 1.6
   },
-  "165": {
+  "165_": {
     "attack": 72,
     "defense": 142,
     "stamina": 80,
@@ -1719,7 +1755,7 @@
     "weight": 10.8,
     "height": 0.99
   },
-  "166": {
+  "166_": {
     "attack": 107,
     "defense": 209,
     "stamina": 110,
@@ -1730,7 +1766,7 @@
     "weight": 35.6,
     "height": 1.4
   },
-  "167": {
+  "167_": {
     "attack": 105,
     "defense": 73,
     "stamina": 80,
@@ -1741,7 +1777,7 @@
     "weight": 8.5,
     "height": 0.51
   },
-  "168": {
+  "168_": {
     "attack": 161,
     "defense": 130,
     "stamina": 140,
@@ -1752,7 +1788,7 @@
     "weight": 33.5,
     "height": 1.09
   },
-  "169": {
+  "169_": {
     "attack": 194,
     "defense": 178,
     "stamina": 170,
@@ -1763,7 +1799,7 @@
     "weight": 75,
     "height": 1.8
   },
-  "170": {
+  "170_": {
     "attack": 106,
     "defense": 106,
     "stamina": 150,
@@ -1774,7 +1810,7 @@
     "weight": 12,
     "height": 0.51
   },
-  "171": {
+  "171_": {
     "attack": 146,
     "defense": 146,
     "stamina": 250,
@@ -1785,7 +1821,7 @@
     "weight": 22.5,
     "height": 1.19
   },
-  "172": {
+  "172_": {
     "attack": 77,
     "defense": 63,
     "stamina": 40,
@@ -1795,7 +1831,7 @@
     "weight": 2,
     "height": 0.3
   },
-  "173": {
+  "173_": {
     "attack": 75,
     "defense": 91,
     "stamina": 100,
@@ -1805,7 +1841,7 @@
     "weight": 3,
     "height": 0.3
   },
-  "174": {
+  "174_": {
     "attack": 69,
     "defense": 34,
     "stamina": 180,
@@ -1816,7 +1852,7 @@
     "weight": 1,
     "height": 0.3
   },
-  "175": {
+  "175_": {
     "attack": 67,
     "defense": 116,
     "stamina": 70,
@@ -1826,7 +1862,7 @@
     "weight": 1.5,
     "height": 0.3
   },
-  "176": {
+  "176_": {
     "attack": 140,
     "defense": 191,
     "stamina": 110,
@@ -1837,7 +1873,7 @@
     "weight": 3.2,
     "height": 0.61
   },
-  "177": {
+  "177_": {
     "attack": 134,
     "defense": 89,
     "stamina": 80,
@@ -1848,7 +1884,7 @@
     "weight": 2,
     "height": 0.2
   },
-  "178": {
+  "178_": {
     "attack": 192,
     "defense": 146,
     "stamina": 130,
@@ -1859,7 +1895,7 @@
     "weight": 15,
     "height": 1.5
   },
-  "179": {
+  "179_": {
     "attack": 114,
     "defense": 82,
     "stamina": 110,
@@ -1869,7 +1905,7 @@
     "weight": 7.8,
     "height": 0.61
   },
-  "180": {
+  "180_": {
     "attack": 145,
     "defense": 112,
     "stamina": 140,
@@ -1879,7 +1915,7 @@
     "weight": 13.3,
     "height": 0.79
   },
-  "181": {
+  "181_": {
     "attack": 211,
     "defense": 172,
     "stamina": 180,
@@ -1889,7 +1925,7 @@
     "weight": 61.5,
     "height": 1.4
   },
-  "182": {
+  "182_": {
     "attack": 169,
     "defense": 189,
     "stamina": 150,
@@ -1899,7 +1935,7 @@
     "weight": 5.8,
     "height": 0.41
   },
-  "183": {
+  "183_": {
     "attack": 37,
     "defense": 93,
     "stamina": 140,
@@ -1910,7 +1946,7 @@
     "weight": 8.5,
     "height": 0.41
   },
-  "184": {
+  "184_": {
     "attack": 112,
     "defense": 152,
     "stamina": 200,
@@ -1921,7 +1957,7 @@
     "weight": 28.5,
     "height": 0.79
   },
-  "185": {
+  "185_": {
     "attack": 167,
     "defense": 198,
     "stamina": 140,
@@ -1931,7 +1967,7 @@
     "weight": 38,
     "height": 1.19
   },
-  "186": {
+  "186_": {
     "attack": 174,
     "defense": 192,
     "stamina": 180,
@@ -1941,7 +1977,7 @@
     "weight": 33.9,
     "height": 1.09
   },
-  "187": {
+  "187_": {
     "attack": 67,
     "defense": 101,
     "stamina": 70,
@@ -1952,7 +1988,7 @@
     "weight": 0.5,
     "height": 0.41
   },
-  "188": {
+  "188_": {
     "attack": 91,
     "defense": 127,
     "stamina": 110,
@@ -1963,7 +1999,7 @@
     "weight": 1,
     "height": 0.61
   },
-  "189": {
+  "189_": {
     "attack": 118,
     "defense": 197,
     "stamina": 150,
@@ -1974,7 +2010,7 @@
     "weight": 3,
     "height": 0.79
   },
-  "190": {
+  "190_": {
     "attack": 136,
     "defense": 112,
     "stamina": 110,
@@ -1984,7 +2020,7 @@
     "weight": 11.5,
     "height": 0.79
   },
-  "191": {
+  "191_": {
     "attack": 55,
     "defense": 55,
     "stamina": 60,
@@ -1994,7 +2030,7 @@
     "weight": 1.8,
     "height": 0.3
   },
-  "192": {
+  "192_": {
     "attack": 185,
     "defense": 148,
     "stamina": 150,
@@ -2004,7 +2040,7 @@
     "weight": 8.5,
     "height": 0.79
   },
-  "193": {
+  "193_": {
     "attack": 154,
     "defense": 94,
     "stamina": 130,
@@ -2015,7 +2051,7 @@
     "weight": 38,
     "height": 1.19
   },
-  "194": {
+  "194_": {
     "attack": 75,
     "defense": 75,
     "stamina": 110,
@@ -2026,7 +2062,7 @@
     "weight": 8.5,
     "height": 0.41
   },
-  "195": {
+  "195_": {
     "attack": 152,
     "defense": 152,
     "stamina": 190,
@@ -2037,7 +2073,7 @@
     "weight": 75,
     "height": 1.4
   },
-  "196": {
+  "196_": {
     "attack": 261,
     "defense": 194,
     "stamina": 130,
@@ -2047,7 +2083,7 @@
     "weight": 26.5,
     "height": 0.89
   },
-  "197": {
+  "197_": {
     "attack": 126,
     "defense": 250,
     "stamina": 190,
@@ -2057,7 +2093,7 @@
     "weight": 27,
     "height": 0.99
   },
-  "198": {
+  "198_": {
     "attack": 175,
     "defense": 87,
     "stamina": 120,
@@ -2068,7 +2104,7 @@
     "weight": 2.1,
     "height": 0.51
   },
-  "199": {
+  "199_": {
     "attack": 177,
     "defense": 194,
     "stamina": 190,
@@ -2079,7 +2115,7 @@
     "weight": 79.5,
     "height": 2.01
   },
-  "200": {
+  "200_": {
     "attack": 167,
     "defense": 167,
     "stamina": 120,
@@ -2089,7 +2125,7 @@
     "weight": 1,
     "height": 0.71
   },
-  "201": {
+  "201_": {
     "attack": 136,
     "defense": 91,
     "stamina": 96,
@@ -2099,7 +2135,7 @@
     "weight": 5,
     "height": 0.51
   },
-  "202": {
+  "202_": {
     "attack": 60,
     "defense": 106,
     "stamina": 380,
@@ -2109,7 +2145,7 @@
     "weight": 28.5,
     "height": 1.3
   },
-  "203": {
+  "203_": {
     "attack": 182,
     "defense": 133,
     "stamina": 140,
@@ -2120,7 +2156,7 @@
     "weight": 41.5,
     "height": 1.5
   },
-  "204": {
+  "204_": {
     "attack": 108,
     "defense": 146,
     "stamina": 100,
@@ -2130,7 +2166,7 @@
     "weight": 7.2,
     "height": 0.61
   },
-  "205": {
+  "205_": {
     "attack": 161,
     "defense": 242,
     "stamina": 150,
@@ -2141,7 +2177,7 @@
     "weight": 125.8,
     "height": 1.19
   },
-  "206": {
+  "206_": {
     "attack": 131,
     "defense": 131,
     "stamina": 200,
@@ -2151,7 +2187,7 @@
     "weight": 14,
     "height": 1.5
   },
-  "207": {
+  "207_": {
     "attack": 143,
     "defense": 204,
     "stamina": 130,
@@ -2162,7 +2198,7 @@
     "weight": 64.8,
     "height": 1.09
   },
-  "208": {
+  "208_": {
     "attack": 148,
     "defense": 333,
     "stamina": 150,
@@ -2173,7 +2209,7 @@
     "weight": 400,
     "height": 9.19
   },
-  "209": {
+  "209_": {
     "attack": 137,
     "defense": 89,
     "stamina": 120,
@@ -2183,7 +2219,7 @@
     "weight": 7.8,
     "height": 0.61
   },
-  "210": {
+  "210_": {
     "attack": 212,
     "defense": 137,
     "stamina": 180,
@@ -2193,7 +2229,7 @@
     "weight": 48.7,
     "height": 1.4
   },
-  "211": {
+  "211_": {
     "attack": 184,
     "defense": 166,
     "stamina": 130,
@@ -2204,7 +2240,7 @@
     "weight": 3.9,
     "height": 0.51
   },
-  "212": {
+  "212_": {
     "attack": 236,
     "defense": 191,
     "stamina": 140,
@@ -2215,7 +2251,7 @@
     "weight": 118,
     "height": 1.8
   },
-  "213": {
+  "213_": {
     "attack": 17,
     "defense": 396,
     "stamina": 40,
@@ -2226,7 +2262,7 @@
     "weight": 20.5,
     "height": 0.61
   },
-  "214": {
+  "214_": {
     "attack": 234,
     "defense": 189,
     "stamina": 160,
@@ -2237,7 +2273,7 @@
     "weight": 54,
     "height": 1.5
   },
-  "215": {
+  "215_": {
     "attack": 189,
     "defense": 157,
     "stamina": 110,
@@ -2248,7 +2284,7 @@
     "weight": 28,
     "height": 0.89
   },
-  "216": {
+  "216_": {
     "attack": 142,
     "defense": 93,
     "stamina": 120,
@@ -2258,7 +2294,7 @@
     "weight": 8.8,
     "height": 0.61
   },
-  "217": {
+  "217_": {
     "attack": 236,
     "defense": 144,
     "stamina": 180,
@@ -2268,7 +2304,7 @@
     "weight": 125.8,
     "height": 1.8
   },
-  "218": {
+  "218_": {
     "attack": 118,
     "defense": 71,
     "stamina": 80,
@@ -2278,7 +2314,7 @@
     "weight": 35,
     "height": 0.71
   },
-  "219": {
+  "219_": {
     "attack": 155,
     "defense": 209,
     "stamina": 120,
@@ -2289,7 +2325,7 @@
     "weight": 55,
     "height": 0.79
   },
-  "220": {
+  "220_": {
     "attack": 90,
     "defense": 74,
     "stamina": 100,
@@ -2300,7 +2336,7 @@
     "weight": 6.5,
     "height": 0.41
   },
-  "221": {
+  "221_": {
     "attack": 181,
     "defense": 147,
     "stamina": 200,
@@ -2311,7 +2347,7 @@
     "weight": 55.8,
     "height": 1.09
   },
-  "222": {
+  "222_": {
     "attack": 118,
     "defense": 175,
     "stamina": 130,
@@ -2322,7 +2358,7 @@
     "weight": 5,
     "height": 0.61
   },
-  "223": {
+  "223_": {
     "attack": 127,
     "defense": 69,
     "stamina": 70,
@@ -2332,7 +2368,7 @@
     "weight": 12,
     "height": 0.61
   },
-  "224": {
+  "224_": {
     "attack": 197,
     "defense": 141,
     "stamina": 150,
@@ -2342,7 +2378,7 @@
     "weight": 28.5,
     "height": 0.89
   },
-  "225": {
+  "225_": {
     "attack": 128,
     "defense": 90,
     "stamina": 90,
@@ -2353,7 +2389,7 @@
     "weight": 16,
     "height": 0.89
   },
-  "226": {
+  "226_": {
     "attack": 149,
     "defense": 260,
     "stamina": 170,
@@ -2364,7 +2400,7 @@
     "weight": 220,
     "height": 2.11
   },
-  "227": {
+  "227_": {
     "attack": 149,
     "defense": 260,
     "stamina": 130,
@@ -2375,7 +2411,7 @@
     "weight": 50.5,
     "height": 1.7
   },
-  "228": {
+  "228_": {
     "attack": 152,
     "defense": 93,
     "stamina": 90,
@@ -2386,7 +2422,7 @@
     "weight": 10.8,
     "height": 0.61
   },
-  "229": {
+  "229_": {
     "attack": 224,
     "defense": 159,
     "stamina": 150,
@@ -2397,7 +2433,7 @@
     "weight": 35,
     "height": 1.4
   },
-  "230": {
+  "230_": {
     "attack": 194,
     "defense": 194,
     "stamina": 150,
@@ -2408,7 +2444,7 @@
     "weight": 152,
     "height": 1.8
   },
-  "231": {
+  "231_": {
     "attack": 107,
     "defense": 107,
     "stamina": 180,
@@ -2418,7 +2454,7 @@
     "weight": 33.5,
     "height": 0.51
   },
-  "232": {
+  "232_": {
     "attack": 214,
     "defense": 214,
     "stamina": 180,
@@ -2428,7 +2464,7 @@
     "weight": 120,
     "height": 1.09
   },
-  "233": {
+  "233_": {
     "attack": 198,
     "defense": 183,
     "stamina": 170,
@@ -2438,7 +2474,7 @@
     "weight": 32.5,
     "height": 0.61
   },
-  "234": {
+  "234_": {
     "attack": 192,
     "defense": 132,
     "stamina": 146,
@@ -2448,7 +2484,7 @@
     "weight": 71.2,
     "height": 1.4
   },
-  "235": {
+  "235_": {
     "attack": 40,
     "defense": 88,
     "stamina": 110,
@@ -2458,7 +2494,7 @@
     "weight": 58,
     "height": 1.19
   },
-  "236": {
+  "236_": {
     "attack": 64,
     "defense": 64,
     "stamina": 70,
@@ -2468,7 +2504,7 @@
     "weight": 21,
     "height": 0.71
   },
-  "237": {
+  "237_": {
     "attack": 173,
     "defense": 214,
     "stamina": 100,
@@ -2478,7 +2514,7 @@
     "weight": 48,
     "height": 1.4
   },
-  "238": {
+  "238_": {
     "attack": 153,
     "defense": 116,
     "stamina": 90,
@@ -2489,7 +2525,7 @@
     "weight": 6,
     "height": 0.41
   },
-  "239": {
+  "239_": {
     "attack": 135,
     "defense": 110,
     "stamina": 90,
@@ -2499,7 +2535,7 @@
     "weight": 23.5,
     "height": 0.61
   },
-  "240": {
+  "240_": {
     "attack": 151,
     "defense": 108,
     "stamina": 90,
@@ -2509,7 +2545,7 @@
     "weight": 21.4,
     "height": 0.71
   },
-  "241": {
+  "241_": {
     "attack": 158,
     "defense": 211,
     "stamina": 190,
@@ -2519,7 +2555,7 @@
     "weight": 75.5,
     "height": 1.19
   },
-  "242": {
+  "242_": {
     "attack": 129,
     "defense": 229,
     "stamina": 510,
@@ -2529,7 +2565,7 @@
     "weight": 46.8,
     "height": 1.5
   },
-  "243": {
+  "243_": {
     "attack": 241,
     "defense": 210,
     "stamina": 180,
@@ -2539,7 +2575,7 @@
     "weight": 178,
     "height": 1.91
   },
-  "244": {
+  "244_": {
     "attack": 235,
     "defense": 176,
     "stamina": 230,
@@ -2549,7 +2585,7 @@
     "weight": 198,
     "height": 2.11
   },
-  "245": {
+  "245_": {
     "attack": 180,
     "defense": 235,
     "stamina": 200,
@@ -2559,7 +2595,7 @@
     "weight": 187,
     "height": 2.01
   },
-  "246": {
+  "246_": {
     "attack": 115,
     "defense": 93,
     "stamina": 100,
@@ -2570,7 +2606,7 @@
     "weight": 72,
     "height": 0.61
   },
-  "247": {
+  "247_": {
     "attack": 155,
     "defense": 133,
     "stamina": 140,
@@ -2581,7 +2617,7 @@
     "weight": 152,
     "height": 1.19
   },
-  "248": {
+  "248_": {
     "attack": 251,
     "defense": 212,
     "stamina": 200,
@@ -2592,7 +2628,7 @@
     "weight": 202,
     "height": 2.01
   },
-  "249": {
+  "249_": {
     "attack": 193,
     "defense": 323,
     "stamina": 212,
@@ -2603,7 +2639,7 @@
     "weight": 216,
     "height": 5.21
   },
-  "250": {
+  "250_": {
     "attack": 239,
     "defense": 274,
     "stamina": 193,
@@ -2614,7 +2650,7 @@
     "weight": 199,
     "height": 3.81
   },
-  "251": {
+  "251_": {
     "attack": 210,
     "defense": 210,
     "stamina": 200,
@@ -2625,7 +2661,7 @@
     "weight": 5,
     "height": 0.61
   },
-  "252": {
+  "252_": {
     "attack": 124,
     "defense": 104,
     "stamina": 80,
@@ -2635,7 +2671,7 @@
     "weight": 5,
     "height": 0.51
   },
-  "253": {
+  "253_": {
     "attack": 172,
     "defense": 130,
     "stamina": 100,
@@ -2645,7 +2681,7 @@
     "weight": 21.6,
     "height": 0.89
   },
-  "254": {
+  "254_": {
     "attack": 223,
     "defense": 180,
     "stamina": 140,
@@ -2655,7 +2691,7 @@
     "weight": 52.2,
     "height": 1.7
   },
-  "255": {
+  "255_": {
     "attack": 130,
     "defense": 92,
     "stamina": 90,
@@ -2665,7 +2701,7 @@
     "weight": 2.5,
     "height": 0.41
   },
-  "256": {
+  "256_": {
     "attack": 163,
     "defense": 115,
     "stamina": 120,
@@ -2676,7 +2712,7 @@
     "weight": 19.5,
     "height": 0.89
   },
-  "257": {
+  "257_": {
     "attack": 240,
     "defense": 141,
     "stamina": 160,
@@ -2687,7 +2723,7 @@
     "weight": 52,
     "height": 1.91
   },
-  "258": {
+  "258_": {
     "attack": 126,
     "defense": 93,
     "stamina": 100,
@@ -2697,7 +2733,7 @@
     "weight": 7.6,
     "height": 0.41
   },
-  "259": {
+  "259_": {
     "attack": 156,
     "defense": 133,
     "stamina": 140,
@@ -2708,7 +2744,7 @@
     "weight": 28,
     "height": 0.71
   },
-  "260": {
+  "260_": {
     "attack": 208,
     "defense": 175,
     "stamina": 200,
@@ -2719,7 +2755,7 @@
     "weight": 81.9,
     "height": 1.5
   },
-  "261": {
+  "261_": {
     "attack": 96,
     "defense": 63,
     "stamina": 70,
@@ -2729,7 +2765,7 @@
     "weight": 13.6,
     "height": 0.51
   },
-  "262": {
+  "262_": {
     "attack": 171,
     "defense": 137,
     "stamina": 140,
@@ -2739,7 +2775,7 @@
     "weight": 37,
     "height": 0.99
   },
-  "263": {
+  "263_": {
     "attack": 58,
     "defense": 80,
     "stamina": 76,
@@ -2749,7 +2785,7 @@
     "weight": 17.5,
     "height": 0.41
   },
-  "264": {
+  "264_": {
     "attack": 142,
     "defense": 128,
     "stamina": 156,
@@ -2759,7 +2795,7 @@
     "weight": 32.5,
     "height": 0.51
   },
-  "265": {
+  "265_": {
     "attack": 75,
     "defense": 61,
     "stamina": 90,
@@ -2769,7 +2805,7 @@
     "weight": 3.6,
     "height": 0.3
   },
-  "266": {
+  "266_": {
     "attack": 60,
     "defense": 91,
     "stamina": 100,
@@ -2779,7 +2815,7 @@
     "weight": 10,
     "height": 0.61
   },
-  "267": {
+  "267_": {
     "attack": 189,
     "defense": 98,
     "stamina": 120,
@@ -2790,7 +2826,7 @@
     "weight": 28.4,
     "height": 0.99
   },
-  "268": {
+  "268_": {
     "attack": 60,
     "defense": 91,
     "stamina": 100,
@@ -2800,7 +2836,7 @@
     "weight": 11.5,
     "height": 0.71
   },
-  "269": {
+  "269_": {
     "attack": 98,
     "defense": 172,
     "stamina": 120,
@@ -2811,7 +2847,7 @@
     "weight": 31.6,
     "height": 1.19
   },
-  "270": {
+  "270_": {
     "attack": 71,
     "defense": 86,
     "stamina": 80,
@@ -2822,7 +2858,7 @@
     "weight": 2.6,
     "height": 0.51
   },
-  "271": {
+  "271_": {
     "attack": 112,
     "defense": 128,
     "stamina": 120,
@@ -2833,7 +2869,7 @@
     "weight": 32.5,
     "height": 1.19
   },
-  "272": {
+  "272_": {
     "attack": 173,
     "defense": 191,
     "stamina": 160,
@@ -2844,7 +2880,7 @@
     "weight": 55,
     "height": 1.5
   },
-  "273": {
+  "273_": {
     "attack": 71,
     "defense": 86,
     "stamina": 80,
@@ -2854,7 +2890,7 @@
     "weight": 4,
     "height": 0.51
   },
-  "274": {
+  "274_": {
     "attack": 134,
     "defense": 78,
     "stamina": 140,
@@ -2865,7 +2901,7 @@
     "weight": 28,
     "height": 0.99
   },
-  "275": {
+  "275_": {
     "attack": 200,
     "defense": 121,
     "stamina": 180,
@@ -2876,7 +2912,7 @@
     "weight": 59.6,
     "height": 1.3
   },
-  "276": {
+  "276_": {
     "attack": 106,
     "defense": 61,
     "stamina": 80,
@@ -2887,7 +2923,7 @@
     "weight": 2.3,
     "height": 0.3
   },
-  "277": {
+  "277_": {
     "attack": 185,
     "defense": 130,
     "stamina": 120,
@@ -2898,7 +2934,7 @@
     "weight": 19.8,
     "height": 0.71
   },
-  "278": {
+  "278_": {
     "attack": 106,
     "defense": 61,
     "stamina": 80,
@@ -2909,7 +2945,7 @@
     "weight": 9.5,
     "height": 0.61
   },
-  "279": {
+  "279_": {
     "attack": 175,
     "defense": 189,
     "stamina": 120,
@@ -2920,7 +2956,7 @@
     "weight": 28,
     "height": 1.19
   },
-  "280": {
+  "280_": {
     "attack": 79,
     "defense": 63,
     "stamina": 56,
@@ -2931,7 +2967,7 @@
     "weight": 6.6,
     "height": 0.41
   },
-  "281": {
+  "281_": {
     "attack": 117,
     "defense": 100,
     "stamina": 76,
@@ -2942,7 +2978,7 @@
     "weight": 20.2,
     "height": 0.79
   },
-  "282": {
+  "282_": {
     "attack": 237,
     "defense": 220,
     "stamina": 136,
@@ -2953,7 +2989,7 @@
     "weight": 48.4,
     "height": 1.6
   },
-  "283": {
+  "283_": {
     "attack": 93,
     "defense": 97,
     "stamina": 80,
@@ -2964,7 +3000,7 @@
     "weight": 1.7,
     "height": 0.51
   },
-  "284": {
+  "284_": {
     "attack": 192,
     "defense": 161,
     "stamina": 140,
@@ -2975,7 +3011,7 @@
     "weight": 3.6,
     "height": 0.79
   },
-  "285": {
+  "285_": {
     "attack": 74,
     "defense": 110,
     "stamina": 120,
@@ -2985,7 +3021,7 @@
     "weight": 4.5,
     "height": 0.41
   },
-  "286": {
+  "286_": {
     "attack": 241,
     "defense": 153,
     "stamina": 120,
@@ -2996,7 +3032,7 @@
     "weight": 39.2,
     "height": 1.19
   },
-  "287": {
+  "287_": {
     "attack": 104,
     "defense": 104,
     "stamina": 120,
@@ -3006,7 +3042,7 @@
     "weight": 24,
     "height": 0.79
   },
-  "288": {
+  "288_": {
     "attack": 159,
     "defense": 159,
     "stamina": 160,
@@ -3016,7 +3052,7 @@
     "weight": 46.5,
     "height": 1.4
   },
-  "289": {
+  "289_": {
     "attack": 319,
     "defense": 201,
     "stamina": 300,
@@ -3026,7 +3062,7 @@
     "weight": 130.5,
     "height": 2.01
   },
-  "290": {
+  "290_": {
     "attack": 80,
     "defense": 153,
     "stamina": 62,
@@ -3037,7 +3073,7 @@
     "weight": 5.5,
     "height": 0.51
   },
-  "291": {
+  "291_": {
     "attack": 199,
     "defense": 116,
     "stamina": 122,
@@ -3048,7 +3084,7 @@
     "weight": 12,
     "height": 0.79
   },
-  "292": {
+  "292_": {
     "attack": 153,
     "defense": 80,
     "stamina": 2,
@@ -3059,7 +3095,7 @@
     "weight": 1.2,
     "height": 0.79
   },
-  "293": {
+  "293_": {
     "attack": 92,
     "defense": 42,
     "stamina": 128,
@@ -3069,7 +3105,7 @@
     "weight": 16.3,
     "height": 0.61
   },
-  "294": {
+  "294_": {
     "attack": 134,
     "defense": 81,
     "stamina": 168,
@@ -3079,7 +3115,7 @@
     "weight": 40.5,
     "height": 0.99
   },
-  "295": {
+  "295_": {
     "attack": 179,
     "defense": 142,
     "stamina": 208,
@@ -3089,7 +3125,7 @@
     "weight": 84,
     "height": 1.5
   },
-  "296": {
+  "296_": {
     "attack": 99,
     "defense": 54,
     "stamina": 144,
@@ -3099,7 +3135,7 @@
     "weight": 86.4,
     "height": 0.99
   },
-  "297": {
+  "297_": {
     "attack": 209,
     "defense": 114,
     "stamina": 288,
@@ -3109,7 +3145,7 @@
     "weight": 253.8,
     "height": 2.31
   },
-  "298": {
+  "298_": {
     "attack": 36,
     "defense": 71,
     "stamina": 100,
@@ -3120,7 +3156,7 @@
     "weight": 2,
     "height": 0.2
   },
-  "299": {
+  "299_": {
     "attack": 82,
     "defense": 236,
     "stamina": 60,
@@ -3130,7 +3166,7 @@
     "weight": 97,
     "height": 0.99
   },
-  "300": {
+  "300_": {
     "attack": 84,
     "defense": 84,
     "stamina": 100,
@@ -3140,7 +3176,7 @@
     "weight": 11,
     "height": 0.61
   },
-  "301": {
+  "301_": {
     "attack": 132,
     "defense": 132,
     "stamina": 140,
@@ -3150,7 +3186,7 @@
     "weight": 32.6,
     "height": 1.09
   },
-  "302": {
+  "302_": {
     "attack": 141,
     "defense": 141,
     "stamina": 100,
@@ -3161,7 +3197,7 @@
     "weight": 11,
     "height": 0.51
   },
-  "303": {
+  "303_": {
     "attack": 155,
     "defense": 155,
     "stamina": 100,
@@ -3172,7 +3208,7 @@
     "weight": 11.5,
     "height": 0.61
   },
-  "304": {
+  "304_": {
     "attack": 121,
     "defense": 168,
     "stamina": 100,
@@ -3183,7 +3219,7 @@
     "weight": 60,
     "height": 0.41
   },
-  "305": {
+  "305_": {
     "attack": 158,
     "defense": 240,
     "stamina": 120,
@@ -3194,7 +3230,7 @@
     "weight": 120,
     "height": 0.89
   },
-  "306": {
+  "306_": {
     "attack": 198,
     "defense": 314,
     "stamina": 140,
@@ -3205,7 +3241,7 @@
     "weight": 360,
     "height": 2.11
   },
-  "307": {
+  "307_": {
     "attack": 78,
     "defense": 107,
     "stamina": 60,
@@ -3216,7 +3252,7 @@
     "weight": 11.2,
     "height": 0.61
   },
-  "308": {
+  "308_": {
     "attack": 121,
     "defense": 152,
     "stamina": 120,
@@ -3227,7 +3263,7 @@
     "weight": 31.5,
     "height": 1.3
   },
-  "309": {
+  "309_": {
     "attack": 123,
     "defense": 78,
     "stamina": 80,
@@ -3237,7 +3273,7 @@
     "weight": 15.2,
     "height": 0.61
   },
-  "310": {
+  "310_": {
     "attack": 215,
     "defense": 127,
     "stamina": 140,
@@ -3247,7 +3283,7 @@
     "weight": 40.2,
     "height": 1.5
   },
-  "311": {
+  "311_": {
     "attack": 167,
     "defense": 147,
     "stamina": 120,
@@ -3257,7 +3293,7 @@
     "weight": 4.2,
     "height": 0.41
   },
-  "312": {
+  "312_": {
     "attack": 147,
     "defense": 167,
     "stamina": 120,
@@ -3267,7 +3303,7 @@
     "weight": 4.2,
     "height": 0.41
   },
-  "313": {
+  "313_": {
     "attack": 143,
     "defense": 171,
     "stamina": 130,
@@ -3277,7 +3313,7 @@
     "weight": 17.7,
     "height": 0.71
   },
-  "314": {
+  "314_": {
     "attack": 143,
     "defense": 171,
     "stamina": 130,
@@ -3287,7 +3323,7 @@
     "weight": 17.7,
     "height": 0.61
   },
-  "315": {
+  "315_": {
     "attack": 186,
     "defense": 148,
     "stamina": 100,
@@ -3298,7 +3334,7 @@
     "weight": 2,
     "height": 0.3
   },
-  "316": {
+  "316_": {
     "attack": 80,
     "defense": 99,
     "stamina": 140,
@@ -3308,7 +3344,7 @@
     "weight": 10.3,
     "height": 0.41
   },
-  "317": {
+  "317_": {
     "attack": 140,
     "defense": 159,
     "stamina": 200,
@@ -3318,7 +3354,7 @@
     "weight": 80,
     "height": 1.7
   },
-  "318": {
+  "318_": {
     "attack": 171,
     "defense": 39,
     "stamina": 90,
@@ -3329,7 +3365,7 @@
     "weight": 20.8,
     "height": 0.79
   },
-  "319": {
+  "319_": {
     "attack": 243,
     "defense": 83,
     "stamina": 140,
@@ -3340,7 +3376,7 @@
     "weight": 88.8,
     "height": 1.8
   },
-  "320": {
+  "320_": {
     "attack": 136,
     "defense": 68,
     "stamina": 260,
@@ -3350,7 +3386,7 @@
     "weight": 130,
     "height": 2.01
   },
-  "321": {
+  "321_": {
     "attack": 175,
     "defense": 87,
     "stamina": 340,
@@ -3360,7 +3396,7 @@
     "weight": 398,
     "height": 14.5
   },
-  "322": {
+  "322_": {
     "attack": 119,
     "defense": 82,
     "stamina": 120,
@@ -3371,7 +3407,7 @@
     "weight": 24,
     "height": 0.71
   },
-  "323": {
+  "323_": {
     "attack": 194,
     "defense": 139,
     "stamina": 140,
@@ -3382,7 +3418,7 @@
     "weight": 220,
     "height": 1.91
   },
-  "324": {
+  "324_": {
     "attack": 151,
     "defense": 234,
     "stamina": 140,
@@ -3392,7 +3428,7 @@
     "weight": 80.4,
     "height": 0.51
   },
-  "325": {
+  "325_": {
     "attack": 125,
     "defense": 145,
     "stamina": 120,
@@ -3402,7 +3438,7 @@
     "weight": 30.6,
     "height": 0.71
   },
-  "326": {
+  "326_": {
     "attack": 171,
     "defense": 211,
     "stamina": 160,
@@ -3412,7 +3448,7 @@
     "weight": 71.5,
     "height": 0.89
   },
-  "327": {
+  "327_": {
     "attack": 116,
     "defense": 116,
     "stamina": 120,
@@ -3422,7 +3458,7 @@
     "weight": 5,
     "height": 1.09
   },
-  "328": {
+  "328_": {
     "attack": 162,
     "defense": 78,
     "stamina": 90,
@@ -3432,7 +3468,7 @@
     "weight": 15,
     "height": 0.71
   },
-  "329": {
+  "329_": {
     "attack": 134,
     "defense": 99,
     "stamina": 100,
@@ -3443,7 +3479,7 @@
     "weight": 15.3,
     "height": 1.09
   },
-  "330": {
+  "330_": {
     "attack": 205,
     "defense": 168,
     "stamina": 160,
@@ -3454,7 +3490,7 @@
     "weight": 82,
     "height": 2.01
   },
-  "331": {
+  "331_": {
     "attack": 156,
     "defense": 74,
     "stamina": 100,
@@ -3464,7 +3500,7 @@
     "weight": 51.3,
     "height": 0.41
   },
-  "332": {
+  "332_": {
     "attack": 221,
     "defense": 115,
     "stamina": 140,
@@ -3475,7 +3511,7 @@
     "weight": 77.4,
     "height": 1.3
   },
-  "333": {
+  "333_": {
     "attack": 76,
     "defense": 139,
     "stamina": 90,
@@ -3486,7 +3522,7 @@
     "weight": 1.2,
     "height": 0.41
   },
-  "334": {
+  "334_": {
     "attack": 141,
     "defense": 208,
     "stamina": 150,
@@ -3497,7 +3533,7 @@
     "weight": 20.6,
     "height": 1.09
   },
-  "335": {
+  "335_": {
     "attack": 222,
     "defense": 124,
     "stamina": 146,
@@ -3507,7 +3543,7 @@
     "weight": 40.3,
     "height": 1.3
   },
-  "336": {
+  "336_": {
     "attack": 196,
     "defense": 118,
     "stamina": 146,
@@ -3517,7 +3553,7 @@
     "weight": 52.5,
     "height": 2.69
   },
-  "337": {
+  "337_": {
     "attack": 178,
     "defense": 163,
     "stamina": 180,
@@ -3528,7 +3564,7 @@
     "weight": 168,
     "height": 0.99
   },
-  "338": {
+  "338_": {
     "attack": 178,
     "defense": 163,
     "stamina": 180,
@@ -3539,7 +3575,7 @@
     "weight": 154,
     "height": 1.19
   },
-  "339": {
+  "339_": {
     "attack": 93,
     "defense": 83,
     "stamina": 100,
@@ -3550,7 +3586,7 @@
     "weight": 1.9,
     "height": 0.41
   },
-  "340": {
+  "340_": {
     "attack": 151,
     "defense": 142,
     "stamina": 220,
@@ -3561,7 +3597,7 @@
     "weight": 23.6,
     "height": 0.89
   },
-  "341": {
+  "341_": {
     "attack": 141,
     "defense": 113,
     "stamina": 86,
@@ -3571,7 +3607,7 @@
     "weight": 11.5,
     "height": 0.61
   },
-  "342": {
+  "342_": {
     "attack": 224,
     "defense": 156,
     "stamina": 126,
@@ -3582,7 +3618,7 @@
     "weight": 32.8,
     "height": 1.09
   },
-  "343": {
+  "343_": {
     "attack": 77,
     "defense": 131,
     "stamina": 80,
@@ -3593,7 +3629,7 @@
     "weight": 21.5,
     "height": 0.51
   },
-  "344": {
+  "344_": {
     "attack": 140,
     "defense": 236,
     "stamina": 120,
@@ -3604,7 +3640,7 @@
     "weight": 108,
     "height": 1.5
   },
-  "345": {
+  "345_": {
     "attack": 105,
     "defense": 154,
     "stamina": 132,
@@ -3615,7 +3651,7 @@
     "weight": 23.8,
     "height": 0.99
   },
-  "346": {
+  "346_": {
     "attack": 152,
     "defense": 198,
     "stamina": 172,
@@ -3626,7 +3662,7 @@
     "weight": 60.4,
     "height": 1.5
   },
-  "347": {
+  "347_": {
     "attack": 176,
     "defense": 100,
     "stamina": 90,
@@ -3637,7 +3673,7 @@
     "weight": 12.5,
     "height": 0.71
   },
-  "348": {
+  "348_": {
     "attack": 222,
     "defense": 183,
     "stamina": 150,
@@ -3648,7 +3684,7 @@
     "weight": 68.2,
     "height": 1.5
   },
-  "349": {
+  "349_": {
     "attack": 29,
     "defense": 102,
     "stamina": 40,
@@ -3658,7 +3694,7 @@
     "weight": 7.4,
     "height": 0.61
   },
-  "350": {
+  "350_": {
     "attack": 192,
     "defense": 242,
     "stamina": 190,
@@ -3668,7 +3704,7 @@
     "weight": 162,
     "height": 6.2
   },
-  "351": {
+  "351_": {
     "attack": 139,
     "defense": 139,
     "stamina": 140,
@@ -3678,7 +3714,7 @@
     "weight": 0.8,
     "height": 0.3
   },
-  "352": {
+  "352_": {
     "attack": 161,
     "defense": 212,
     "stamina": 120,
@@ -3688,7 +3724,7 @@
     "weight": 22,
     "height": 0.99
   },
-  "353": {
+  "353_": {
     "attack": 138,
     "defense": 66,
     "stamina": 88,
@@ -3698,7 +3734,7 @@
     "weight": 2.3,
     "height": 0.61
   },
-  "354": {
+  "354_": {
     "attack": 218,
     "defense": 127,
     "stamina": 128,
@@ -3708,7 +3744,7 @@
     "weight": 12.5,
     "height": 1.09
   },
-  "355": {
+  "355_": {
     "attack": 70,
     "defense": 162,
     "stamina": 40,
@@ -3718,7 +3754,7 @@
     "weight": 15,
     "height": 0.79
   },
-  "356": {
+  "356_": {
     "attack": 124,
     "defense": 234,
     "stamina": 80,
@@ -3728,7 +3764,7 @@
     "weight": 30.6,
     "height": 1.6
   },
-  "357": {
+  "357_": {
     "attack": 136,
     "defense": 165,
     "stamina": 198,
@@ -3739,7 +3775,7 @@
     "weight": 100,
     "height": 2.01
   },
-  "358": {
+  "358_": {
     "attack": 175,
     "defense": 174,
     "stamina": 150,
@@ -3749,7 +3785,7 @@
     "weight": 1,
     "height": 0.61
   },
-  "359": {
+  "359_": {
     "attack": 246,
     "defense": 120,
     "stamina": 130,
@@ -3759,7 +3795,7 @@
     "weight": 47,
     "height": 1.19
   },
-  "360": {
+  "360_": {
     "attack": 41,
     "defense": 86,
     "stamina": 190,
@@ -3769,7 +3805,7 @@
     "weight": 14,
     "height": 0.61
   },
-  "361": {
+  "361_": {
     "attack": 95,
     "defense": 95,
     "stamina": 100,
@@ -3779,7 +3815,7 @@
     "weight": 16.8,
     "height": 0.71
   },
-  "362": {
+  "362_": {
     "attack": 162,
     "defense": 162,
     "stamina": 160,
@@ -3789,7 +3825,7 @@
     "weight": 256.5,
     "height": 1.5
   },
-  "363": {
+  "363_": {
     "attack": 95,
     "defense": 90,
     "stamina": 140,
@@ -3800,7 +3836,7 @@
     "weight": 39.5,
     "height": 0.79
   },
-  "364": {
+  "364_": {
     "attack": 137,
     "defense": 132,
     "stamina": 180,
@@ -3811,7 +3847,7 @@
     "weight": 87.6,
     "height": 1.09
   },
-  "365": {
+  "365_": {
     "attack": 182,
     "defense": 176,
     "stamina": 220,
@@ -3822,7 +3858,7 @@
     "weight": 150.6,
     "height": 1.4
   },
-  "366": {
+  "366_": {
     "attack": 133,
     "defense": 149,
     "stamina": 70,
@@ -3832,7 +3868,7 @@
     "weight": 52.5,
     "height": 0.41
   },
-  "367": {
+  "367_": {
     "attack": 197,
     "defense": 194,
     "stamina": 110,
@@ -3842,7 +3878,7 @@
     "weight": 27,
     "height": 1.7
   },
-  "368": {
+  "368_": {
     "attack": 211,
     "defense": 194,
     "stamina": 110,
@@ -3852,7 +3888,7 @@
     "weight": 22.6,
     "height": 1.8
   },
-  "369": {
+  "369_": {
     "attack": 162,
     "defense": 234,
     "stamina": 200,
@@ -3863,7 +3899,7 @@
     "weight": 23.4,
     "height": 0.99
   },
-  "370": {
+  "370_": {
     "attack": 81,
     "defense": 134,
     "stamina": 86,
@@ -3873,7 +3909,7 @@
     "weight": 8.7,
     "height": 0.61
   },
-  "371": {
+  "371_": {
     "attack": 134,
     "defense": 107,
     "stamina": 90,
@@ -3883,7 +3919,7 @@
     "weight": 42.1,
     "height": 0.61
   },
-  "372": {
+  "372_": {
     "attack": 172,
     "defense": 179,
     "stamina": 130,
@@ -3893,7 +3929,7 @@
     "weight": 110.5,
     "height": 1.09
   },
-  "373": {
+  "373_": {
     "attack": 277,
     "defense": 168,
     "stamina": 190,
@@ -3904,7 +3940,7 @@
     "weight": 102.6,
     "height": 1.5
   },
-  "374": {
+  "374_": {
     "attack": 96,
     "defense": 141,
     "stamina": 80,
@@ -3915,7 +3951,7 @@
     "weight": 95.2,
     "height": 0.61
   },
-  "375": {
+  "375_": {
     "attack": 138,
     "defense": 185,
     "stamina": 120,
@@ -3926,7 +3962,7 @@
     "weight": 202.5,
     "height": 1.19
   },
-  "376": {
+  "376_": {
     "attack": 257,
     "defense": 248,
     "stamina": 160,
@@ -3937,7 +3973,7 @@
     "weight": 550,
     "height": 1.6
   },
-  "377": {
+  "377_": {
     "attack": 179,
     "defense": 356,
     "stamina": 160,
@@ -3947,7 +3983,7 @@
     "weight": 230,
     "height": 1.7
   },
-  "378": {
+  "378_": {
     "attack": 179,
     "defense": 356,
     "stamina": 160,
@@ -3957,7 +3993,7 @@
     "weight": 175,
     "height": 1.8
   },
-  "379": {
+  "379_": {
     "attack": 143,
     "defense": 285,
     "stamina": 160,
@@ -3967,7 +4003,7 @@
     "weight": 205,
     "height": 1.91
   },
-  "380": {
+  "380_": {
     "attack": 228,
     "defense": 268,
     "stamina": 160,
@@ -3978,7 +4014,7 @@
     "weight": 40,
     "height": 1.4
   },
-  "381": {
+  "381_": {
     "attack": 268,
     "defense": 228,
     "stamina": 160,
@@ -3989,7 +4025,7 @@
     "weight": 60,
     "height": 2.01
   },
-  "382": {
+  "382_": {
     "attack": 270,
     "defense": 251,
     "stamina": 182,
@@ -3999,7 +4035,7 @@
     "weight": 352,
     "height": 4.5
   },
-  "383": {
+  "383_": {
     "attack": 270,
     "defense": 251,
     "stamina": 182,
@@ -4009,7 +4045,7 @@
     "weight": 950,
     "height": 3.51
   },
-  "384": {
+  "384_": {
     "attack": 284,
     "defense": 170,
     "stamina": 191,
@@ -4020,7 +4056,7 @@
     "weight": 206.5,
     "height": 7.01
   },
-  "385": {
+  "385_": {
     "attack": 210,
     "defense": 210,
     "stamina": 200,
@@ -4031,7 +4067,7 @@
     "weight": 1.1,
     "height": 0.3
   },
-  "386": {
+  "386_": {
     "attack": 345,
     "defense": 115,
     "stamina": 100,
@@ -4041,7 +4077,7 @@
     "weight": 60.8,
     "height": 1.7
   },
-  "387": {
+  "387_": {
     "attack": 119,
     "defense": 115,
     "stamina": 110,
@@ -4051,7 +4087,7 @@
     "weight": 10.2,
     "height": 0.41
   },
-  "388": {
+  "388_": {
     "attack": 157,
     "defense": 152,
     "stamina": 150,
@@ -4061,7 +4097,7 @@
     "weight": 97,
     "height": 1.09
   },
-  "389": {
+  "389_": {
     "attack": 202,
     "defense": 197,
     "stamina": 190,
@@ -4072,7 +4108,7 @@
     "weight": 310,
     "height": 2.21
   },
-  "390": {
+  "390_": {
     "attack": 113,
     "defense": 86,
     "stamina": 88,
@@ -4082,7 +4118,7 @@
     "weight": 6.2,
     "height": 0.51
   },
-  "391": {
+  "391_": {
     "attack": 158,
     "defense": 105,
     "stamina": 128,
@@ -4093,7 +4129,7 @@
     "weight": 22,
     "height": 0.89
   },
-  "392": {
+  "392_": {
     "attack": 222,
     "defense": 151,
     "stamina": 152,
@@ -4104,7 +4140,7 @@
     "weight": 55,
     "height": 1.19
   },
-  "393": {
+  "393_": {
     "attack": 112,
     "defense": 103,
     "stamina": 106,
@@ -4114,7 +4150,7 @@
     "weight": 5.2,
     "height": 0.41
   },
-  "394": {
+  "394_": {
     "attack": 150,
     "defense": 143,
     "stamina": 128,
@@ -4124,7 +4160,7 @@
     "weight": 23,
     "height": 0.79
   },
-  "395": {
+  "395_": {
     "attack": 210,
     "defense": 193,
     "stamina": 168,
@@ -4135,7 +4171,7 @@
     "weight": 84.5,
     "height": 1.7
   },
-  "396": {
+  "396_": {
     "attack": 101,
     "defense": 58,
     "stamina": 80,
@@ -4146,7 +4182,7 @@
     "weight": 2,
     "height": 0.3
   },
-  "397": {
+  "397_": {
     "attack": 142,
     "defense": 99,
     "stamina": 110,
@@ -4157,7 +4193,7 @@
     "weight": 15.5,
     "height": 0.61
   },
-  "398": {
+  "398_": {
     "attack": 234,
     "defense": 145,
     "stamina": 170,
@@ -4168,7 +4204,7 @@
     "weight": 24.9,
     "height": 1.19
   },
-  "399": {
+  "399_": {
     "attack": 80,
     "defense": 73,
     "stamina": 118,
@@ -4178,7 +4214,7 @@
     "weight": 20,
     "height": 0.51
   },
-  "400": {
+  "400_": {
     "attack": 162,
     "defense": 119,
     "stamina": 158,
@@ -4189,7 +4225,7 @@
     "weight": 31.5,
     "height": 0.99
   },
-  "401": {
+  "401_": {
     "attack": 45,
     "defense": 74,
     "stamina": 74,
@@ -4199,7 +4235,7 @@
     "weight": 2.2,
     "height": 0.3
   },
-  "402": {
+  "402_": {
     "attack": 160,
     "defense": 100,
     "stamina": 154,
@@ -4209,7 +4245,7 @@
     "weight": 25.5,
     "height": 0.99
   },
-  "403": {
+  "403_": {
     "attack": 117,
     "defense": 64,
     "stamina": 90,
@@ -4219,7 +4255,7 @@
     "weight": 9.5,
     "height": 0.51
   },
-  "404": {
+  "404_": {
     "attack": 159,
     "defense": 95,
     "stamina": 120,
@@ -4229,7 +4265,7 @@
     "weight": 30.5,
     "height": 0.89
   },
-  "405": {
+  "405_": {
     "attack": 232,
     "defense": 156,
     "stamina": 160,
@@ -4239,7 +4275,7 @@
     "weight": 42,
     "height": 1.4
   },
-  "406": {
+  "406_": {
     "attack": 91,
     "defense": 126,
     "stamina": 80,
@@ -4250,7 +4286,7 @@
     "weight": 1.2,
     "height": 0.2
   },
-  "407": {
+  "407_": {
     "attack": 243,
     "defense": 206,
     "stamina": 120,
@@ -4261,7 +4297,7 @@
     "weight": 14.5,
     "height": 0.89
   },
-  "408": {
+  "408_": {
     "attack": 218,
     "defense": 75,
     "stamina": 134,
@@ -4271,7 +4307,7 @@
     "weight": 31.5,
     "height": 0.89
   },
-  "409": {
+  "409_": {
     "attack": 295,
     "defense": 114,
     "stamina": 194,
@@ -4281,7 +4317,7 @@
     "weight": 102.5,
     "height": 1.6
   },
-  "410": {
+  "410_": {
     "attack": 76,
     "defense": 208,
     "stamina": 60,
@@ -4292,7 +4328,7 @@
     "weight": 57,
     "height": 0.51
   },
-  "411": {
+  "411_": {
     "attack": 94,
     "defense": 299,
     "stamina": 120,
@@ -4303,7 +4339,7 @@
     "weight": 149.5,
     "height": 1.3
   },
-  "412": {
+  "412_": {
     "attack": 53,
     "defense": 83,
     "stamina": 80,
@@ -4313,7 +4349,7 @@
     "weight": 3.4,
     "height": 0.2
   },
-  "413": {
+  "413_": {
     "attack": 141,
     "defense": 189,
     "stamina": 120,
@@ -4324,7 +4360,7 @@
     "weight": 6.5,
     "height": 0.51
   },
-  "414": {
+  "414_": {
     "attack": 185,
     "defense": 98,
     "stamina": 140,
@@ -4335,7 +4371,7 @@
     "weight": 23.3,
     "height": 0.89
   },
-  "415": {
+  "415_": {
     "attack": 59,
     "defense": 83,
     "stamina": 60,
@@ -4346,7 +4382,7 @@
     "weight": 5.5,
     "height": 0.3
   },
-  "416": {
+  "416_": {
     "attack": 149,
     "defense": 190,
     "stamina": 140,
@@ -4357,7 +4393,7 @@
     "weight": 38.5,
     "height": 1.19
   },
-  "417": {
+  "417_": {
     "attack": 94,
     "defense": 182,
     "stamina": 120,
@@ -4367,7 +4403,7 @@
     "weight": 3.9,
     "height": 0.41
   },
-  "418": {
+  "418_": {
     "attack": 132,
     "defense": 70,
     "stamina": 110,
@@ -4377,7 +4413,7 @@
     "weight": 29.5,
     "height": 0.71
   },
-  "419": {
+  "419_": {
     "attack": 221,
     "defense": 118,
     "stamina": 170,
@@ -4387,7 +4423,7 @@
     "weight": 33.5,
     "height": 1.09
   },
-  "420": {
+  "420_": {
     "attack": 108,
     "defense": 96,
     "stamina": 90,
@@ -4397,7 +4433,7 @@
     "weight": 3.3,
     "height": 0.41
   },
-  "421": {
+  "421_": {
     "attack": 170,
     "defense": 157,
     "stamina": 140,
@@ -4407,7 +4443,7 @@
     "weight": 9.3,
     "height": 0.51
   },
-  "422": {
+  "422_": {
     "attack": 103,
     "defense": 111,
     "stamina": 152,
@@ -4417,7 +4453,7 @@
     "weight": 6.3,
     "height": 0.3
   },
-  "423": {
+  "423_": {
     "attack": 169,
     "defense": 149,
     "stamina": 222,
@@ -4428,7 +4464,7 @@
     "weight": 29.9,
     "height": 0.89
   },
-  "424": {
+  "424_": {
     "attack": 205,
     "defense": 143,
     "stamina": 150,
@@ -4438,7 +4474,7 @@
     "weight": 20.3,
     "height": 1.19
   },
-  "425": {
+  "425_": {
     "attack": 117,
     "defense": 85,
     "stamina": 180,
@@ -4449,7 +4485,7 @@
     "weight": 1.2,
     "height": 0.41
   },
-  "426": {
+  "426_": {
     "attack": 180,
     "defense": 107,
     "stamina": 300,
@@ -4460,7 +4496,7 @@
     "weight": 15,
     "height": 1.19
   },
-  "427": {
+  "427_": {
     "attack": 130,
     "defense": 111,
     "stamina": 110,
@@ -4470,7 +4506,7 @@
     "weight": 5.5,
     "height": 0.41
   },
-  "428": {
+  "428_": {
     "attack": 156,
     "defense": 200,
     "stamina": 130,
@@ -4480,7 +4516,7 @@
     "weight": 33.3,
     "height": 1.19
   },
-  "429": {
+  "429_": {
     "attack": 211,
     "defense": 211,
     "stamina": 120,
@@ -4490,7 +4526,7 @@
     "weight": 4.4,
     "height": 0.89
   },
-  "430": {
+  "430_": {
     "attack": 243,
     "defense": 103,
     "stamina": 200,
@@ -4501,7 +4537,7 @@
     "weight": 27.3,
     "height": 0.89
   },
-  "431": {
+  "431_": {
     "attack": 109,
     "defense": 85,
     "stamina": 98,
@@ -4511,7 +4547,7 @@
     "weight": 3.9,
     "height": 0.51
   },
-  "432": {
+  "432_": {
     "attack": 172,
     "defense": 136,
     "stamina": 142,
@@ -4521,7 +4557,7 @@
     "weight": 43.8,
     "height": 0.99
   },
-  "433": {
+  "433_": {
     "attack": 114,
     "defense": 94,
     "stamina": 90,
@@ -4531,7 +4567,7 @@
     "weight": 0.6,
     "height": 0.2
   },
-  "434": {
+  "434_": {
     "attack": 121,
     "defense": 93,
     "stamina": 126,
@@ -4542,7 +4578,7 @@
     "weight": 19.2,
     "height": 0.41
   },
-  "435": {
+  "435_": {
     "attack": 184,
     "defense": 135,
     "stamina": 206,
@@ -4553,7 +4589,7 @@
     "weight": 38,
     "height": 0.99
   },
-  "436": {
+  "436_": {
     "attack": 43,
     "defense": 154,
     "stamina": 114,
@@ -4564,7 +4600,7 @@
     "weight": 60.5,
     "height": 0.51
   },
-  "437": {
+  "437_": {
     "attack": 161,
     "defense": 213,
     "stamina": 134,
@@ -4575,7 +4611,7 @@
     "weight": 187,
     "height": 1.3
   },
-  "438": {
+  "438_": {
     "attack": 124,
     "defense": 155,
     "stamina": 100,
@@ -4585,7 +4621,7 @@
     "weight": 15,
     "height": 0.51
   },
-  "439": {
+  "439_": {
     "attack": 125,
     "defense": 164,
     "stamina": 40,
@@ -4596,7 +4632,7 @@
     "weight": 13,
     "height": 0.61
   },
-  "440": {
+  "440_": {
     "attack": 25,
     "defense": 105,
     "stamina": 200,
@@ -4606,7 +4642,7 @@
     "weight": 24.4,
     "height": 0.61
   },
-  "441": {
+  "441_": {
     "attack": 183,
     "defense": 92,
     "stamina": 152,
@@ -4617,7 +4653,7 @@
     "weight": 1.9,
     "height": 0.51
   },
-  "442": {
+  "442_": {
     "attack": 169,
     "defense": 199,
     "stamina": 100,
@@ -4628,7 +4664,7 @@
     "weight": 108,
     "height": 0.99
   },
-  "443": {
+  "443_": {
     "attack": 124,
     "defense": 84,
     "stamina": 116,
@@ -4639,7 +4675,7 @@
     "weight": 20.5,
     "height": 0.71
   },
-  "444": {
+  "444_": {
     "attack": 172,
     "defense": 130,
     "stamina": 136,
@@ -4650,7 +4686,7 @@
     "weight": 56,
     "height": 1.4
   },
-  "445": {
+  "445_": {
     "attack": 261,
     "defense": 198,
     "stamina": 216,
@@ -4661,7 +4697,7 @@
     "weight": 95,
     "height": 1.91
   },
-  "446": {
+  "446_": {
     "attack": 137,
     "defense": 137,
     "stamina": 270,
@@ -4671,7 +4707,7 @@
     "weight": 105,
     "height": 0.61
   },
-  "447": {
+  "447_": {
     "attack": 127,
     "defense": 78,
     "stamina": 80,
@@ -4681,7 +4717,7 @@
     "weight": 20.2,
     "height": 0.71
   },
-  "448": {
+  "448_": {
     "attack": 236,
     "defense": 144,
     "stamina": 140,
@@ -4692,7 +4728,7 @@
     "weight": 54,
     "height": 1.19
   },
-  "449": {
+  "449_": {
     "attack": 124,
     "defense": 134,
     "stamina": 136,
@@ -4702,7 +4738,7 @@
     "weight": 49.5,
     "height": 0.79
   },
-  "450": {
+  "450_": {
     "attack": 201,
     "defense": 212,
     "stamina": 216,
@@ -4712,7 +4748,7 @@
     "weight": 300,
     "height": 2.01
   },
-  "451": {
+  "451_": {
     "attack": 93,
     "defense": 168,
     "stamina": 80,
@@ -4723,7 +4759,7 @@
     "weight": 12,
     "height": 0.79
   },
-  "452": {
+  "452_": {
     "attack": 180,
     "defense": 219,
     "stamina": 140,
@@ -4734,7 +4770,7 @@
     "weight": 61.5,
     "height": 1.3
   },
-  "453": {
+  "453_": {
     "attack": 116,
     "defense": 76,
     "stamina": 96,
@@ -4745,7 +4781,7 @@
     "weight": 23,
     "height": 0.71
   },
-  "454": {
+  "454_": {
     "attack": 211,
     "defense": 133,
     "stamina": 166,
@@ -4756,7 +4792,7 @@
     "weight": 44.4,
     "height": 1.3
   },
-  "455": {
+  "455_": {
     "attack": 187,
     "defense": 136,
     "stamina": 148,
@@ -4766,7 +4802,7 @@
     "weight": 27,
     "height": 1.4
   },
-  "456": {
+  "456_": {
     "attack": 96,
     "defense": 119,
     "stamina": 98,
@@ -4776,7 +4812,7 @@
     "weight": 7,
     "height": 0.41
   },
-  "457": {
+  "457_": {
     "attack": 142,
     "defense": 175,
     "stamina": 138,
@@ -4786,7 +4822,7 @@
     "weight": 24,
     "height": 1.19
   },
-  "458": {
+  "458_": {
     "attack": 105,
     "defense": 212,
     "stamina": 90,
@@ -4797,7 +4833,7 @@
     "weight": 65,
     "height": 0.99
   },
-  "459": {
+  "459_": {
     "attack": 115,
     "defense": 110,
     "stamina": 120,
@@ -4808,7 +4844,7 @@
     "weight": 50.5,
     "height": 0.99
   },
-  "460": {
+  "460_": {
     "attack": 178,
     "defense": 163,
     "stamina": 180,
@@ -4819,7 +4855,7 @@
     "weight": 135.5,
     "height": 2.21
   },
-  "461": {
+  "461_": {
     "attack": 243,
     "defense": 182,
     "stamina": 140,
@@ -4830,7 +4866,7 @@
     "weight": 34,
     "height": 1.09
   },
-  "462": {
+  "462_": {
     "attack": 238,
     "defense": 217,
     "stamina": 140,
@@ -4841,7 +4877,7 @@
     "weight": 180,
     "height": 1.19
   },
-  "463": {
+  "463_": {
     "attack": 161,
     "defense": 181,
     "stamina": 220,
@@ -4851,7 +4887,7 @@
     "weight": 140,
     "height": 1.7
   },
-  "464": {
+  "464_": {
     "attack": 241,
     "defense": 224,
     "stamina": 230,
@@ -4862,7 +4898,7 @@
     "weight": 282.8,
     "height": 2.39
   },
-  "465": {
+  "465_": {
     "attack": 207,
     "defense": 219,
     "stamina": 200,
@@ -4872,7 +4908,7 @@
     "weight": 128.6,
     "height": 2.01
   },
-  "466": {
+  "466_": {
     "attack": 249,
     "defense": 173,
     "stamina": 150,
@@ -4882,7 +4918,7 @@
     "weight": 138.6,
     "height": 1.8
   },
-  "467": {
+  "467_": {
     "attack": 247,
     "defense": 186,
     "stamina": 150,
@@ -4892,7 +4928,7 @@
     "weight": 68,
     "height": 1.6
   },
-  "468": {
+  "468_": {
     "attack": 225,
     "defense": 227,
     "stamina": 170,
@@ -4903,7 +4939,7 @@
     "weight": 38,
     "height": 1.5
   },
-  "469": {
+  "469_": {
     "attack": 231,
     "defense": 172,
     "stamina": 172,
@@ -4914,7 +4950,7 @@
     "weight": 51.5,
     "height": 1.91
   },
-  "470": {
+  "470_": {
     "attack": 216,
     "defense": 254,
     "stamina": 130,
@@ -4924,7 +4960,7 @@
     "weight": 25.5,
     "height": 0.99
   },
-  "471": {
+  "471_": {
     "attack": 238,
     "defense": 212,
     "stamina": 130,
@@ -4934,7 +4970,7 @@
     "weight": 25.9,
     "height": 0.79
   },
-  "472": {
+  "472_": {
     "attack": 185,
     "defense": 248,
     "stamina": 150,
@@ -4945,7 +4981,7 @@
     "weight": 42.5,
     "height": 2.01
   },
-  "473": {
+  "473_": {
     "attack": 247,
     "defense": 157,
     "stamina": 220,
@@ -4956,7 +4992,7 @@
     "weight": 291,
     "height": 2.49
   },
-  "474": {
+  "474_": {
     "attack": 264,
     "defense": 153,
     "stamina": 170,
@@ -4966,7 +5002,7 @@
     "weight": 34,
     "height": 0.89
   },
-  "475": {
+  "475_": {
     "attack": 237,
     "defense": 220,
     "stamina": 136,
@@ -4977,7 +5013,7 @@
     "weight": 52,
     "height": 1.6
   },
-  "476": {
+  "476_": {
     "attack": 135,
     "defense": 278,
     "stamina": 120,
@@ -4988,7 +5024,7 @@
     "weight": 340,
     "height": 1.4
   },
-  "477": {
+  "477_": {
     "attack": 180,
     "defense": 254,
     "stamina": 90,
@@ -4998,7 +5034,7 @@
     "weight": 106.6,
     "height": 2.21
   },
-  "478": {
+  "478_": {
     "attack": 171,
     "defense": 150,
     "stamina": 140,
@@ -5009,7 +5045,7 @@
     "weight": 26.6,
     "height": 1.3
   },
-  "479": {
+  "479_": {
     "attack": 185,
     "defense": 159,
     "stamina": 100,
@@ -5020,7 +5056,7 @@
     "weight": 0.3,
     "height": 0.3
   },
-  "480": {
+  "480_": {
     "attack": 156,
     "defense": 270,
     "stamina": 150,
@@ -5030,7 +5066,7 @@
     "weight": 0.3,
     "height": 0.3
   },
-  "481": {
+  "481_": {
     "attack": 212,
     "defense": 212,
     "stamina": 160,
@@ -5040,7 +5076,7 @@
     "weight": 0.3,
     "height": 0.3
   },
-  "482": {
+  "482_": {
     "attack": 270,
     "defense": 151,
     "stamina": 150,
@@ -5050,7 +5086,7 @@
     "weight": 0.3,
     "height": 0.3
   },
-  "483": {
+  "483_": {
     "attack": 302,
     "defense": 242,
     "stamina": 200,
@@ -5061,7 +5097,7 @@
     "weight": 683,
     "height": 5.41
   },
-  "484": {
+  "484_": {
     "attack": 308,
     "defense": 247,
     "stamina": 180,
@@ -5072,7 +5108,7 @@
     "weight": 336,
     "height": 4.19
   },
-  "485": {
+  "485_": {
     "attack": 251,
     "defense": 213,
     "stamina": 182,
@@ -5083,7 +5119,7 @@
     "weight": 430,
     "height": 1.7
   },
-  "486": {
+  "486_": {
     "attack": 315,
     "defense": 231,
     "stamina": 220,
@@ -5093,7 +5129,7 @@
     "weight": 420,
     "height": 3.71
   },
-  "487": {
+  "487_": {
     "attack": 206,
     "defense": 247,
     "stamina": 300,
@@ -5104,7 +5140,7 @@
     "weight": 750,
     "height": 4.5
   },
-  "488": {
+  "488_": {
     "attack": 152,
     "defense": 263,
     "stamina": 240,
@@ -5114,7 +5150,7 @@
     "weight": 85.6,
     "height": 1.5
   },
-  "489": {
+  "489_": {
     "attack": 162,
     "defense": 162,
     "stamina": 160,
@@ -5124,7 +5160,7 @@
     "weight": 3.1,
     "height": 0.41
   },
-  "490": {
+  "490_": {
     "attack": 210,
     "defense": 210,
     "stamina": 200,
@@ -5134,7 +5170,7 @@
     "weight": 1.4,
     "height": 0.3
   },
-  "491": {
+  "491_": {
     "attack": 285,
     "defense": 198,
     "stamina": 140,
@@ -5144,7 +5180,7 @@
     "weight": 50.5,
     "height": 1.5
   },
-  "492": {
+  "492_": {
     "attack": 210,
     "defense": 210,
     "stamina": 200,
@@ -5154,7 +5190,7 @@
     "weight": 5.2,
     "height": 0.41
   },
-  "493": {
+  "493_": {
     "attack": 262,
     "defense": 262,
     "stamina": 240,
@@ -5164,7 +5200,7 @@
     "weight": 320,
     "height": 3.2
   },
-  "494": {
+  "494_": {
     "attack": 210,
     "defense": 210,
     "stamina": 200,
@@ -5175,7 +5211,7 @@
     "weight": 4,
     "height": 0.41
   },
-  "495": {
+  "495_": {
     "attack": 88,
     "defense": 107,
     "stamina": 90,
@@ -5185,7 +5221,7 @@
     "weight": 8.1,
     "height": 0.61
   },
-  "496": {
+  "496_": {
     "attack": 122,
     "defense": 152,
     "stamina": 120,
@@ -5195,7 +5231,7 @@
     "weight": 16,
     "height": 0.79
   },
-  "497": {
+  "497_": {
     "attack": 161,
     "defense": 204,
     "stamina": 150,
@@ -5205,7 +5241,7 @@
     "weight": 63,
     "height": 3.3
   },
-  "498": {
+  "498_": {
     "attack": 115,
     "defense": 85,
     "stamina": 130,
@@ -5215,7 +5251,7 @@
     "weight": 9.9,
     "height": 0.51
   },
-  "499": {
+  "499_": {
     "attack": 173,
     "defense": 106,
     "stamina": 180,
@@ -5226,7 +5262,7 @@
     "weight": 55.5,
     "height": 0.99
   },
-  "500": {
+  "500_": {
     "attack": 235,
     "defense": 127,
     "stamina": 220,
@@ -5237,7 +5273,7 @@
     "weight": 150,
     "height": 1.6
   },
-  "501": {
+  "501_": {
     "attack": 117,
     "defense": 85,
     "stamina": 110,
@@ -5247,7 +5283,7 @@
     "weight": 5.9,
     "height": 0.51
   },
-  "502": {
+  "502_": {
     "attack": 159,
     "defense": 116,
     "stamina": 150,
@@ -5257,7 +5293,7 @@
     "weight": 24.5,
     "height": 0.79
   },
-  "503": {
+  "503_": {
     "attack": 212,
     "defense": 164,
     "stamina": 190,
@@ -5267,7 +5303,7 @@
     "weight": 94.6,
     "height": 1.5
   },
-  "504": {
+  "504_": {
     "attack": 98,
     "defense": 73,
     "stamina": 90,
@@ -5277,7 +5313,7 @@
     "weight": 11.6,
     "height": 0.51
   },
-  "505": {
+  "505_": {
     "attack": 165,
     "defense": 139,
     "stamina": 120,
@@ -5287,7 +5323,7 @@
     "weight": 27,
     "height": 1.09
   },
-  "506": {
+  "506_": {
     "attack": 107,
     "defense": 86,
     "stamina": 90,
@@ -5297,7 +5333,7 @@
     "weight": 4.1,
     "height": 0.41
   },
-  "507": {
+  "507_": {
     "attack": 145,
     "defense": 126,
     "stamina": 130,
@@ -5307,7 +5343,7 @@
     "weight": 14.7,
     "height": 0.89
   },
-  "508": {
+  "508_": {
     "attack": 206,
     "defense": 182,
     "stamina": 170,
@@ -5317,7 +5353,7 @@
     "weight": 61,
     "height": 1.19
   },
-  "509": {
+  "509_": {
     "attack": 98,
     "defense": 73,
     "stamina": 82,
@@ -5327,7 +5363,7 @@
     "weight": 10.1,
     "height": 0.41
   },
-  "510": {
+  "510_": {
     "attack": 187,
     "defense": 106,
     "stamina": 128,
@@ -5337,7 +5373,7 @@
     "weight": 37.5,
     "height": 1.09
   },
-  "511": {
+  "511_": {
     "attack": 104,
     "defense": 94,
     "stamina": 100,
@@ -5347,7 +5383,7 @@
     "weight": 10.5,
     "height": 0.61
   },
-  "512": {
+  "512_": {
     "attack": 206,
     "defense": 133,
     "stamina": 150,
@@ -5357,7 +5393,7 @@
     "weight": 30.5,
     "height": 1.09
   },
-  "513": {
+  "513_": {
     "attack": 104,
     "defense": 94,
     "stamina": 100,
@@ -5367,7 +5403,7 @@
     "weight": 11,
     "height": 0.61
   },
-  "514": {
+  "514_": {
     "attack": 206,
     "defense": 133,
     "stamina": 150,
@@ -5377,7 +5413,7 @@
     "weight": 28,
     "height": 0.99
   },
-  "515": {
+  "515_": {
     "attack": 104,
     "defense": 94,
     "stamina": 100,
@@ -5387,7 +5423,7 @@
     "weight": 13.5,
     "height": 0.61
   },
-  "516": {
+  "516_": {
     "attack": 206,
     "defense": 133,
     "stamina": 150,
@@ -5397,7 +5433,7 @@
     "weight": 29,
     "height": 0.99
   },
-  "517": {
+  "517_": {
     "attack": 111,
     "defense": 97,
     "stamina": 152,
@@ -5407,7 +5443,7 @@
     "weight": 23.3,
     "height": 0.61
   },
-  "518": {
+  "518_": {
     "attack": 183,
     "defense": 171,
     "stamina": 232,
@@ -5417,7 +5453,7 @@
     "weight": 60.5,
     "height": 1.09
   },
-  "519": {
+  "519_": {
     "attack": 98,
     "defense": 89,
     "stamina": 100,
@@ -5428,7 +5464,7 @@
     "weight": 2.1,
     "height": 0.3
   },
-  "520": {
+  "520_": {
     "attack": 144,
     "defense": 117,
     "stamina": 124,
@@ -5439,7 +5475,7 @@
     "weight": 15,
     "height": 0.61
   },
-  "521": {
+  "521_": {
     "attack": 226,
     "defense": 160,
     "stamina": 160,
@@ -5450,7 +5486,7 @@
     "weight": 29,
     "height": 1.19
   },
-  "522": {
+  "522_": {
     "attack": 118,
     "defense": 64,
     "stamina": 90,
@@ -5460,7 +5496,7 @@
     "weight": 29.8,
     "height": 0.79
   },
-  "523": {
+  "523_": {
     "attack": 211,
     "defense": 136,
     "stamina": 150,
@@ -5470,7 +5506,7 @@
     "weight": 79.5,
     "height": 1.6
   },
-  "524": {
+  "524_": {
     "attack": 121,
     "defense": 136,
     "stamina": 110,
@@ -5480,7 +5516,7 @@
     "weight": 18,
     "height": 0.41
   },
-  "525": {
+  "525_": {
     "attack": 174,
     "defense": 173,
     "stamina": 140,
@@ -5490,7 +5526,7 @@
     "weight": 102,
     "height": 0.89
   },
-  "526": {
+  "526_": {
     "attack": 226,
     "defense": 223,
     "stamina": 170,
@@ -5500,7 +5536,7 @@
     "weight": 260,
     "height": 1.7
   },
-  "527": {
+  "527_": {
     "attack": 107,
     "defense": 85,
     "stamina": 130,
@@ -5511,7 +5547,7 @@
     "weight": 2.1,
     "height": 0.41
   },
-  "528": {
+  "528_": {
     "attack": 161,
     "defense": 119,
     "stamina": 134,
@@ -5522,7 +5558,7 @@
     "weight": 10.5,
     "height": 0.89
   },
-  "529": {
+  "529_": {
     "attack": 154,
     "defense": 88,
     "stamina": 120,
@@ -5532,7 +5568,7 @@
     "weight": 8.5,
     "height": 0.3
   },
-  "530": {
+  "530_": {
     "attack": 255,
     "defense": 132,
     "stamina": 220,
@@ -5543,7 +5579,7 @@
     "weight": 40.4,
     "height": 0.71
   },
-  "531": {
+  "531_": {
     "attack": 114,
     "defense": 163,
     "stamina": 206,
@@ -5553,7 +5589,7 @@
     "weight": 31,
     "height": 1.09
   },
-  "532": {
+  "532_": {
     "attack": 134,
     "defense": 97,
     "stamina": 150,
@@ -5563,7 +5599,7 @@
     "weight": 12.5,
     "height": 0.61
   },
-  "533": {
+  "533_": {
     "attack": 180,
     "defense": 150,
     "stamina": 170,
@@ -5573,7 +5609,7 @@
     "weight": 40,
     "height": 1.19
   },
-  "534": {
+  "534_": {
     "attack": 243,
     "defense": 172,
     "stamina": 210,
@@ -5583,7 +5619,7 @@
     "weight": 87,
     "height": 1.4
   },
-  "535": {
+  "535_": {
     "attack": 98,
     "defense": 78,
     "stamina": 100,
@@ -5593,7 +5629,7 @@
     "weight": 4.5,
     "height": 0.51
   },
-  "536": {
+  "536_": {
     "attack": 128,
     "defense": 109,
     "stamina": 150,
@@ -5604,7 +5640,7 @@
     "weight": 17,
     "height": 0.79
   },
-  "537": {
+  "537_": {
     "attack": 188,
     "defense": 150,
     "stamina": 210,
@@ -5615,7 +5651,7 @@
     "weight": 62,
     "height": 1.5
   },
-  "538": {
+  "538_": {
     "attack": 172,
     "defense": 160,
     "stamina": 240,
@@ -5625,7 +5661,7 @@
     "weight": 55.5,
     "height": 1.3
   },
-  "539": {
+  "539_": {
     "attack": 231,
     "defense": 153,
     "stamina": 150,
@@ -5635,7 +5671,7 @@
     "weight": 51,
     "height": 1.4
   },
-  "540": {
+  "540_": {
     "attack": 96,
     "defense": 129,
     "stamina": 90,
@@ -5646,7 +5682,7 @@
     "weight": 2.5,
     "height": 0.3
   },
-  "541": {
+  "541_": {
     "attack": 115,
     "defense": 166,
     "stamina": 110,
@@ -5657,7 +5693,7 @@
     "weight": 7.3,
     "height": 0.51
   },
-  "542": {
+  "542_": {
     "attack": 205,
     "defense": 165,
     "stamina": 150,
@@ -5668,7 +5704,7 @@
     "weight": 20.5,
     "height": 1.19
   },
-  "543": {
+  "543_": {
     "attack": 83,
     "defense": 109,
     "stamina": 60,
@@ -5679,7 +5715,7 @@
     "weight": 5.3,
     "height": 0.41
   },
-  "544": {
+  "544_": {
     "attack": 100,
     "defense": 182,
     "stamina": 80,
@@ -5690,7 +5726,7 @@
     "weight": 58.5,
     "height": 1.19
   },
-  "545": {
+  "545_": {
     "attack": 203,
     "defense": 186,
     "stamina": 120,
@@ -5701,7 +5737,7 @@
     "weight": 200.5,
     "height": 2.49
   },
-  "546": {
+  "546_": {
     "attack": 71,
     "defense": 116,
     "stamina": 80,
@@ -5712,7 +5748,7 @@
     "weight": 0.6,
     "height": 0.3
   },
-  "547": {
+  "547_": {
     "attack": 164,
     "defense": 182,
     "stamina": 120,
@@ -5723,7 +5759,7 @@
     "weight": 6.6,
     "height": 0.71
   },
-  "548": {
+  "548_": {
     "attack": 119,
     "defense": 91,
     "stamina": 90,
@@ -5733,7 +5769,7 @@
     "weight": 6.6,
     "height": 0.51
   },
-  "549": {
+  "549_": {
     "attack": 214,
     "defense": 155,
     "stamina": 140,
@@ -5743,7 +5779,7 @@
     "weight": 16.3,
     "height": 1.09
   },
-  "550": {
+  "550_": {
     "attack": 189,
     "defense": 134,
     "stamina": 140,
@@ -5753,7 +5789,7 @@
     "weight": 18,
     "height": 0.99
   },
-  "551": {
+  "551_": {
     "attack": 132,
     "defense": 69,
     "stamina": 100,
@@ -5764,7 +5800,7 @@
     "weight": 15.2,
     "height": 0.71
   },
-  "552": {
+  "552_": {
     "attack": 155,
     "defense": 90,
     "stamina": 120,
@@ -5775,7 +5811,7 @@
     "weight": 33.4,
     "height": 0.99
   },
-  "553": {
+  "553_": {
     "attack": 229,
     "defense": 163,
     "stamina": 190,
@@ -5786,7 +5822,7 @@
     "weight": 96.3,
     "height": 1.5
   },
-  "554": {
+  "554_": {
     "attack": 153,
     "defense": 86,
     "stamina": 140,
@@ -5796,7 +5832,7 @@
     "weight": 37.5,
     "height": 0.61
   },
-  "555": {
+  "555_": {
     "attack": 263,
     "defense": 114,
     "stamina": 210,
@@ -5806,7 +5842,7 @@
     "weight": 92.9,
     "height": 1.3
   },
-  "556": {
+  "556_": {
     "attack": 201,
     "defense": 130,
     "stamina": 150,
@@ -5816,7 +5852,7 @@
     "weight": 28,
     "height": 0.99
   },
-  "557": {
+  "557_": {
     "attack": 118,
     "defense": 152,
     "stamina": 100,
@@ -5827,7 +5863,7 @@
     "weight": 14.5,
     "height": 0.3
   },
-  "558": {
+  "558_": {
     "attack": 188,
     "defense": 224,
     "stamina": 140,
@@ -5838,7 +5874,7 @@
     "weight": 200,
     "height": 1.4
   },
-  "559": {
+  "559_": {
     "attack": 132,
     "defense": 132,
     "stamina": 100,
@@ -5849,7 +5885,7 @@
     "weight": 11.8,
     "height": 0.61
   },
-  "560": {
+  "560_": {
     "attack": 163,
     "defense": 222,
     "stamina": 130,
@@ -5860,7 +5896,7 @@
     "weight": 30,
     "height": 1.09
   },
-  "561": {
+  "561_": {
     "attack": 204,
     "defense": 167,
     "stamina": 144,
@@ -5871,7 +5907,7 @@
     "weight": 14,
     "height": 1.4
   },
-  "562": {
+  "562_": {
     "attack": 95,
     "defense": 150,
     "stamina": 76,
@@ -5881,7 +5917,7 @@
     "weight": 1.5,
     "height": 0.51
   },
-  "563": {
+  "563_": {
     "attack": 163,
     "defense": 255,
     "stamina": 116,
@@ -5891,7 +5927,7 @@
     "weight": 76.5,
     "height": 1.7
   },
-  "564": {
+  "564_": {
     "attack": 134,
     "defense": 172,
     "stamina": 108,
@@ -5902,7 +5938,7 @@
     "weight": 16.5,
     "height": 0.71
   },
-  "565": {
+  "565_": {
     "attack": 192,
     "defense": 228,
     "stamina": 148,
@@ -5913,7 +5949,7 @@
     "weight": 81,
     "height": 1.19
   },
-  "566": {
+  "566_": {
     "attack": 213,
     "defense": 89,
     "stamina": 110,
@@ -5924,7 +5960,7 @@
     "weight": 9.5,
     "height": 0.51
   },
-  "567": {
+  "567_": {
     "attack": 292,
     "defense": 139,
     "stamina": 150,
@@ -5935,7 +5971,7 @@
     "weight": 32,
     "height": 1.4
   },
-  "568": {
+  "568_": {
     "attack": 96,
     "defense": 122,
     "stamina": 100,
@@ -5945,7 +5981,7 @@
     "weight": 31,
     "height": 0.61
   },
-  "569": {
+  "569_": {
     "attack": 181,
     "defense": 164,
     "stamina": 160,
@@ -5955,7 +5991,7 @@
     "weight": 107.3,
     "height": 1.91
   },
-  "570": {
+  "570_": {
     "attack": 153,
     "defense": 78,
     "stamina": 80,
@@ -5965,7 +6001,7 @@
     "weight": 12.5,
     "height": 0.71
   },
-  "571": {
+  "571_": {
     "attack": 250,
     "defense": 127,
     "stamina": 120,
@@ -5975,7 +6011,7 @@
     "weight": 81.1,
     "height": 1.6
   },
-  "572": {
+  "572_": {
     "attack": 98,
     "defense": 80,
     "stamina": 110,
@@ -5985,7 +6021,7 @@
     "weight": 5.8,
     "height": 0.41
   },
-  "573": {
+  "573_": {
     "attack": 198,
     "defense": 130,
     "stamina": 150,
@@ -5995,7 +6031,7 @@
     "weight": 7.5,
     "height": 0.51
   },
-  "574": {
+  "574_": {
     "attack": 98,
     "defense": 118,
     "stamina": 90,
@@ -6005,7 +6041,7 @@
     "weight": 5.8,
     "height": 0.41
   },
-  "575": {
+  "575_": {
     "attack": 137,
     "defense": 159,
     "stamina": 120,
@@ -6015,7 +6051,7 @@
     "weight": 18,
     "height": 0.71
   },
-  "576": {
+  "576_": {
     "attack": 176,
     "defense": 212,
     "stamina": 140,
@@ -6025,7 +6061,7 @@
     "weight": 44,
     "height": 1.5
   },
-  "577": {
+  "577_": {
     "attack": 170,
     "defense": 87,
     "stamina": 90,
@@ -6035,7 +6071,7 @@
     "weight": 1,
     "height": 0.3
   },
-  "578": {
+  "578_": {
     "attack": 208,
     "defense": 107,
     "stamina": 130,
@@ -6045,7 +6081,7 @@
     "weight": 8,
     "height": 0.61
   },
-  "579": {
+  "579_": {
     "attack": 214,
     "defense": 153,
     "stamina": 220,
@@ -6055,7 +6091,7 @@
     "weight": 20.1,
     "height": 0.99
   },
-  "580": {
+  "580_": {
     "attack": 84,
     "defense": 96,
     "stamina": 124,
@@ -6066,7 +6102,7 @@
     "weight": 5.5,
     "height": 0.51
   },
-  "581": {
+  "581_": {
     "attack": 182,
     "defense": 132,
     "stamina": 150,
@@ -6077,7 +6113,7 @@
     "weight": 24.2,
     "height": 1.3
   },
-  "582": {
+  "582_": {
     "attack": 118,
     "defense": 111,
     "stamina": 72,
@@ -6087,7 +6123,7 @@
     "weight": 5.7,
     "height": 0.41
   },
-  "583": {
+  "583_": {
     "attack": 151,
     "defense": 143,
     "stamina": 102,
@@ -6097,7 +6133,7 @@
     "weight": 41,
     "height": 1.09
   },
-  "584": {
+  "584_": {
     "attack": 218,
     "defense": 190,
     "stamina": 142,
@@ -6107,7 +6143,7 @@
     "weight": 57.5,
     "height": 1.3
   },
-  "585": {
+  "585_": {
     "attack": 115,
     "defense": 100,
     "stamina": 120,
@@ -6118,7 +6154,7 @@
     "weight": 19.5,
     "height": 0.61
   },
-  "586": {
+  "586_": {
     "attack": 198,
     "defense": 146,
     "stamina": 160,
@@ -6129,7 +6165,7 @@
     "weight": 92.5,
     "height": 1.91
   },
-  "587": {
+  "587_": {
     "attack": 158,
     "defense": 127,
     "stamina": 110,
@@ -6140,7 +6176,7 @@
     "weight": 5,
     "height": 0.41
   },
-  "588": {
+  "588_": {
     "attack": 137,
     "defense": 87,
     "stamina": 100,
@@ -6150,7 +6186,7 @@
     "weight": 5.9,
     "height": 0.51
   },
-  "589": {
+  "589_": {
     "attack": 223,
     "defense": 187,
     "stamina": 140,
@@ -6161,7 +6197,7 @@
     "weight": 33,
     "height": 0.99
   },
-  "590": {
+  "590_": {
     "attack": 97,
     "defense": 95,
     "stamina": 138,
@@ -6172,7 +6208,7 @@
     "weight": 1,
     "height": 0.2
   },
-  "591": {
+  "591_": {
     "attack": 155,
     "defense": 144,
     "stamina": 228,
@@ -6183,7 +6219,7 @@
     "weight": 10.5,
     "height": 0.61
   },
-  "592": {
+  "592_": {
     "attack": 115,
     "defense": 150,
     "stamina": 110,
@@ -6194,7 +6230,7 @@
     "weight": 33,
     "height": 1.19
   },
-  "593": {
+  "593_": {
     "attack": 159,
     "defense": 195,
     "stamina": 200,
@@ -6205,7 +6241,7 @@
     "weight": 135,
     "height": 2.21
   },
-  "594": {
+  "594_": {
     "attack": 138,
     "defense": 148,
     "stamina": 330,
@@ -6215,7 +6251,7 @@
     "weight": 31.6,
     "height": 1.19
   },
-  "595": {
+  "595_": {
     "attack": 110,
     "defense": 98,
     "stamina": 100,
@@ -6226,7 +6262,7 @@
     "weight": 0.6,
     "height": 0.1
   },
-  "596": {
+  "596_": {
     "attack": 201,
     "defense": 128,
     "stamina": 140,
@@ -6237,7 +6273,7 @@
     "weight": 14.3,
     "height": 0.79
   },
-  "597": {
+  "597_": {
     "attack": 82,
     "defense": 157,
     "stamina": 88,
@@ -6248,7 +6284,7 @@
     "weight": 18.8,
     "height": 0.61
   },
-  "598": {
+  "598_": {
     "attack": 158,
     "defense": 230,
     "stamina": 148,
@@ -6259,7 +6295,7 @@
     "weight": 110,
     "height": 0.99
   },
-  "599": {
+  "599_": {
     "attack": 98,
     "defense": 126,
     "stamina": 80,
@@ -6269,7 +6305,7 @@
     "weight": 21,
     "height": 0.3
   },
-  "600": {
+  "600_": {
     "attack": 150,
     "defense": 179,
     "stamina": 120,
@@ -6279,7 +6315,7 @@
     "weight": 51,
     "height": 0.61
   },
-  "601": {
+  "601_": {
     "attack": 199,
     "defense": 230,
     "stamina": 120,
@@ -6289,7 +6325,7 @@
     "weight": 81,
     "height": 0.61
   },
-  "602": {
+  "602_": {
     "attack": 105,
     "defense": 78,
     "stamina": 70,
@@ -6299,7 +6335,7 @@
     "weight": 0.3,
     "height": 0.2
   },
-  "603": {
+  "603_": {
     "attack": 156,
     "defense": 130,
     "stamina": 130,
@@ -6309,7 +6345,7 @@
     "weight": 22,
     "height": 1.19
   },
-  "604": {
+  "604_": {
     "attack": 217,
     "defense": 152,
     "stamina": 170,
@@ -6319,7 +6355,7 @@
     "weight": 80.5,
     "height": 2.11
   },
-  "605": {
+  "605_": {
     "attack": 148,
     "defense": 100,
     "stamina": 110,
@@ -6329,7 +6365,7 @@
     "weight": 9,
     "height": 0.51
   },
-  "606": {
+  "606_": {
     "attack": 221,
     "defense": 172,
     "stamina": 150,
@@ -6339,7 +6375,7 @@
     "weight": 34.5,
     "height": 0.99
   },
-  "607": {
+  "607_": {
     "attack": 108,
     "defense": 98,
     "stamina": 100,
@@ -6350,7 +6386,7 @@
     "weight": 3.1,
     "height": 0.3
   },
-  "608": {
+  "608_": {
     "attack": 169,
     "defense": 115,
     "stamina": 120,
@@ -6361,7 +6397,7 @@
     "weight": 13,
     "height": 0.61
   },
-  "609": {
+  "609_": {
     "attack": 271,
     "defense": 182,
     "stamina": 120,
@@ -6372,7 +6408,7 @@
     "weight": 34.3,
     "height": 0.99
   },
-  "610": {
+  "610_": {
     "attack": 154,
     "defense": 111,
     "stamina": 92,
@@ -6382,7 +6418,7 @@
     "weight": 18,
     "height": 0.61
   },
-  "611": {
+  "611_": {
     "attack": 212,
     "defense": 133,
     "stamina": 132,
@@ -6392,7 +6428,7 @@
     "weight": 36,
     "height": 0.99
   },
-  "612": {
+  "612_": {
     "attack": 284,
     "defense": 183,
     "stamina": 152,
@@ -6402,7 +6438,7 @@
     "weight": 105.5,
     "height": 1.8
   },
-  "613": {
+  "613_": {
     "attack": 128,
     "defense": 74,
     "stamina": 110,
@@ -6412,7 +6448,7 @@
     "weight": 8.5,
     "height": 0.51
   },
-  "614": {
+  "614_": {
     "attack": 233,
     "defense": 152,
     "stamina": 190,
@@ -6422,7 +6458,7 @@
     "weight": 260,
     "height": 2.59
   },
-  "615": {
+  "615_": {
     "attack": 190,
     "defense": 264,
     "stamina": 160,
@@ -6432,7 +6468,7 @@
     "weight": 148,
     "height": 1.09
   },
-  "616": {
+  "616_": {
     "attack": 72,
     "defense": 149,
     "stamina": 100,
@@ -6442,7 +6478,7 @@
     "weight": 7.7,
     "height": 0.41
   },
-  "617": {
+  "617_": {
     "attack": 220,
     "defense": 131,
     "stamina": 160,
@@ -6452,7 +6488,7 @@
     "weight": 25.3,
     "height": 0.79
   },
-  "618": {
+  "618_": {
     "attack": 144,
     "defense": 177,
     "stamina": 218,
@@ -6463,7 +6499,7 @@
     "weight": 11,
     "height": 0.71
   },
-  "619": {
+  "619_": {
     "attack": 160,
     "defense": 98,
     "stamina": 90,
@@ -6473,7 +6509,7 @@
     "weight": 20,
     "height": 0.89
   },
-  "620": {
+  "620_": {
     "attack": 258,
     "defense": 127,
     "stamina": 130,
@@ -6483,7 +6519,7 @@
     "weight": 35.5,
     "height": 1.4
   },
-  "621": {
+  "621_": {
     "attack": 213,
     "defense": 170,
     "stamina": 154,
@@ -6493,7 +6529,7 @@
     "weight": 139,
     "height": 1.6
   },
-  "622": {
+  "622_": {
     "attack": 127,
     "defense": 92,
     "stamina": 118,
@@ -6504,7 +6540,7 @@
     "weight": 92,
     "height": 0.99
   },
-  "623": {
+  "623_": {
     "attack": 222,
     "defense": 154,
     "stamina": 178,
@@ -6515,7 +6551,7 @@
     "weight": 330,
     "height": 2.79
   },
-  "624": {
+  "624_": {
     "attack": 154,
     "defense": 129,
     "stamina": 90,
@@ -6526,7 +6562,7 @@
     "weight": 10.2,
     "height": 0.51
   },
-  "625": {
+  "625_": {
     "attack": 232,
     "defense": 191,
     "stamina": 130,
@@ -6537,7 +6573,7 @@
     "weight": 70,
     "height": 1.6
   },
-  "626": {
+  "626_": {
     "attack": 195,
     "defense": 182,
     "stamina": 190,
@@ -6547,7 +6583,7 @@
     "weight": 94.6,
     "height": 1.6
   },
-  "627": {
+  "627_": {
     "attack": 150,
     "defense": 97,
     "stamina": 140,
@@ -6558,7 +6594,7 @@
     "weight": 10.5,
     "height": 0.51
   },
-  "628": {
+  "628_": {
     "attack": 232,
     "defense": 152,
     "stamina": 200,
@@ -6569,7 +6605,7 @@
     "weight": 41,
     "height": 1.5
   },
-  "629": {
+  "629_": {
     "attack": 105,
     "defense": 144,
     "stamina": 140,
@@ -6580,7 +6616,7 @@
     "weight": 9,
     "height": 0.51
   },
-  "630": {
+  "630_": {
     "attack": 129,
     "defense": 210,
     "stamina": 220,
@@ -6591,7 +6627,7 @@
     "weight": 39.5,
     "height": 1.19
   },
-  "631": {
+  "631_": {
     "attack": 204,
     "defense": 129,
     "stamina": 170,
@@ -6601,7 +6637,7 @@
     "weight": 58,
     "height": 1.4
   },
-  "632": {
+  "632_": {
     "attack": 217,
     "defense": 222,
     "stamina": 116,
@@ -6612,7 +6648,7 @@
     "weight": 33,
     "height": 0.3
   },
-  "633": {
+  "633_": {
     "attack": 116,
     "defense": 93,
     "stamina": 104,
@@ -6623,7 +6659,7 @@
     "weight": 17.3,
     "height": 0.79
   },
-  "634": {
+  "634_": {
     "attack": 159,
     "defense": 135,
     "stamina": 144,
@@ -6634,7 +6670,7 @@
     "weight": 50,
     "height": 1.4
   },
-  "635": {
+  "635_": {
     "attack": 256,
     "defense": 188,
     "stamina": 184,
@@ -6645,7 +6681,7 @@
     "weight": 160,
     "height": 1.8
   },
-  "636": {
+  "636_": {
     "attack": 156,
     "defense": 107,
     "stamina": 110,
@@ -6656,7 +6692,7 @@
     "weight": 28.8,
     "height": 1.09
   },
-  "637": {
+  "637_": {
     "attack": 264,
     "defense": 210,
     "stamina": 170,
@@ -6667,7 +6703,7 @@
     "weight": 46,
     "height": 1.6
   },
-  "638": {
+  "638_": {
     "attack": 192,
     "defense": 260,
     "stamina": 182,
@@ -6678,7 +6714,7 @@
     "weight": 250,
     "height": 2.11
   },
-  "639": {
+  "639_": {
     "attack": 260,
     "defense": 192,
     "stamina": 182,
@@ -6689,7 +6725,7 @@
     "weight": 260,
     "height": 1.91
   },
-  "640": {
+  "640_": {
     "attack": 192,
     "defense": 260,
     "stamina": 182,
@@ -6700,7 +6736,7 @@
     "weight": 200,
     "height": 2.01
   },
-  "641": {
+  "641_": {
     "attack": 266,
     "defense": 169,
     "stamina": 158,
@@ -6710,7 +6746,7 @@
     "weight": 63,
     "height": 1.4
   },
-  "642": {
+  "642_": {
     "attack": 266,
     "defense": 169,
     "stamina": 158,
@@ -6721,7 +6757,7 @@
     "weight": 61,
     "height": 3
   },
-  "643": {
+  "643_": {
     "attack": 302,
     "defense": 242,
     "stamina": 200,
@@ -6732,7 +6768,7 @@
     "weight": 330,
     "height": 3.2
   },
-  "644": {
+  "644_": {
     "attack": 302,
     "defense": 242,
     "stamina": 200,
@@ -6743,7 +6779,7 @@
     "weight": 345,
     "height": 2.9
   },
-  "645": {
+  "645_": {
     "attack": 261,
     "defense": 187,
     "stamina": 178,
@@ -6754,7 +6790,7 @@
     "weight": 68,
     "height": 1.5
   },
-  "646": {
+  "646_": {
     "attack": 270,
     "defense": 187,
     "stamina": 250,
@@ -6765,7 +6801,7 @@
     "weight": 325,
     "height": 3
   },
-  "647": {
+  "647_": {
     "attack": 260,
     "defense": 192,
     "stamina": 182,
@@ -6776,7 +6812,7 @@
     "weight": 48.5,
     "height": 1.4
   },
-  "648": {
+  "648_": {
     "attack": 250,
     "defense": 250,
     "stamina": 200,
@@ -6787,7 +6823,7 @@
     "weight": 6.5,
     "height": 0.61
   },
-  "649": {
+  "649_": {
     "attack": 252,
     "defense": 199,
     "stamina": 142,
@@ -6798,7 +6834,7 @@
     "weight": 82.5,
     "height": 1.5
   },
-  "650": {
+  "650_": {
     "attack": 110,
     "defense": 116,
     "stamina": 112,
@@ -6808,7 +6844,7 @@
     "weight": 9,
     "height": 0.41
   },
-  "651": {
+  "651_": {
     "attack": 146,
     "defense": 174,
     "stamina": 122,
@@ -6818,7 +6854,7 @@
     "weight": 29,
     "height": 0.71
   },
-  "652": {
+  "652_": {
     "attack": 201,
     "defense": 227,
     "stamina": 176,
@@ -6829,7 +6865,7 @@
     "weight": 90,
     "height": 1.6
   },
-  "653": {
+  "653_": {
     "attack": 116,
     "defense": 112,
     "stamina": 80,
@@ -6839,7 +6875,7 @@
     "weight": 9.4,
     "height": 0.41
   },
-  "654": {
+  "654_": {
     "attack": 171,
     "defense": 136,
     "stamina": 118,
@@ -6849,7 +6885,7 @@
     "weight": 14.5,
     "height": 0.99
   },
-  "655": {
+  "655_": {
     "attack": 230,
     "defense": 204,
     "stamina": 150,
@@ -6860,7 +6896,7 @@
     "weight": 39,
     "height": 1.5
   },
-  "656": {
+  "656_": {
     "attack": 122,
     "defense": 86,
     "stamina": 82,
@@ -6870,7 +6906,7 @@
     "weight": 7,
     "height": 0.3
   },
-  "657": {
+  "657_": {
     "attack": 168,
     "defense": 116,
     "stamina": 108,
@@ -6880,7 +6916,7 @@
     "weight": 10.9,
     "height": 0.61
   },
-  "658": {
+  "658_": {
     "attack": 223,
     "defense": 154,
     "stamina": 144,
@@ -6891,7 +6927,7 @@
     "weight": 40,
     "height": 1.5
   },
-  "659": {
+  "659_": {
     "attack": 68,
     "defense": 73,
     "stamina": 76,
@@ -6901,7 +6937,7 @@
     "weight": 5,
     "height": 0.41
   },
-  "660": {
+  "660_": {
     "attack": 112,
     "defense": 155,
     "stamina": 170,
@@ -6912,7 +6948,7 @@
     "weight": 42.4,
     "height": 0.99
   },
-  "661": {
+  "661_": {
     "attack": 95,
     "defense": 83,
     "stamina": 90,
@@ -6923,7 +6959,7 @@
     "weight": 1.7,
     "height": 0.3
   },
-  "662": {
+  "662_": {
     "attack": 145,
     "defense": 111,
     "stamina": 124,
@@ -6934,7 +6970,7 @@
     "weight": 16,
     "height": 0.71
   },
-  "663": {
+  "663_": {
     "attack": 176,
     "defense": 156,
     "stamina": 156,
@@ -6945,7 +6981,7 @@
     "weight": 24.5,
     "height": 1.19
   },
-  "664": {
+  "664_": {
     "attack": 63,
     "defense": 70,
     "stamina": 76,
@@ -6955,7 +6991,7 @@
     "weight": 2.5,
     "height": 0.3
   },
-  "665": {
+  "665_": {
     "attack": 48,
     "defense": 103,
     "stamina": 90,
@@ -6965,7 +7001,7 @@
     "weight": 8.4,
     "height": 0.3
   },
-  "666": {
+  "666_": {
     "attack": 176,
     "defense": 103,
     "stamina": 160,
@@ -6976,7 +7012,7 @@
     "weight": 17,
     "height": 1.19
   },
-  "667": {
+  "667_": {
     "attack": 139,
     "defense": 114,
     "stamina": 124,
@@ -6987,7 +7023,7 @@
     "weight": 13.5,
     "height": 0.61
   },
-  "668": {
+  "668_": {
     "attack": 221,
     "defense": 152,
     "stamina": 172,
@@ -6998,7 +7034,7 @@
     "weight": 81.5,
     "height": 1.5
   },
-  "669": {
+  "669_": {
     "attack": 108,
     "defense": 138,
     "stamina": 88,
@@ -7008,7 +7044,7 @@
     "weight": 0.1,
     "height": 0.1
   },
-  "670": {
+  "670_": {
     "attack": 136,
     "defense": 175,
     "stamina": 108,
@@ -7018,7 +7054,7 @@
     "weight": 0.9,
     "height": 0.2
   },
-  "671": {
+  "671_": {
     "attack": 212,
     "defense": 287,
     "stamina": 156,
@@ -7028,7 +7064,7 @@
     "weight": 10,
     "height": 1.09
   },
-  "672": {
+  "672_": {
     "attack": 123,
     "defense": 107,
     "stamina": 132,
@@ -7038,7 +7074,7 @@
     "weight": 31,
     "height": 0.89
   },
-  "673": {
+  "673_": {
     "attack": 196,
     "defense": 155,
     "stamina": 246,
@@ -7048,7 +7084,7 @@
     "weight": 91,
     "height": 1.7
   },
-  "674": {
+  "674_": {
     "attack": 145,
     "defense": 113,
     "stamina": 134,
@@ -7058,7 +7094,7 @@
     "weight": 8,
     "height": 0.61
   },
-  "675": {
+  "675_": {
     "attack": 226,
     "defense": 149,
     "stamina": 190,
@@ -7069,7 +7105,7 @@
     "weight": 136,
     "height": 2.11
   },
-  "676": {
+  "676_": {
     "attack": 164,
     "defense": 182,
     "stamina": 150,
@@ -7079,7 +7115,7 @@
     "weight": 28,
     "height": 1.19
   },
-  "677": {
+  "677_": {
     "attack": 120,
     "defense": 117,
     "stamina": 124,
@@ -7089,7 +7125,7 @@
     "weight": 3.5,
     "height": 0.3
   },
-  "678": {
+  "678_": {
     "attack": 166,
     "defense": 170,
     "stamina": 148,
@@ -7099,7 +7135,7 @@
     "weight": 8.5,
     "height": 0.61
   },
-  "679": {
+  "679_": {
     "attack": 135,
     "defense": 167,
     "stamina": 90,
@@ -7110,7 +7146,7 @@
     "weight": 2,
     "height": 0.79
   },
-  "680": {
+  "680_": {
     "attack": 188,
     "defense": 253,
     "stamina": 118,
@@ -7121,7 +7157,7 @@
     "weight": 4.5,
     "height": 0.84
   },
-  "681": {
+  "681_": {
     "attack": 97,
     "defense": 291,
     "stamina": 120,
@@ -7132,7 +7168,7 @@
     "weight": 53,
     "height": 1.7
   },
-  "682": {
+  "682_": {
     "attack": 110,
     "defense": 116,
     "stamina": 156,
@@ -7142,7 +7178,7 @@
     "weight": 0.5,
     "height": 0.2
   },
-  "683": {
+  "683_": {
     "attack": 173,
     "defense": 158,
     "stamina": 202,
@@ -7152,7 +7188,7 @@
     "weight": 15.5,
     "height": 0.79
   },
-  "684": {
+  "684_": {
     "attack": 109,
     "defense": 123,
     "stamina": 124,
@@ -7162,7 +7198,7 @@
     "weight": 3.5,
     "height": 0.41
   },
-  "685": {
+  "685_": {
     "attack": 168,
     "defense": 168,
     "stamina": 164,
@@ -7172,7 +7208,7 @@
     "weight": 5,
     "height": 0.79
   },
-  "686": {
+  "686_": {
     "attack": 98,
     "defense": 98,
     "stamina": 106,
@@ -7183,7 +7219,7 @@
     "weight": 3.5,
     "height": 0.41
   },
-  "687": {
+  "687_": {
     "attack": 177,
     "defense": 172,
     "stamina": 172,
@@ -7194,7 +7230,7 @@
     "weight": 47,
     "height": 1.5
   },
-  "688": {
+  "688_": {
     "attack": 96,
     "defense": 124,
     "stamina": 84,
@@ -7205,7 +7241,7 @@
     "weight": 31,
     "height": 0.51
   },
-  "689": {
+  "689_": {
     "attack": 194,
     "defense": 220,
     "stamina": 144,
@@ -7216,7 +7252,7 @@
     "weight": 96,
     "height": 1.3
   },
-  "690": {
+  "690_": {
     "attack": 109,
     "defense": 109,
     "stamina": 100,
@@ -7227,7 +7263,7 @@
     "weight": 7.3,
     "height": 0.51
   },
-  "691": {
+  "691_": {
     "attack": 177,
     "defense": 223,
     "stamina": 130,
@@ -7238,7 +7274,7 @@
     "weight": 81.5,
     "height": 1.8
   },
-  "692": {
+  "692_": {
     "attack": 108,
     "defense": 118,
     "stamina": 100,
@@ -7248,7 +7284,7 @@
     "weight": 8.3,
     "height": 0.51
   },
-  "693": {
+  "693_": {
     "attack": 221,
     "defense": 172,
     "stamina": 142,
@@ -7258,7 +7294,7 @@
     "weight": 35.3,
     "height": 1.3
   },
-  "694": {
+  "694_": {
     "attack": 115,
     "defense": 83,
     "stamina": 88,
@@ -7269,7 +7305,7 @@
     "weight": 6,
     "height": 0.51
   },
-  "695": {
+  "695_": {
     "attack": 219,
     "defense": 190,
     "stamina": 124,
@@ -7280,7 +7316,7 @@
     "weight": 21,
     "height": 0.99
   },
-  "696": {
+  "696_": {
     "attack": 158,
     "defense": 138,
     "stamina": 116,
@@ -7291,7 +7327,7 @@
     "weight": 26,
     "height": 0.79
   },
-  "697": {
+  "697_": {
     "attack": 227,
     "defense": 221,
     "stamina": 164,
@@ -7302,7 +7338,7 @@
     "weight": 270,
     "height": 2.49
   },
-  "698": {
+  "698_": {
     "attack": 124,
     "defense": 116,
     "stamina": 154,
@@ -7313,7 +7349,7 @@
     "weight": 25.2,
     "height": 1.3
   },
-  "699": {
+  "699_": {
     "attack": 186,
     "defense": 173,
     "stamina": 246,
@@ -7324,7 +7360,7 @@
     "weight": 225,
     "height": 2.69
   },
-  "700": {
+  "700_": {
     "attack": 203,
     "defense": 237,
     "stamina": 190,
@@ -7334,7 +7370,7 @@
     "weight": 23.5,
     "height": 0.99
   },
-  "701": {
+  "701_": {
     "attack": 195,
     "defense": 160,
     "stamina": 156,
@@ -7345,7 +7381,7 @@
     "weight": 21.5,
     "height": 0.79
   },
-  "702": {
+  "702_": {
     "attack": 164,
     "defense": 139,
     "stamina": 134,
@@ -7356,7 +7392,7 @@
     "weight": 2.2,
     "height": 0.2
   },
-  "703": {
+  "703_": {
     "attack": 95,
     "defense": 285,
     "stamina": 100,
@@ -7367,7 +7403,7 @@
     "weight": 5.7,
     "height": 0.3
   },
-  "704": {
+  "704_": {
     "attack": 101,
     "defense": 130,
     "stamina": 90,
@@ -7377,7 +7413,7 @@
     "weight": 2.8,
     "height": 0.3
   },
-  "705": {
+  "705_": {
     "attack": 159,
     "defense": 205,
     "stamina": 136,
@@ -7387,7 +7423,7 @@
     "weight": 17.5,
     "height": 0.79
   },
-  "706": {
+  "706_": {
     "attack": 220,
     "defense": 283,
     "stamina": 180,
@@ -7397,7 +7433,7 @@
     "weight": 150.5,
     "height": 2.01
   },
-  "707": {
+  "707_": {
     "attack": 160,
     "defense": 181,
     "stamina": 114,
@@ -7408,7 +7444,7 @@
     "weight": 3,
     "height": 0.2
   },
-  "708": {
+  "708_": {
     "attack": 125,
     "defense": 108,
     "stamina": 86,
@@ -7419,7 +7455,7 @@
     "weight": 7,
     "height": 0.41
   },
-  "709": {
+  "709_": {
     "attack": 201,
     "defense": 157,
     "stamina": 170,
@@ -7430,7 +7466,7 @@
     "weight": 71,
     "height": 1.5
   },
-  "710": {
+  "710_": {
     "attack": 121,
     "defense": 129,
     "stamina": 98,
@@ -7441,7 +7477,7 @@
     "weight": 5,
     "height": 0.41
   },
-  "711": {
+  "711_": {
     "attack": 175,
     "defense": 236,
     "stamina": 130,
@@ -7452,7 +7488,7 @@
     "weight": 39,
     "height": 1.7
   },
-  "712": {
+  "712_": {
     "attack": 117,
     "defense": 143,
     "stamina": 110,
@@ -7462,7 +7498,7 @@
     "weight": 99.5,
     "height": 0.99
   },
-  "713": {
+  "713_": {
     "attack": 196,
     "defense": 303,
     "stamina": 190,
@@ -7472,7 +7508,7 @@
     "weight": 505,
     "height": 2.01
   },
-  "714": {
+  "714_": {
     "attack": 83,
     "defense": 76,
     "stamina": 80,
@@ -7483,7 +7519,7 @@
     "weight": 8,
     "height": 0.51
   },
-  "715": {
+  "715_": {
     "attack": 205,
     "defense": 175,
     "stamina": 170,
@@ -7494,7 +7530,7 @@
     "weight": 85,
     "height": 1.5
   },
-  "716": {
+  "716_": {
     "attack": 275,
     "defense": 204,
     "stamina": 252,
@@ -7504,7 +7540,7 @@
     "weight": 215,
     "height": 3
   },
-  "717": {
+  "717_": {
     "attack": 275,
     "defense": 204,
     "stamina": 252,
@@ -7515,7 +7551,7 @@
     "weight": 203,
     "height": 5.79
   },
-  "718": {
+  "718_": {
     "attack": 203,
     "defense": 245,
     "stamina": 216,
@@ -7526,7 +7562,7 @@
     "weight": 33.5,
     "height": 1.19
   },
-  "719": {
+  "719_": {
     "attack": 190,
     "defense": 285,
     "stamina": 100,
@@ -7537,7 +7573,7 @@
     "weight": 8.8,
     "height": 0.71
   },
-  "720": {
+  "720_": {
     "attack": 287,
     "defense": 241,
     "stamina": 160,
@@ -7548,7 +7584,7 @@
     "weight": 9,
     "height": 0.51
   },
-  "721": {
+  "721_": {
     "attack": 252,
     "defense": 231,
     "stamina": 160,
@@ -7559,7 +7595,7 @@
     "weight": 195,
     "height": 1.7
   },
-  "722": {
+  "722_": {
     "attack": 102,
     "defense": 102,
     "stamina": 136,
@@ -7570,7 +7606,7 @@
     "weight": 1.5,
     "height": 0.3
   },
-  "723": {
+  "723_": {
     "attack": 142,
     "defense": 142,
     "stamina": 156,
@@ -7581,7 +7617,7 @@
     "weight": 16,
     "height": 0.71
   },
-  "724": {
+  "724_": {
     "attack": 210,
     "defense": 192,
     "stamina": 156,
@@ -7592,7 +7628,7 @@
     "weight": 36.6,
     "height": 1.6
   },
-  "725": {
+  "725_": {
     "attack": 128,
     "defense": 79,
     "stamina": 90,
@@ -7602,7 +7638,7 @@
     "weight": 4.3,
     "height": 0.41
   },
-  "726": {
+  "726_": {
     "attack": 174,
     "defense": 103,
     "stamina": 130,
@@ -7612,7 +7648,7 @@
     "weight": 25,
     "height": 0.71
   },
-  "727": {
+  "727_": {
     "attack": 214,
     "defense": 175,
     "stamina": 190,
@@ -7623,7 +7659,7 @@
     "weight": 83,
     "height": 1.8
   },
-  "728": {
+  "728_": {
     "attack": 120,
     "defense": 104,
     "stamina": 100,
@@ -7633,7 +7669,7 @@
     "weight": 7.5,
     "height": 0.41
   },
-  "729": {
+  "729_": {
     "attack": 168,
     "defense": 151,
     "stamina": 120,
@@ -7643,7 +7679,7 @@
     "weight": 17.5,
     "height": 0.61
   },
-  "730": {
+  "730_": {
     "attack": 232,
     "defense": 215,
     "stamina": 160,
@@ -7654,7 +7690,7 @@
     "weight": 44,
     "height": 1.8
   },
-  "731": {
+  "731_": {
     "attack": 136,
     "defense": 59,
     "stamina": 70,
@@ -7665,7 +7701,7 @@
     "weight": 1.2,
     "height": 0.3
   },
-  "732": {
+  "732_": {
     "attack": 159,
     "defense": 100,
     "stamina": 110,
@@ -7676,7 +7712,7 @@
     "weight": 14.8,
     "height": 0.61
   },
-  "733": {
+  "733_": {
     "attack": 222,
     "defense": 146,
     "stamina": 160,
@@ -7687,7 +7723,7 @@
     "weight": 26,
     "height": 1.09
   },
-  "734": {
+  "734_": {
     "attack": 122,
     "defense": 56,
     "stamina": 96,
@@ -7697,7 +7733,7 @@
     "weight": 6,
     "height": 0.41
   },
-  "735": {
+  "735_": {
     "attack": 194,
     "defense": 113,
     "stamina": 176,
@@ -7707,7 +7743,7 @@
     "weight": 14.2,
     "height": 0.71
   },
-  "736": {
+  "736_": {
     "attack": 115,
     "defense": 85,
     "stamina": 94,
@@ -7717,7 +7753,7 @@
     "weight": 4.4,
     "height": 0.41
   },
-  "737": {
+  "737_": {
     "attack": 145,
     "defense": 171,
     "stamina": 114,
@@ -7728,7 +7764,7 @@
     "weight": 10.5,
     "height": 0.51
   },
-  "738": {
+  "738_": {
     "attack": 254,
     "defense": 165,
     "stamina": 154,
@@ -7739,7 +7775,7 @@
     "weight": 45,
     "height": 1.5
   },
-  "739": {
+  "739_": {
     "attack": 150,
     "defense": 109,
     "stamina": 94,
@@ -7749,7 +7785,7 @@
     "weight": 7,
     "height": 0.61
   },
-  "740": {
+  "740_": {
     "attack": 231,
     "defense": 142,
     "stamina": 194,
@@ -7760,7 +7796,7 @@
     "weight": 180,
     "height": 1.7
   },
-  "741": {
+  "741_": {
     "attack": 196,
     "defense": 145,
     "stamina": 150,
@@ -7771,7 +7807,7 @@
     "weight": 3.4,
     "height": 0.61
   },
-  "742": {
+  "742_": {
     "attack": 110,
     "defense": 81,
     "stamina": 80,
@@ -7782,7 +7818,7 @@
     "weight": 0.2,
     "height": 0.1
   },
-  "743": {
+  "743_": {
     "attack": 198,
     "defense": 152,
     "stamina": 120,
@@ -7793,7 +7829,7 @@
     "weight": 0.5,
     "height": 0.2
   },
-  "744": {
+  "744_": {
     "attack": 117,
     "defense": 78,
     "stamina": 90,
@@ -7803,7 +7839,7 @@
     "weight": 9.2,
     "height": 0.51
   },
-  "745": {
+  "745_": {
     "attack": 231,
     "defense": 140,
     "stamina": 150,
@@ -7813,7 +7849,7 @@
     "weight": 25,
     "height": 0.79
   },
-  "746": {
+  "746_": {
     "attack": 46,
     "defense": 46,
     "stamina": 90,
@@ -7823,7 +7859,7 @@
     "weight": 0.3,
     "height": 0.2
   },
-  "747": {
+  "747_": {
     "attack": 98,
     "defense": 115,
     "stamina": 100,
@@ -7834,7 +7870,7 @@
     "weight": 8,
     "height": 0.41
   },
-  "748": {
+  "748_": {
     "attack": 114,
     "defense": 278,
     "stamina": 100,
@@ -7845,7 +7881,7 @@
     "weight": 14.5,
     "height": 0.71
   },
-  "749": {
+  "749_": {
     "attack": 175,
     "defense": 128,
     "stamina": 140,
@@ -7855,7 +7891,7 @@
     "weight": 110,
     "height": 0.99
   },
-  "750": {
+  "750_": {
     "attack": 214,
     "defense": 180,
     "stamina": 200,
@@ -7865,7 +7901,7 @@
     "weight": 920,
     "height": 2.49
   },
-  "751": {
+  "751_": {
     "attack": 72,
     "defense": 126,
     "stamina": 76,
@@ -7876,7 +7912,7 @@
     "weight": 4,
     "height": 0.3
   },
-  "752": {
+  "752_": {
     "attack": 126,
     "defense": 237,
     "stamina": 136,
@@ -7887,7 +7923,7 @@
     "weight": 82,
     "height": 1.8
   },
-  "753": {
+  "753_": {
     "attack": 100,
     "defense": 64,
     "stamina": 80,
@@ -7897,7 +7933,7 @@
     "weight": 1.5,
     "height": 0.3
   },
-  "754": {
+  "754_": {
     "attack": 192,
     "defense": 169,
     "stamina": 140,
@@ -7907,7 +7943,7 @@
     "weight": 18.5,
     "height": 0.89
   },
-  "755": {
+  "755_": {
     "attack": 108,
     "defense": 128,
     "stamina": 80,
@@ -7918,7 +7954,7 @@
     "weight": 1.5,
     "height": 0.2
   },
-  "756": {
+  "756_": {
     "attack": 154,
     "defense": 177,
     "stamina": 120,
@@ -7929,7 +7965,7 @@
     "weight": 11.5,
     "height": 0.99
   },
-  "757": {
+  "757_": {
     "attack": 136,
     "defense": 80,
     "stamina": 96,
@@ -7940,7 +7976,7 @@
     "weight": 4.8,
     "height": 0.61
   },
-  "758": {
+  "758_": {
     "attack": 228,
     "defense": 130,
     "stamina": 136,
@@ -7951,7 +7987,7 @@
     "weight": 22.2,
     "height": 1.19
   },
-  "759": {
+  "759_": {
     "attack": 136,
     "defense": 95,
     "stamina": 140,
@@ -7962,7 +7998,7 @@
     "weight": 6.8,
     "height": 0.51
   },
-  "760": {
+  "760_": {
     "attack": 226,
     "defense": 150,
     "stamina": 240,
@@ -7973,7 +8009,7 @@
     "weight": 135,
     "height": 2.11
   },
-  "761": {
+  "761_": {
     "attack": 55,
     "defense": 69,
     "stamina": 84,
@@ -7983,7 +8019,7 @@
     "weight": 3.2,
     "height": 0.3
   },
-  "762": {
+  "762_": {
     "attack": 78,
     "defense": 94,
     "stamina": 104,
@@ -7993,7 +8029,7 @@
     "weight": 8.2,
     "height": 0.71
   },
-  "763": {
+  "763_": {
     "attack": 222,
     "defense": 195,
     "stamina": 144,
@@ -8003,7 +8039,7 @@
     "weight": 21.4,
     "height": 1.14
   },
-  "764": {
+  "764_": {
     "attack": 165,
     "defense": 226,
     "stamina": 102,
@@ -8013,7 +8049,7 @@
     "weight": 0.3,
     "height": 0.1
   },
-  "765": {
+  "765_": {
     "attack": 168,
     "defense": 207,
     "stamina": 180,
@@ -8024,7 +8060,7 @@
     "weight": 76,
     "height": 1.5
   },
-  "766": {
+  "766_": {
     "attack": 222,
     "defense": 175,
     "stamina": 200,
@@ -8034,7 +8070,7 @@
     "weight": 82.8,
     "height": 2.01
   },
-  "767": {
+  "767_": {
     "attack": 67,
     "defense": 79,
     "stamina": 50,
@@ -8045,7 +8081,7 @@
     "weight": 12,
     "height": 0.51
   },
-  "768": {
+  "768_": {
     "attack": 218,
     "defense": 249,
     "stamina": 150,
@@ -8056,7 +8092,7 @@
     "weight": 108,
     "height": 2.01
   },
-  "769": {
+  "769_": {
     "attack": 120,
     "defense": 133,
     "stamina": 110,
@@ -8067,7 +8103,7 @@
     "weight": 70,
     "height": 0.51
   },
-  "770": {
+  "770_": {
     "attack": 178,
     "defense": 194,
     "stamina": 170,
@@ -8078,7 +8114,7 @@
     "weight": 250,
     "height": 1.3
   },
-  "771": {
+  "771_": {
     "attack": 97,
     "defense": 224,
     "stamina": 110,
@@ -8088,7 +8124,7 @@
     "weight": 1.2,
     "height": 0.3
   },
-  "772": {
+  "772_": {
     "attack": 184,
     "defense": 184,
     "stamina": 190,
@@ -8098,7 +8134,7 @@
     "weight": 120.5,
     "height": 1.91
   },
-  "773": {
+  "773_": {
     "attack": 198,
     "defense": 198,
     "stamina": 190,
@@ -8108,7 +8144,7 @@
     "weight": 100.5,
     "height": 2.31
   },
-  "774": {
+  "774_": {
     "attack": 116,
     "defense": 194,
     "stamina": 120,
@@ -8119,7 +8155,7 @@
     "weight": 40,
     "height": 0.3
   },
-  "775": {
+  "775_": {
     "attack": 216,
     "defense": 179,
     "stamina": 130,
@@ -8129,7 +8165,7 @@
     "weight": 19.9,
     "height": 0.41
   },
-  "776": {
+  "776_": {
     "attack": 165,
     "defense": 238,
     "stamina": 120,
@@ -8140,7 +8176,7 @@
     "weight": 212,
     "height": 2.01
   },
-  "777": {
+  "777_": {
     "attack": 190,
     "defense": 150,
     "stamina": 130,
@@ -8151,7 +8187,7 @@
     "weight": 3.3,
     "height": 0.3
   },
-  "778": {
+  "778_": {
     "attack": 177,
     "defense": 213,
     "stamina": 110,
@@ -8162,7 +8198,7 @@
     "weight": 0.7,
     "height": 0.2
   },
-  "779": {
+  "779_": {
     "attack": 208,
     "defense": 145,
     "stamina": 136,
@@ -8173,7 +8209,7 @@
     "weight": 19,
     "height": 0.89
   },
-  "780": {
+  "780_": {
     "attack": 231,
     "defense": 167,
     "stamina": 156,
@@ -8184,7 +8220,7 @@
     "weight": 185,
     "height": 3
   },
-  "781": {
+  "781_": {
     "attack": 233,
     "defense": 184,
     "stamina": 140,
@@ -8195,7 +8231,7 @@
     "weight": 210,
     "height": 3.91
   },
-  "782": {
+  "782_": {
     "attack": 102,
     "defense": 118,
     "stamina": 90,
@@ -8205,7 +8241,7 @@
     "weight": 29.7,
     "height": 0.61
   },
-  "783": {
+  "783_": {
     "attack": 145,
     "defense": 172,
     "stamina": 110,
@@ -8216,7 +8252,7 @@
     "weight": 47,
     "height": 1.14
   },
-  "784": {
+  "784_": {
     "attack": 222,
     "defense": 250,
     "stamina": 150,
@@ -8227,7 +8263,7 @@
     "weight": 78.2,
     "height": 1.6
   },
-  "785": {
+  "785_": {
     "attack": 250,
     "defense": 186,
     "stamina": 140,
@@ -8238,7 +8274,7 @@
     "weight": 20.5,
     "height": 1.8
   },
-  "786": {
+  "786_": {
     "attack": 259,
     "defense": 229,
     "stamina": 140,
@@ -8249,7 +8285,7 @@
     "weight": 18.6,
     "height": 1.19
   },
-  "787": {
+  "787_": {
     "attack": 249,
     "defense": 225,
     "stamina": 140,
@@ -8260,7 +8296,7 @@
     "weight": 45.5,
     "height": 1.91
   },
-  "788": {
+  "788_": {
     "attack": 189,
     "defense": 261,
     "stamina": 140,
@@ -8271,7 +8307,7 @@
     "weight": 21.2,
     "height": 1.3
   },
-  "789": {
+  "789_": {
     "attack": 54,
     "defense": 57,
     "stamina": 86,
@@ -8281,7 +8317,7 @@
     "weight": 0.1,
     "height": 0.2
   },
-  "790": {
+  "790_": {
     "attack": 54,
     "defense": 242,
     "stamina": 86,
@@ -8291,7 +8327,7 @@
     "weight": 999.9,
     "height": 0.1
   },
-  "791": {
+  "791_": {
     "attack": 280,
     "defense": 219,
     "stamina": 274,
@@ -8302,7 +8338,7 @@
     "weight": 230,
     "height": 3.4
   },
-  "792": {
+  "792_": {
     "attack": 280,
     "defense": 219,
     "stamina": 274,
@@ -8313,7 +8349,7 @@
     "weight": 120,
     "height": 3.99
   },
-  "793": {
+  "793_": {
     "attack": 249,
     "defense": 254,
     "stamina": 218,
@@ -8324,7 +8360,7 @@
     "weight": 55.5,
     "height": 1.19
   },
-  "794": {
+  "794_": {
     "attack": 259,
     "defense": 259,
     "stamina": 214,
@@ -8335,7 +8371,7 @@
     "weight": 333.6,
     "height": 2.39
   },
-  "795": {
+  "795_": {
     "attack": 316,
     "defense": 85,
     "stamina": 142,
@@ -8346,7 +8382,7 @@
     "weight": 25,
     "height": 1.8
   },
-  "796": {
+  "796_": {
     "attack": 330,
     "defense": 144,
     "stamina": 166,
@@ -8356,7 +8392,7 @@
     "weight": 100,
     "height": 3.81
   },
-  "797": {
+  "797_": {
     "attack": 207,
     "defense": 200,
     "stamina": 194,
@@ -8367,7 +8403,7 @@
     "weight": 999.9,
     "height": 9.19
   },
-  "798": {
+  "798_": {
     "attack": 355,
     "defense": 253,
     "stamina": 118,
@@ -8378,7 +8414,7 @@
     "weight": 0.1,
     "height": 0.3
   },
-  "799": {
+  "799_": {
     "attack": 188,
     "defense": 99,
     "stamina": 446,
@@ -8389,7 +8425,7 @@
     "weight": 888,
     "height": 5.51
   },
-  "800": {
+  "800_": {
     "attack": 251,
     "defense": 201,
     "stamina": 194,
@@ -8399,7 +8435,7 @@
     "weight": 230,
     "height": 2.39
   },
-  "801": {
+  "801_": {
     "attack": 246,
     "defense": 225,
     "stamina": 160,

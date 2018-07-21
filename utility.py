@@ -86,6 +86,7 @@ def load_locale(fp):
     global locale
     with open(fp) as f:
         locale = json.load(f)
+    return locale
 
 
 def load_gyms(fp):
@@ -99,7 +100,10 @@ def load_gyms(fp):
 
 
 def get_pokemon_id_from_name(pkmn):
-    return locale['pokemon'].get(pkmn)
+    pid = locale['pokemon'].get(pkmn)
+    if isinstance(pid, int):
+        pid = str(pid).zfill(3) + '_'
+    return pid
 
 
 def pokemon_match(pkmn):
@@ -111,7 +115,7 @@ def pokemon_match(pkmn):
 
 
 def get_cp_range(pid, level):
-    stats = base_stats["{0:03d}".format(pid)]
+    stats = base_stats["{}".format(pid)]
     cpm = cp_multipliers['{}'.format(level)]
 
     min_cp = int(((stats['attack'] + 10.0) *
@@ -127,11 +131,19 @@ def get_cp_range(pid, level):
     return min_cp, max_cp
 
 
+def get_name(pid, pkmn):
+    stats = base_stats["{}".format(pid)]
+    name = pkmn
+    if "name" in stats:
+        name = stats.get("name")
+    return name
+
+
 def get_types(pid):
-    stats = base_stats["{0:03d}".format(pid)]
-    type1 = locale["types"]["{0:03d}".format(stats.get("type1"))]
+    stats = base_stats["{}".format(pid)]
+    type1 = locale["types"]["{}".format(stats.get("type1"))]
     if "type2" in stats:
-        type2 = locale["types"]["{0:03d}".format(stats.get("type2"))]
+        type2 = locale["types"]["{}".format(stats.get("type2"))]
     else:
         type2 = None
     return type1, type2

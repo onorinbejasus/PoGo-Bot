@@ -14,7 +14,7 @@ from datetime import datetime, timedelta
 from utility import getfieldbyname, check_footer, \
     getrolefromname, get_static_map_url, load_locale, load_base_stats, \
     load_cp_multipliers, load_gyms, get_gym_coords, get_cp_range, \
-    get_pokemon_id_from_name, printr, pokemon_match, check_roles, get_types
+    get_pokemon_id_from_name, printr, pokemon_match, check_roles, get_types, get_name
 
 BOT_PREFIX = "!"
 BOT_TOKEN = None
@@ -492,8 +492,8 @@ async def raid(ctx, pkmn, *, locationtime):
     lt = locationtime.rsplit(" ", 1)
     if len(lt) > 1:
         if re.search(r'[0-9]', str(lt[-1])):
-            location = lt[0].strip()
             timer = lt[1].strip()
+            location =  lt[0].strip()
         else:
             location = locationtime.strip()
             timer = "Unset"
@@ -519,6 +519,7 @@ async def raid(ctx, pkmn, *, locationtime):
     thumb = None
     descrip = ""
     match = pokemon_match(pkmn)
+    name = ""
     if match:
         pkmn = match
     pkmn = string.capwords(pkmn, "-")
@@ -526,16 +527,17 @@ async def raid(ctx, pkmn, *, locationtime):
     if pid:
         if IMAGE_URL:
             thumb = IMAGE_URL.format(pid)
-
+		
         mincp20, maxcp20 = get_cp_range(pid, 20)
         mincp25, maxcp25 = get_cp_range(pid, 25)
+        name = get_name(pid, pkmn)
 
         descrip = "CP: ({}-{})\nWB: ({}-{})".format(mincp20, maxcp20,
                                                     mincp25, maxcp25)
     else:
         printr("Pokemon id not found for {}".format(pkmn))
 
-    embed = discord.Embed(title="Raid - {}".format(pkmn),
+    embed = discord.Embed(title="Raid - {}".format(name),
                           description=descrip)
     embed.set_author(name=ctx.message.author.name)
     if thumb:
