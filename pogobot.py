@@ -145,6 +145,7 @@ async def on_reaction_add(message, emoji, user):
                 ask = await channel.send("{}, edit raid at {}? (delete, pokemon, "
                                          "location, time, role, cancel)"
                                          .format(user.mention, loc))
+                print(user.name)
         except:
             print("Unexpected error:", sys.exc_info()[0])
         try:
