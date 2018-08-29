@@ -138,16 +138,13 @@ async def on_reaction_add(message, emoji, user):
                 await ask.delete()
         return
     if emoji.name == "🖍":
-        try:
-            if message.embeds[0].author.name == user.name or \
-                    check_roles(user, MOD_ROLE_ID) or \
-                    check_roles(user, RAID_ROLE_ID):
-                ask = await channel.send("{}, edit raid at {}? (delete, pokemon, "
-                                         "location, time, role, cancel)"
-                                         .format(user.mention, loc))
-                print(user.name)
-        except:
-            print("Unexpected error:", sys.exc_info()[0])
+
+        if message.embeds[0].author.name == user.name or \
+                check_roles(user, MOD_ROLE_ID) or \
+                check_roles(user, RAID_ROLE_ID):
+            ask = await channel.send("{}, edit raid at {}? (delete, pokemon, "
+                                     "location, time, role, cancel)"
+                                     .format(user.mention, loc))
         try:
             msg = await bot.wait_for("message", timeout=30.0, check=confirm)
             if msg.content.lower().startswith("del"):    # delete post
