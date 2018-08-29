@@ -138,9 +138,8 @@ async def on_reaction_add(message, emoji, user):
                 await ask.delete()
         return
     if emoji.name == "🖍":
-        if message.embeds[0].author.name == user.name or \
-                check_roles(user, MOD_ROLE_ID) or \
-                check_roles(user, RAID_ROLE_ID):
+        if message.embeds[0].author == user.name or \
+                check_roles(user, MOD_ROLE_ID):
             ask = await channel.send("{}, edit raid at {}? (delete, pokemon, "
                                      "location, time, role, cancel)"
                                      .format(user.mention, loc))
@@ -1240,8 +1239,8 @@ async def notify_exraid(msg, coords=None):
     await msg.edit(embed=embed)
 
 
-async def checkmod(ctx):
-    if not check_roles(ctx.message.author, MOD_ROLE_ID):
+async def checkmod(ctx, role):
+    if not check_roles(ctx.message.author, role):
         printr("Not a mod!")
         await ctx.send("You must be a mod in order to use " +
                        "this command!", delete_after=10)
