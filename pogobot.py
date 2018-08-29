@@ -115,7 +115,7 @@ async def on_reaction_add(message, emoji, user):
     loc = loc.value if loc else "Unknown"
     if emoji.name == "❌":
         if check_roles(user, MOD_ROLE_ID) or \
-                message.embeds[0].author.name == user.name:
+                message.embeds[0].author == user.name:
             ask = await channel.send("{} are you sure you would like to "
                                      "delete raid *{}*? (yes/ignore)"
                                      .format(user.mention, loc))
@@ -139,7 +139,7 @@ async def on_reaction_add(message, emoji, user):
         return
     if emoji.name == "🖍":
 
-        if message.embeds[0].author.name == user.name or \
+        if message.embeds[0].author == user.name or \
                 check_roles(user, MOD_ROLE_ID) or \
                 check_roles(user, RAID_ROLE_ID):
             ask = await channel.send("{}, edit raid at {}? (delete, pokemon, "
