@@ -4,7 +4,7 @@ import re
 import string
 
 import discord
-import os, sys
+import os
 
 from discord.ext import commands
 import asyncio
@@ -138,99 +138,96 @@ async def on_reaction_add(message, emoji, user):
                 await ask.delete()
         return
     if emoji.name == "🖍":
-
-        if message.embeds[0].author == user.name or \
+        if message.embeds[0].author.name == user.name or \
                 check_roles(user, MOD_ROLE_ID) or \
                 check_roles(user, RAID_ROLE_ID):
             ask = await channel.send("{}, edit raid at {}? (delete, pokemon, "
                                      "location, time, role, cancel)"
                                      .format(user.mention, loc))
-        try:
-            msg = await bot.wait_for("message", timeout=30.0, check=confirm)
-            if msg.content.lower().startswith("del"):    # delete post
-                printr("Raid {} deleted by user {}".format(loc, user.name))
-                await channel.send("Raid **{}** deleted by {}"
-                                   .format(loc, user.mention),
-                                   delete_after=20.0)
-                await message.delete()
-            elif msg.content.lower().startswith("p"):    # change pokemon
-                if " " in msg.content:
-                    pkmn = msg.content.split(' ', 1)[1].strip()
-                    await editraidpokemon(message, pkmn)
-                    location = getfieldbyname(message.embeds[0].fields,
-                                              "Location:")
-                    loc = location.value if location else "Unknown"
-                    await channel.send("Updated Raid at *{}* to **{}**"
-                                       .format(loc, pkmn))
-                else:
-                    await channel.send("{}, unable to process pokemon!"
-                                       .format(user.mention),
+            try:
+                msg = await bot.wait_for("message", timeout=30.0, check=confirm)
+                if msg.content.lower().startswith("del"):    # delete post
+                    printr("Raid {} deleted by user {}".format(loc, user.name))
+                    await channel.send("Raid **{}** deleted by {}"
+                                       .format(loc, user.mention),
                                        delete_after=20.0)
-            elif msg.content.lower().startswith("l"):  # change location
-                if " " in msg.content:
-                    loc = msg.content.split(' ', 1)[1].strip()
-                    location = getfieldbyname(message.embeds[0].fields,
-                                              "Location:")
-                    await editraidlocation(message, loc)
-                    await channel.send(
-                        "Updated Raid at {} to **{}**"
-                        .format(location.value if location else "Unknown",
-                                loc))
+                    await message.delete()
+                elif msg.content.lower().startswith("p"):    # change pokemon
+                    if " " in msg.content:
+                        pkmn = msg.content.split(' ', 1)[1].strip()
+                        await editraidpokemon(message, pkmn)
+                        location = getfieldbyname(message.embeds[0].fields,
+                                                  "Location:")
+                        loc = location.value if location else "Unknown"
+                        await channel.send("Updated Raid at *{}* to **{}**"
+                                           .format(loc, pkmn))
+                    else:
+                        await channel.send("{}, unable to process pokemon!"
+                                           .format(user.mention),
+                                           delete_after=20.0)
+                elif msg.content.lower().startswith("l"):  # change location
+                    if " " in msg.content:
+                        loc = msg.content.split(' ', 1)[1].strip()
+                        location = getfieldbyname(message.embeds[0].fields,
+                                                  "Location:")
+                        await editraidlocation(message, loc)
+                        await channel.send(
+                            "Updated Raid at {} to **{}**"
+                            .format(location.value if location else "Unknown",
+                                    loc))
+                    else:
+                        await channel.send("{}, unable to process location!"
+                                           .format(user.mention),
+                                           delete_after=20.0)
+                elif msg.content.lower().startswith("t"):  # change time
+                    if " " in msg.content:
+                        timer = msg.content.split(' ', 1)[1]
+                        await editraidtime(message, timer)
+                        location = getfieldbyname(message.embeds[0].fields,
+                                                  "Location:")
+                        await channel.send(
+                            "Updated Raid at *{}* to time: **{}**"
+                            .format(location.value if location else "Unknown",
+                                    timer))
+                    else:
+                        await channel.send("{}, unable to process time!"
+                                           .format(user.mention),
+                                           delete_after=30.0)
+                    await message.remove_reaction(emoji, user)
+                elif msg.content.lower().startswith("r"):  # change role
+                    printr("Edit role")
+                    if not check_footer(message, "ex-"):
+                        await channel.send("{}, not an Ex-raid, "
+                                           "cannot change role."
+                                           .format(user.mention),
+                                           delete_after=20.0)
+                    elif " " in msg.content:
+                        role = msg.content.split(' ', 1)[1]
+                        printr(role)
+                        await editraidrole(message, role)
+                        location = getfieldbyname(message.embeds[0].fields,
+                                                  "Location:")
+                        await channel.send(
+                            "Updated Raid at *{}* to role: **{}**"
+                            .format(location.value if location else "Unknown",
+                                    role))
+                    else:
+                        await channel.send("{}, unable to process role!"
+                                           .format(user.mention),
+                                           delete_after=30.0)
                 else:
-                    await channel.send("{}, unable to process location!"
-                                       .format(user.mention),
-                                       delete_after=20.0)
-            elif msg.content.lower().startswith("t"):  # change time
-                if " " in msg.content:
-                    timer = msg.content.split(' ', 1)[1]
-                    await editraidtime(message, timer)
-                    location = getfieldbyname(message.embeds[0].fields,
-                                              "Location:")
-                    await channel.send(
-                        "Updated Raid at *{}* to time: **{}**"
-                        .format(location.value if location else "Unknown",
-                                timer))
-                else:
-                    await channel.send("{}, unable to process time!"
-                                       .format(user.mention),
-                                       delete_after=30.0)
+                    await channel.send("{}, I do not understand that option."
+                                       .format(user.mention), delete_after=20.0)
+                await ask.delete()
+                await msg.delete()
                 await message.remove_reaction(emoji, user)
-            elif msg.content.lower().startswith("r"):  # change role
-                printr("Edit role")
-                if not check_footer(message, "ex-"):
-                    await channel.send("{}, not an Ex-raid, "
-                                       "cannot change role."
-                                       .format(user.mention),
-                                       delete_after=20.0)
-                elif " " in msg.content:
-                    role = msg.content.split(' ', 1)[1]
-                    printr(role)
-                    await editraidrole(message, role)
-                    location = getfieldbyname(message.embeds[0].fields,
-                                              "Location:")
-                    await channel.send(
-                        "Updated Raid at *{}* to role: **{}**"
-                        .format(location.value if location else "Unknown",
-                                role))
-                else:
-                    await channel.send("{}, unable to process role!"
-                                       .format(user.mention),
-                                       delete_after=30.0)
-            else:
-                await channel.send("{}, I do not understand that option."
+                return
+            except asyncio.TimeoutError:
+                await message.remove_reaction(emoji, user)
+                await channel.send("{} response timed out. Try again."
                                    .format(user.mention), delete_after=20.0)
-            await ask.delete()
-            await msg.delete()
-            await message.remove_reaction(emoji, user)
-            return
-        except asyncio.TimeoutError:
-            await message.remove_reaction(emoji, user)
-            await channel.send("{} response timed out. Try again."
-                               .format(user.mention), delete_after=20.0)
-            await ask.delete()
-            return
-        except:
-            print("Unexpected error:", sys.exc_info()[0])
+                await ask.delete()
+                return
 
     if message.embeds and check_footer(message, "raid"):
         printr("notifying raid {}: {}".format(loc, user.name))
