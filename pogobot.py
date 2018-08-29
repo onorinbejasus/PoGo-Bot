@@ -107,7 +107,7 @@ async def on_reaction_add(message, emoji, user):
             return True
         return False
 
-    with open('logs.txt', 'ab') as f:
+    with open('logs.txt', 'a') as f:
         f.write(user.name)
 
     channel = message.channel
