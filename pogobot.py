@@ -107,6 +107,9 @@ async def on_reaction_add(message, emoji, user):
             return True
         return False
 
+    with open('logs.txt', 'ab') as f:
+        f.write(user.name)
+
     channel = message.channel
     if user == bot.user or message.author != bot.user or \
             not message.embeds:
