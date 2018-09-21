@@ -153,6 +153,7 @@ def get_gym_coords(gn):
     results = process.extractBests(gn, gym_names, scorer=fuzz.partial_ratio,
                                    score_cutoff=70)
     if not results:
+        print("no results")
         return None
     if len(results) > 1:
         results = process.extractBests(gn, gym_names, scorer=fuzz.ratio,
@@ -166,6 +167,7 @@ def get_gym_coords(gn):
     name, match = results[0]
     printr("{} matched {} with score {}".format(gn, name, match))
     for d in gyms:
+        print(d.get("name"))
         if name == d.get("name"):
             print(d.get("latitude"), d.get("longitude"))
             return [d.get("latitude"), d.get("longitude")]
