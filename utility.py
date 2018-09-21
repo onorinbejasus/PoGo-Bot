@@ -167,6 +167,7 @@ def get_gym_coords(gn):
     printr("{} matched {} with score {}".format(gn, name, match))
     for d in gyms:
         if name == d.get("name"):
+            print(d.get("latitude"), d.get("longitude"))
             return [d.get("latitude"), d.get("longitude")]
 
     return None
