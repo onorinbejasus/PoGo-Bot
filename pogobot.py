@@ -14,7 +14,8 @@ from datetime import datetime, timedelta
 from utility import getfieldbyname, check_footer, \
     getrolefromname, get_static_map_url, load_locale, load_base_stats, \
     load_cp_multipliers, load_gyms, get_gym_coords, get_cp_range, \
-    get_pokemon_id_from_name, printr, pokemon_match, check_roles, get_types, get_name
+    get_pokemon_id_from_name, printr, pokemon_match, check_roles, get_types, get_name, \
+    get_map_dir_url
 
 BOT_PREFIX = "!"
 BOT_TOKEN = None
@@ -548,8 +549,12 @@ async def raid(ctx, pkmn, *, locationtime):
     if thumb:
         embed.set_thumbnail(url=thumb)
     coords = get_gym_coords(location)
+    map_image = None
+    map_dir = None
     if coords and GMAPS_KEY:
         map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+        map_dir = get_map_dir_url(coords[0], coords[1])
+
         embed.set_image(url=map_image)
     embed.add_field(name="Location:", value=location, inline=True)
     embed.add_field(name="Proposed Time:", value=timer + "\n", inline=True)
@@ -561,6 +566,10 @@ async def raid(ctx, pkmn, *, locationtime):
     embed.add_field(name=str(getEmoji("instinct")) + "__Instinct (0)__",
                     value="[]", inline=True)
     embed.add_field(name="**Total:**", value="0", inline=False)
+
+    if map_dir:
+        embed.add_field(name="**Directions**", value="[Map Link](" + map_dir + ")", inline=False)
+
     embed.set_footer(text="raid")
     msg = await ctx.send(embed=embed)
     await asyncio.sleep(0.1)

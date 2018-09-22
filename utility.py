@@ -69,6 +69,13 @@ def get_static_map_url(lat, lng, width='250', height='125',
         map_ += ('&key=%s' % api_key)
     return map_
 
+# Returns a direction url with <lat> and <lng> parameters
+# Taken and modified from PokeAlarm
+def get_map_dir_url(lat, lng):
+    center = '{},{}'.format(lat, lng)
+    map_ = ('https://www.google.com/maps/dir//' + center)
+    return map_
+
 
 def load_base_stats(fp):
     global base_stats
