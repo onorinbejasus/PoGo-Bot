@@ -1062,7 +1062,7 @@ async def notify_raid(msg, coords=None):
                 if user.name in user_guests:
                     guest = "+{}".format(user_guests.get(user.name), "")
                 mystic += user.name + guest + user_ready.get(user.name, "") \
-                    + ","
+                    + ", "
                 m_tot += 1
                 total += 1
             mystic = mystic.rstrip(", ")
@@ -1074,8 +1074,8 @@ async def notify_raid(msg, coords=None):
                 guest = ""
                 if user.name in user_guests:
                     guest = "+{}".format(user_guests.get(user.name), "")
-                valor += user.mention + guest + user_ready.get(user.name, "") \
-                    + ","
+                valor += user.name + guest + user_ready.get(user.name, "") \
+                    + ", "
                 v_tot += 1
                 total += 1
             valor = valor.rstrip(", ")
@@ -1087,8 +1087,8 @@ async def notify_raid(msg, coords=None):
                 guest = ""
                 if user.name in user_guests:
                     guest = "+{}".format(user_guests.get(user.name), "")
-                instinct += user.mention + guest + \
-                    user_ready.get(user.name, "") + ","
+                instinct += user.name + guest + \
+                    user_ready.get(user.name, "") + ", "
                 i_tot += 1
                 total += 1
             instinct = instinct.rstrip(", ")
