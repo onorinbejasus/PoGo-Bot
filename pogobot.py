@@ -1061,7 +1061,7 @@ async def notify_raid(msg, coords=None):
                 guest = ""
                 if user.name in user_guests:
                     guest = "+{}".format(user_guests.get(user.name), "")
-                mystic += user.mention + guest + user_ready.get(user.name, "") \
+                mystic += user.name + guest + user_ready.get(user.name, "") \
                     + ","
                 m_tot += 1
                 total += 1
