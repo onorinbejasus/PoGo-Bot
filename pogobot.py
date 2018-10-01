@@ -142,6 +142,9 @@ async def on_reaction_add(message, emoji, user):
         if message.embeds[0].author == user.name or \
                 check_roles(user, MOD_ROLE_ID) or \
                 check_roles(user, RAID_ROLE_ID):
+
+            print("ask")
+
             ask = await channel.send("{}, edit raid at {}? (delete, pokemon, "
                                      "location, time, role, cancel)"
                                      .format(user.mention, loc))
