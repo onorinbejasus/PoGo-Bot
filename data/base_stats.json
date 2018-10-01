@@ -4067,9 +4067,39 @@
     "weight": 1.1,
     "height": 0.3
   },
-  "386_": {
+  "386normal_": {
     "attack": 345,
     "defense": 115,
+    "stamina": 100,
+    "type1": 14,
+    "legendary": true,
+    "generation": 3,
+    "weight": 60.8,
+    "height": 1.7
+  },
+    "386attack_": {
+    "attack": 414,
+    "defense": 46,
+    "stamina": 100,
+    "type1": 14,
+    "legendary": true,
+    "generation": 3,
+    "weight": 60.8,
+    "height": 1.7
+  },
+    "386speed_": {
+    "attack": 230,
+    "defense": 218,
+    "stamina": 100,
+    "type1": 14,
+    "legendary": true,
+    "generation": 3,
+    "weight": 60.8,
+    "height": 1.7
+  },
+    "386defense_": {
+    "attack": 144,
+    "defense": 330,
     "stamina": 100,
     "type1": 14,
     "legendary": true,
