@@ -33,7 +33,7 @@ bot = commands.Bot(command_prefix=BOT_PREFIX, case_insensitive=True,
 
 running_updater = False
 
-reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍"]
+reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍"]#, "🔃"]
 
 
 @bot.event
@@ -229,6 +229,19 @@ async def on_reaction_add(message, emoji, user):
                                    .format(user.mention), delete_after=20.0)
                 await ask.delete()
                 return
+    if emoji.name == "🔃":
+        if message.embeds[0].author == user.name or \
+                check_roles(user, MOD_ROLE_ID) or \
+                check_roles(user, RAID_ROLE_ID):
+            try:
+
+                await message.remove_reaction(emoji, user)
+                return
+            except asyncio.TimeoutError:
+                await message.remove_reaction(emoji, user)
+                await channel.send("{} response timed out. Try again."
+                                   .format(user.mention), delete_after=20.0)
+                return
 
     if message.embeds and check_footer(message, "raid"):
         printr("notifying raid {}: {}".format(loc, user.name))
@@ -257,7 +270,7 @@ async def on_reaction_remove(message, emoji, user):
         loc = loc.value
     else:
         loc = "Unknown"
-    if emoji.name == "❌" or emoji.name == "🖍" or \
+    if emoji.name == "❌" or emoji.name == "🖍" or emoji.name == "🔃" or \
             emoji.name not in reaction_list:
         return
     if check_footer(message, "raid"):
@@ -314,7 +327,7 @@ async def beast(ctx):
              brief="[MOD] Clear all members from role. !clearrole [role_name]",
              pass_context=True)
 async def clearrole(ctx, rolex=None):
-    if not await checkmod(ctx):
+    if not await checkmod(ctx, MOD_ROLE_ID):
         return
     if not rolex:
         cname = ctx.message.channel.name
@@ -353,7 +366,7 @@ async def purge(ctx, pinned=False):
             return True
         return False
 
-    if await checkmod(ctx):
+    if await checkmod(ctx, MOD_ROLE_ID):
         ask = await ctx.send("Are you sure you would like to clear the last 100"
                              " messages? (yes/no)")
         try:
@@ -388,7 +401,7 @@ async def donate(ctx):
              brief="[MOD] Manually scan channel for ex-raid posts. !scanex ",
              pass_context=True)
 async def scanex(ctx):
-    if not await checkmod(ctx):
+    if not await checkmod(ctx, MOD_ROLE_ID):
         return
 
     await manualexscan(ctx.message.channel)
@@ -402,7 +415,7 @@ async def scanex(ctx):
              pass_context=True)
 async def exupdater(ctx, minutes=5):
     global running_updater
-    if not await checkmod(ctx):
+    if not await checkmod(ctx,MOD_ROLE_ID):
         return
 
     ctx.message.delete()
@@ -454,7 +467,7 @@ async def clearraids(ctx):
     def raid(msg):
         return msg.author == bot.user and check_footer(msg, "raid")
 
-    if not await checkmod(ctx):
+    if not await checkmod(ctx,MOD_ROLE_ID):
         return
     await ctx.message.channel.purge(limit=500, check=raid)
     await ctx.send("Cleared all raid posts", delete_after=10)
@@ -585,6 +598,10 @@ async def raid(ctx, pkmn, *, locationtime):
     await msg.add_reaction("3⃣")
     await asyncio.sleep(0.1)
     await msg.add_reaction("🖍")
+    await asyncio.sleep(0.1)
+    await msg.add_reaction("🔃")
+    await asyncio.sleep(0.1)
+
     await asyncio.sleep(7200)
     await msg.unpin()
 
