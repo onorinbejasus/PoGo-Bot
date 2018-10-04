@@ -142,6 +142,9 @@ async def on_reaction_add(message, emoji, user):
         if message.embeds[0].author == user.name or \
                 check_roles(user, MOD_ROLE_ID) or \
                 check_roles(user, RAID_ROLE_ID):
+
+            print("ask")
+
             ask = await channel.send("{}, edit raid at {}? (delete, pokemon, "
                                      "location, time, role, cancel)"
                                      .format(user.mention, loc))
@@ -1078,8 +1081,8 @@ async def notify_raid(msg, coords=None):
                 guest = ""
                 if user.name in user_guests:
                     guest = "+{}".format(user_guests.get(user.name), "")
-                mystic += user.mention + guest + user_ready.get(user.name, "") \
-                    + ","
+                mystic += user.name + guest + user_ready.get(user.name, "") \
+                    + ", "
                 m_tot += 1
                 total += 1
             mystic = mystic.rstrip(", ")
@@ -1091,8 +1094,8 @@ async def notify_raid(msg, coords=None):
                 guest = ""
                 if user.name in user_guests:
                     guest = "+{}".format(user_guests.get(user.name), "")
-                valor += user.mention + guest + user_ready.get(user.name, "") \
-                    + ","
+                valor += user.name + guest + user_ready.get(user.name, "") \
+                    + ", "
                 v_tot += 1
                 total += 1
             valor = valor.rstrip(", ")
@@ -1104,8 +1107,8 @@ async def notify_raid(msg, coords=None):
                 guest = ""
                 if user.name in user_guests:
                     guest = "+{}".format(user_guests.get(user.name), "")
-                instinct += user.mention + guest + \
-                    user_ready.get(user.name, "") + ","
+                instinct += user.name + guest + \
+                    user_ready.get(user.name, "") + ", "
                 i_tot += 1
                 total += 1
             instinct = instinct.rstrip(", ")
