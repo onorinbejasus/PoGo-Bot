@@ -565,8 +565,9 @@ async def raid(ctx, pkmn, *, locationtime):
     map_dir = None
     if coords and GMAPS_KEY:
         map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
-        embed.set_image(url=map_image)
-    map_dir = get_map_dir_url(coords[0], coords[1])
+        if map_image:
+            embed.set_image(url=map_image)
+        map_dir = get_map_dir_url(coords[0], coords[1])
     embed.add_field(name="Location:", value=location, inline=True)
     embed.add_field(name="Proposed Time:", value=timer + "\n", inline=True)
     embed.add_field(name="** **", value="** **", inline=False)
