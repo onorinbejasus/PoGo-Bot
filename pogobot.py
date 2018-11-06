@@ -1200,7 +1200,7 @@ async def notify_exraid(msg, coords=None):
                 mystic += user.name + guest + ", "
                 m_tot += 1
                 total += 1
-            mystic = mystic.rstrip(",")
+            mystic = mystic.rstrip(", ")
         elif reaction.emoji.name == 'valor':
             users = await reaction.users().flatten()
             for user in users:
