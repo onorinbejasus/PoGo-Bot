@@ -1192,12 +1192,12 @@ async def notify_exraid(msg, coords=None):
                     printr("User {} added to role {}".format(user.name,
                                                              role_name))
                     await msg.channel.send("{} you have been added to {}".
-                                           format(user.mention, role_name),
+                                           format(user.name, role_name),
                                            delete_after=30.0)
                 guest = "+{}".format(
                     user_guests.get(user.name), 0) if user.name in user_guests \
                     else ""
-                mystic += user.mention + guest + ","
+                mystic += user.name + guest + ","
                 m_tot += 1
                 total += 1
             mystic = mystic.rstrip(",")
@@ -1211,12 +1211,12 @@ async def notify_exraid(msg, coords=None):
                     printr("User {} added to role {}".format(user.name,
                                                              role_name))
                     await msg.channel.send("{} you have been added to {}".
-                                           format(user.mention, role_name),
+                                           format(user.name, role_name),
                                            delete_after=30.0)
                 guest = "+{}".format(
                     user_guests.get(user.name), 0) if user.name in user_guests \
                     else ""
-                valor += user.mention + guest + ","
+                valor += user.name + guest + ","
                 v_tot += 1
                 total += 1
             valor = valor.rstrip(", ")
@@ -1230,12 +1230,12 @@ async def notify_exraid(msg, coords=None):
                     printr("User {} added to role {}".format(user.name,
                                                              role_name))
                     await msg.channel.send("{} you have been added to {}".
-                                           format(user.mention, role_name),
+                                           format(user.name, role_name),
                                            delete_after=30.0)
                 guest = "+{}".format(
                     user_guests.get(user.name), 0) if user.name in user_guests \
                     else ""
-                instinct += user.mention + guest + ","
+                instinct += user.name + guest + ","
                 i_tot += 1
                 total += 1
             instinct = instinct.rstrip(", ")
