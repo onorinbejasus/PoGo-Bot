@@ -1197,7 +1197,7 @@ async def notify_exraid(msg, coords=None):
                 guest = "+{}".format(
                     user_guests.get(user.name), 0) if user.name in user_guests \
                     else ""
-                mystic += user.name + guest + ","
+                mystic += user.name + guest + ", "
                 m_tot += 1
                 total += 1
             mystic = mystic.rstrip(",")
@@ -1216,7 +1216,7 @@ async def notify_exraid(msg, coords=None):
                 guest = "+{}".format(
                     user_guests.get(user.name), 0) if user.name in user_guests \
                     else ""
-                valor += user.name + guest + ","
+                valor += user.name + guest + ", "
                 v_tot += 1
                 total += 1
             valor = valor.rstrip(", ")
@@ -1235,7 +1235,7 @@ async def notify_exraid(msg, coords=None):
                 guest = "+{}".format(
                     user_guests.get(user.name), 0) if user.name in user_guests \
                     else ""
-                instinct += user.name + guest + ","
+                instinct += user.name + guest + ", "
                 i_tot += 1
                 total += 1
             instinct = instinct.rstrip(", ")
