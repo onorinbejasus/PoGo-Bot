@@ -1300,7 +1300,7 @@ if __name__ == "__main__":
     GMAPS_KEY = cfg['PoGoBot'].get('GMapsKey') or None
     load_locale(os.path.join('locales', '{}.json'
                              .format(cfg['PoGoBot']['Locale'] or 'en')))
-    load_base_stats(os.path.join('data', 'base_stats.json'))
+    load_base_stats(os.path.join('data', 'base_stats_revised.json'))
     load_cp_multipliers(os.path.join('data', 'cp_multipliers.json'))
 
     if os.path.exists('gyms.json'):
