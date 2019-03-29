@@ -5160,6 +5160,17 @@
     "height": 3.71
   },
   "487_": {
+    "attack": 187,
+    "defense": 225,
+    "stamina": 284,
+    "type1": 8,
+    "type2": 16,
+    "legendary": true,
+    "generation": 4,
+    "weight": 750,
+    "height": 4.5
+  },
+  "487_o": {
     "attack": 225,
     "defense": 187,
     "stamina": 284,
