@@ -62,44 +62,50 @@ async def on_ready():
 @bot.event
 # Payload( PartialEmoji, Message_id, Channel_id, User_id)
 async def on_raw_reaction_add(*payload):
-    if len(payload) == 4:
-        emoji = payload[0]
-        mid = payload[1]
-        channel = bot.get_channel(payload[2])
-        user = channel.guild.get_member(payload[3]) if channel \
-            else bot.get_user(payload[3])
+    m_payload = payload[0]
+    try:
+        emoji = m_payload.emoji
+        mid = m_payload.message_id
+        channel = bot.get_channel(m_payload.channel_id)
+        user = channel.guild.get_member(m_payload.user_id) if channel else bot.get_user(m_payload.user_id)
+    except AttributeError:
+        printr("Attribute not found")
+        return
 
-        if not channel or (emoji and emoji.name not in reaction_list):
-            return
-        try:
-            message = await channel.get_message(mid)
-            if message:
-                await on_reaction_add(message, emoji, user)
-        except discord.NotFound:
-            printr("Message {} not found".format(mid))
+    if not channel or (emoji and emoji.name not in reaction_list):
+        return
+    try:
+        message = await channel.fetch_message(mid)
+        if message:
+            await on_reaction_add(message, emoji, user)
+    except discord.NotFound:
+        printr("Message {} not found".format(mid))
 
 
 @bot.event
 # Payload( PartialEmoji, Message_id, Channel_id, User_id)
 async def on_raw_reaction_remove(*payload):
-    if len(payload) == 4:
-        emoji = payload[0]
-        mid = payload[1]
-        channel = bot.get_channel(payload[2])
-        user = channel.guild.get_member(payload[3]) if channel \
-            else bot.get_user(payload[3])
+    m_payload = payload[0]
+    try:
+        emoji = m_payload.emoji
+        mid = m_payload.message_id
+        channel = bot.get_channel(m_payload.channel_id)
+        user = channel.guild.get_member(m_payload.user_id) if channel else bot.get_user(m_payload.user_id)
+    except AttributeError:
+        printr("Attribute not found")
+        return
 
-        if emoji and emoji.name not in reaction_list:
-            return
+    if emoji and emoji.name not in reaction_list:
+        return
 
-        if not channel:
-            return
-        try:
-            message = await channel.get_message(mid)
-            if message:
-                await on_reaction_remove(message, emoji, user)
-        except:
-            printr("Message id {} not found".format(mid))
+    if not channel:
+        return
+    try:
+        message = await channel.fetch_message(mid)
+        if message:
+            await on_reaction_remove(message, emoji, user)
+    except discord.NotFound:
+        printr("Message id {} not found".format(mid))
 
 
 async def on_reaction_add(message, emoji, user):
@@ -545,7 +551,6 @@ async def raid(ctx, pkmn, *, locationtime):
     if pid:
         if IMAGE_URL:
             thumb = IMAGE_URL.format(pid)
-		
         mincp20, maxcp20 = get_cp_range(pid, 20)
         mincp25, maxcp25 = get_cp_range(pid, 25)
         name = get_name(pid, pkmn)
