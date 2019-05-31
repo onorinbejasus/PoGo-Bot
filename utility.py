@@ -21,7 +21,7 @@ def check_roles(member, roles):
     return False
 
 
-async def getrolefromname(guild, role_name, create_new_role=False):
+async def get_role_from_name(guild, role_name, create_new_role=False):
     roles = guild.roles
     role = None
     for r in roles:
@@ -35,7 +35,7 @@ async def getrolefromname(guild, role_name, create_new_role=False):
     return role
 
 
-def getfieldbyname(fields, name):
+def get_field_by_name(fields, name):
     for field in fields:
         if name.lower() in field.name.lower():
             return field
@@ -182,3 +182,7 @@ def get_gym_coords(gn):
 # Replace non-ascii characters with '?' and print
 def printr(s):
     print(re.sub(r'[^\x00-\x7F]', '?', str(s)))
+
+
+def scheduled_clear():
+    print("It Works!")

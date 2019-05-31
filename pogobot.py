@@ -5,14 +5,15 @@ import string
 
 import discord
 import os
+import schedule, time
 
 from discord.ext import commands
 import asyncio
 import configparser
 from datetime import datetime, timedelta
 
-from utility import getfieldbyname, check_footer, \
-    getrolefromname, get_static_map_url, load_locale, load_base_stats, \
+from utility import get_field_by_name, check_footer, scheduled_clear, \
+    get_role_from_name, get_static_map_url, load_locale, load_base_stats, \
     load_cp_multipliers, load_gyms, get_gym_coords, get_cp_range, \
     get_pokemon_id_from_name, printr, pokemon_match, check_roles, get_types, get_name, \
     get_map_dir_url
@@ -21,9 +22,11 @@ BOT_PREFIX = "!"
 BOT_TOKEN = None
 MOD_ROLE_ID = None
 RAID_ROLE_ID = None
+BOT_ROLE_ID = None
 ANYONE_RAID_POST = False
 IMAGE_URL = ""
 EGG_IMAGE_URL = ""
+RAID_CHANNELS = None
 EX_RAID_CHANNEL = None
 GMAPS_KEY = None
 PAYPAL_DONATION_LINK = "https://www.paypal.me/uicraids"
@@ -36,10 +39,23 @@ running_updater = False
 reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍"]#, "🔃"]
 
 
+async def raid_purge(channel):
+    return await channel.purge()
+
+
+def scheduled_purge(loop):
+    global bot
+    for channel_id in RAID_CHANNELS:
+        channel = bot.get_channel(int(channel_id))
+        loop.create_task(raid_purge(channel))
+        time.sleep(0.01)
+
+
 @bot.event
 @asyncio.coroutine
 async def on_ready():
     global running_updater
+
     printr(discord.version_info)
     printr('Logged in as: {}'.format(bot.user.name))
     printr('Bot ID: {}'.format(bot.user.id))
@@ -50,14 +66,14 @@ async def on_ready():
     printr("GMaps Key: {}...".format(GMAPS_KEY[:10]))
     printr('------')
 
-    # if EX_RAID_CHANNEL:
-    #     exchan = bot.get_channel(int(EX_RAID_CHANNEL))
-    #     if exchan:
-    #         running_updater = True
-    #         await exchan.send("Scanning ex-raid channel for updates",
-    #                           delete_after=30.0)
-    #         await exupdaterloop(exchan, 5)
+    loop = asyncio.get_event_loop()
+    # schedule.every(10).seconds.do(scheduled_purge, loop=loop)
+    schedule.every().day.at("00:01").do(scheduled_purge, loop=loop)
 
+    # Start a new continuous run thread.
+    schedule.run_continuously(0)
+    # Allow a small time for separate thread to register time stamps.
+    time.sleep(0.001)
 
 @bot.event
 # Payload( PartialEmoji, Message_id, Channel_id, User_id)
@@ -118,7 +134,7 @@ async def on_reaction_add(message, emoji, user):
     if user == bot.user or message.author != bot.user or \
             not message.embeds:
         return
-    loc = getfieldbyname(message.embeds[0].fields, "Location")
+    loc = get_field_by_name(message.embeds[0].fields, "Location")
     loc = loc.value if loc else "Unknown"
     if emoji.name == "❌":
         if check_roles(user, MOD_ROLE_ID) or \
@@ -166,7 +182,7 @@ async def on_reaction_add(message, emoji, user):
                     if " " in msg.content:
                         pkmn = msg.content.split(' ', 1)[1].strip()
                         await editraidpokemon(message, pkmn)
-                        location = getfieldbyname(message.embeds[0].fields,
+                        location = get_field_by_name(message.embeds[0].fields,
                                                   "Location:")
                         loc = location.value if location else "Unknown"
                         await channel.send("Updated Raid at *{}* to **{}**"
@@ -178,7 +194,7 @@ async def on_reaction_add(message, emoji, user):
                 elif msg.content.lower().startswith("l"):  # change location
                     if " " in msg.content:
                         loc = msg.content.split(' ', 1)[1].strip()
-                        location = getfieldbyname(message.embeds[0].fields,
+                        location = get_field_by_name(message.embeds[0].fields,
                                                   "Location:")
                         await editraidlocation(message, loc)
                         await channel.send(
@@ -193,7 +209,7 @@ async def on_reaction_add(message, emoji, user):
                     if " " in msg.content:
                         timer = msg.content.split(' ', 1)[1]
                         await editraidtime(message, timer)
-                        location = getfieldbyname(message.embeds[0].fields,
+                        location = get_field_by_name(message.embeds[0].fields,
                                                   "Location:")
                         await channel.send(
                             "Updated Raid at *{}* to time: **{}**"
@@ -215,7 +231,7 @@ async def on_reaction_add(message, emoji, user):
                         role = msg.content.split(' ', 1)[1]
                         printr(role)
                         await editraidrole(message, role)
-                        location = getfieldbyname(message.embeds[0].fields,
+                        location = get_field_by_name(message.embeds[0].fields,
                                                   "Location:")
                         await channel.send(
                             "Updated Raid at *{}* to role: **{}**"
@@ -274,7 +290,7 @@ async def on_reaction_add(message, emoji, user):
 async def on_reaction_remove(message, emoji, user):
     if user == bot.user and not message.embeds:
         return
-    loc = getfieldbyname(message.embeds[0].fields, "Location")
+    loc = get_field_by_name(message.embeds[0].fields, "Location")
     if loc:
         loc = loc.value
     else:
@@ -529,7 +545,7 @@ async def raid(ctx, pkmn, *, locationtime):
 
     async for msg in ctx.message.channel.history():
         if msg.author == bot.user and msg.embeds:
-            loc = getfieldbyname(msg.embeds[0].fields, "Location")
+            loc = get_field_by_name(msg.embeds[0].fields, "Location")
             if loc and location.lower() == loc.value.lower() and pkmn.lower() \
                     in msg.embeds[0].title.lower():
                 if (datetime.utcnow() - msg.created_at) < \
@@ -663,7 +679,7 @@ async def raidegg(ctx, level, *, locationtime):
 
     async for msg in ctx.message.channel.history():
         if msg.author == bot.user and msg.embeds:
-            loc = getfieldbyname(msg.embeds[0].fields, "Location")
+            loc = get_field_by_name(msg.embeds[0].fields, "Location")
             if loc and location.lower() == loc.value.lower() and level.lower() \
                     in msg.embeds[0].title.lower():
                 if (datetime.utcnow() - msg.created_at) < \
@@ -748,10 +764,10 @@ async def raidtime(ctx, loc, timer=None):
                     await ctx.message.delete()
                     return
                 else:
-                    total = getfieldbyname(msg.embeds[0].fields, "Total")
+                    total = get_field_by_name(msg.embeds[0].fields, "Total")
                     total = total.value if total else 0
-                    time = getfieldbyname(msg.embeds[0].fields, "Time:") or \
-                        getfieldbyname(msg.embeds[0].fields, "Date:")
+                    time = get_field_by_name(msg.embeds[0].fields, "Time:") or \
+                           get_field_by_name(msg.embeds[0].fields, "Date:")
                     await ctx.send(
                         "Raid at **{}** at time: **{}** has  **{} ** "
                         "people registered."
@@ -1165,7 +1181,7 @@ async def notify_exraid(msg, coords=None):
         role_name = None
     role = None
     if role_name and role_name != "ex-raid":
-        role = await getrolefromname(msg.guild, role_name, True)
+        role = await get_role_from_name(msg.guild, role_name, True)
     user_guests = {}
     for reaction in msg.reactions:
         if isinstance(reaction.emoji, str):
@@ -1277,7 +1293,6 @@ async def notify_exraid(msg, coords=None):
 
 async def checkmod(ctx, role):
     if not check_roles(ctx.message.author, role):
-        printr("Not a mod!")
         await ctx.send("You must be a mod in order to use " +
                        "this command!", delete_after=10)
         await ctx.message.delete()
@@ -1295,8 +1310,13 @@ if __name__ == "__main__":
     bot.command_prefix = cfg['PoGoBot']['BotPrefix'] or "!"
     MOD_ROLE_ID = cfg['PoGoBot'].get('ModRoleID') or -1
     RAID_ROLE_ID = cfg['PoGoBot'].get('RaidRoleID') or -1
+    BOT_ROLE_ID = cfg['PoGoBot'].get('BotRoleID') or -1
     if ',' in str(RAID_ROLE_ID):
         RAID_ROLE_ID = [x.strip() for x in RAID_ROLE_ID.split(",")]
+
+    RAID_CHANNELS = cfg['PoGoBot'].get('RaidChannels') or 0
+    if ',' in str(RAID_CHANNELS):
+        RAID_CHANNELS = [x.strip() for x in RAID_CHANNELS.split(",")]
 
     ANYONE_RAID_POST = cfg['PoGoBot'].get('AnyoneRaidPost') or False
     IMAGE_URL = cfg['PoGoBot'].get('ImageURL') or None
