@@ -68,7 +68,7 @@ async def on_ready():
 
     loop = asyncio.get_event_loop()
     # schedule.every(10).seconds.do(scheduled_purge, loop=loop)
-    schedule.every().day.at("05:01").do(scheduled_purge, loop=loop)
+    schedule.every().day.at("00:01").do(scheduled_purge, loop=loop)
 
     # Start a new continuous run thread.
     schedule.run_continuously(0)
@@ -382,7 +382,7 @@ async def clearrole(ctx, rolex=None):
 @bot.command(aliases=[],
              brief="[MOD] Purge messages from channel. !purge [pinned]",
              pass_context=True)
-async def purge(ctx, pinned=False):
+async def purge(ctx, pinned=False, after=None):
     def notpinned(message):
         return not message.pinned
 
@@ -404,7 +404,7 @@ async def purge(ctx, pinned=False):
         if msg.content.lower().startswith("y"):
             await ask.delete()
             await msg.delete()
-            await channel.purge(check=notpinned if not pinned else None)
+            await channel.purge(check=notpinned if not pinned else None, after=after)
             await asyncio.sleep(0.1)
         else:
             await ctx.send("Purge canceled.", delete_after=10.0)
