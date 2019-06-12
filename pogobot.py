@@ -39,15 +39,17 @@ running_updater = False
 reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍"]#, "🔃"]
 
 
-async def raid_purge(channel):
-    return await channel.purge()
+async def raid_purge(channel, after=None):
+    return await channel.purge(after=after)
 
 
 def scheduled_purge(loop):
     global bot
+    # Purge messages from the last 2 days
+    after = datetime.now() - timedelta(days=2)
     for channel_id in RAID_CHANNELS:
         channel = bot.get_channel(int(channel_id))
-        loop.create_task(raid_purge(channel))
+        loop.create_task(raid_purge(channel, after))
         time.sleep(0.01)
 
 
@@ -401,7 +403,12 @@ async def purge(ctx, pinned=False, after=None):
             await ask.delete()
             return
         channel = ctx.message.channel
+
         if msg.content.lower().startswith("y"):
+
+            if after:
+                after = datetime.now() - timedelta(days=int(after))
+
             await ask.delete()
             await msg.delete()
             await channel.purge(check=notpinned if not pinned else None, after=after)
