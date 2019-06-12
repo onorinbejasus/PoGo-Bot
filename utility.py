@@ -182,7 +182,3 @@ def get_gym_coords(gn):
 # Replace non-ascii characters with '?' and print
 def printr(s):
     print(re.sub(r'[^\x00-\x7F]', '?', str(s)))
-
-
-def scheduled_clear():
-    print("It Works!")

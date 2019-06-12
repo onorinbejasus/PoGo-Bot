@@ -4,7 +4,7 @@ import re
 import string
 
 import discord
-import os
+import os, sys
 import schedule, time
 
 from discord.ext import commands
@@ -12,7 +12,7 @@ import asyncio
 import configparser
 from datetime import datetime, timedelta
 
-from utility import get_field_by_name, check_footer, scheduled_clear, \
+from utility import get_field_by_name, check_footer, \
     get_role_from_name, get_static_map_url, load_locale, load_base_stats, \
     load_cp_multipliers, load_gyms, get_gym_coords, get_cp_range, \
     get_pokemon_id_from_name, printr, pokemon_match, check_roles, get_types, get_name, \
@@ -69,7 +69,6 @@ async def on_ready():
     printr('------')
 
     loop = asyncio.get_event_loop()
-    # schedule.every(10).seconds.do(scheduled_purge, loop=loop)
     schedule.every().day.at("00:01").do(scheduled_purge, loop=loop)
 
     # Start a new continuous run thread.
@@ -384,7 +383,7 @@ async def clearrole(ctx, rolex=None):
 @bot.command(aliases=[],
              brief="[MOD] Purge messages from channel. !purge [pinned]",
              pass_context=True)
-async def purge(ctx, pinned=False, after=None):
+async def purge(ctx, pinned=False, limit=100, after=None):
     def notpinned(message):
         return not message.pinned
 
@@ -402,23 +401,25 @@ async def purge(ctx, pinned=False, after=None):
             await ctx.message.delete()
             await ask.delete()
             return
+
         channel = ctx.message.channel
+        if after:
+            after = datetime.now() - timedelta(days=int(after))
 
-        if msg.content.lower().startswith("y"):
-
-            if after:
-                after = datetime.now() - timedelta(days=int(after))
-
-            await ask.delete()
-            await msg.delete()
-            await channel.purge(check=notpinned if not pinned else None, after=after)
-            await asyncio.sleep(0.1)
-        else:
-            await ctx.send("Purge canceled.", delete_after=10.0)
-            await ask.delete()
-            await msg.delete()
-            await ctx.message.delete()
-
+        try:
+            if msg.content.lower().startswith("y"):
+                await ask.delete()
+                await msg.delete()
+                await channel.purge(limit=limit, check=notpinned if not pinned else None, after=after)
+                time.sleep(0.01)
+                print("Purge Complete")
+            else:
+                await ctx.send("Purge canceled.", delete_after=10.0)
+                await ask.delete()
+                await msg.delete()
+                await ctx.message.delete()
+        except Exception:
+            print("Unexpected error:", sys.exc_info()[0])
 
 @bot.command(aliases=[],
              brief="Messages the donation link",
