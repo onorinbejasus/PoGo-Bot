@@ -3720,7 +3720,7 @@
         "base_defense": 225, 
         "base_stamina": 284, 
         "form": "Altered", 
-        "pokemon_id": 487, 
+        "pokemon_id": "487_a",
         "pokemon_name": "Giratina"
     }, 
     {
@@ -3728,7 +3728,7 @@
         "base_defense": 187, 
         "base_stamina": 284, 
         "form": "Origin", 
-        "pokemon_id": 487, 
+        "pokemon_id": "487_o",
         "pokemon_name": "Giratina"
     }, 
     {
