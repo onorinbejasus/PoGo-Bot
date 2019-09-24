@@ -1210,6 +1210,14 @@
         "base_stamina": 214, 
         "pokemon_id": 150, 
         "pokemon_name": "Mewtwo"
+    },
+       {
+        "base_attack":182,
+        "base_defense":278,
+        "base_stamina":214,
+        "pokemon_id": 150,
+        "pokemon_name": "Mewtwo",
+        "form":"Armored"
     }, 
     {
         "base_attack": 210, 
