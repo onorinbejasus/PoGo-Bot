@@ -1602,6 +1602,16 @@
     "weight": 122,
     "height": 2.01
   },
+   "150armored_": {
+    "attack": 182,
+    "defense": 278,
+    "stamina": 214,
+    "type1": 14,
+    "legendary": true,
+    "generation": 1,
+    "weight": 122,
+    "height": 2.01
+  },
   "151_": {
     "attack": 210,
     "defense": 210,
