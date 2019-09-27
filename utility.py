@@ -60,7 +60,7 @@ def deg2num(lat_deg, lon_deg, zoom):
 
 
 def get_open_static_map_url(lat, lng, zoom='15'):
-    x, y = deg2num(lat, lng, int(zoom))
+    x, y = deg2num(float(lat), float(lng), int(zoom))
     return 'https://a.tile.openstreetmap.org/' + str(x) + '/' + str(y) + '/' + zoom
 
 
@@ -68,7 +68,7 @@ def get_open_static_map_url(lat, lng, zoom='15'):
 # Taken and modified from PokeAlarm
 def get_static_map_url(lat, lng, width='250', height='125',
                        maptype='roadmap', zoom='15', api_key=None):
-    center = '{},{}'.format(float(lat), float(lng))
+    center = '{},{}'.format(lat, lng)
     query_center = 'center={}'.format(center)
     query_markers = 'markers=color:red%7C{}'.format(center)
     query_size = 'size={}x{}'.format(width, height)
