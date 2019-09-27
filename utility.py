@@ -81,6 +81,7 @@ def get_static_map_url(lat, lng, width='250', height='125',
 
     if api_key is not None:
         map_ += ('&key=%s' % api_key)
+    print(map_)
     return map_
 
 # Returns a direction url with <lat> and <lng> parameters
