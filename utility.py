@@ -2,6 +2,7 @@ import asyncio
 import json
 import re
 from fuzzywuzzy import fuzz, process
+import math
 
 base_stats = {}
 locale = {}
@@ -48,6 +49,19 @@ def check_footer(msg, val):
             if embed.footer and embed.footer.text.startswith(val):
                 return True
     return False
+
+
+def deg2num(lat_deg, lon_deg, zoom):
+    lat_rad = math.radians(lat_deg)
+    n = 2.0 ** zoom
+    xtile = int((lon_deg + 180.0) / 360.0 * n)
+    ytile = int((1.0 - math.asinh(math.tan(lat_rad)) / math.pi) / 2.0 * n)
+    return xtile, ytile
+
+
+def get_open_static_map_url(lat, lng, zoom='15'):
+    x, y = deg2num(lat, lng, int(zoom))
+    return 'https://a.tile.openstreetmap.org/' + str(x) + '/' + str(y) + '/' + zoom
 
 
 # Returns a static map url with <lat> and <lng> parameters for dynamic test

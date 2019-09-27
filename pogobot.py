@@ -13,7 +13,7 @@ import configparser
 from datetime import datetime, timedelta
 
 from utility import get_field_by_name, check_footer, \
-    get_role_from_name, get_static_map_url, load_locale, load_base_stats, \
+    get_role_from_name, get_static_map_url, get_open_static_map_url, load_locale, load_base_stats, \
     load_cp_multipliers, load_gyms, get_gym_coords, get_cp_range, \
     get_pokemon_id_from_name, printr, pokemon_match, check_roles, get_types, get_name, \
     get_map_dir_url
@@ -593,7 +593,8 @@ async def raid(ctx, pkmn, *, locationtime):
     map_image = None
     map_dir = None
     if coords and GMAPS_KEY:
-        map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+        # map_image = get_static_map_url(coords[0], coords[1], api_key=
+        map_image = get_open_static_map_url(coords[0], coords[1])
         if map_image is not None:
             embed.set_image(url=map_image)
         map_dir = get_map_dir_url(coords[0], coords[1])
@@ -649,8 +650,8 @@ async def editraidlocation(msg, location):
                                        inline=True)
             coords = get_gym_coords(location)
             if coords and GMAPS_KEY:
-                map_image = get_static_map_url(coords[0], coords[1],
-                                               api_key=GMAPS_KEY)
+                # map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+                map_image = get_open_static_map_url(coords[0], coords[1])
                 msg.embeds[0].set_image(url=map_image)
             await msg.edit(embed=msg.embeds[0])
             return True
@@ -709,7 +710,8 @@ async def raidegg(ctx, level, *, locationtime):
         embed.set_thumbnail(url=thumb)
     coords = get_gym_coords(location)
     if coords and GMAPS_KEY:
-        map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+        # map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+        map_image = get_open_static_map_url(coords[0], coords[1])
         embed.set_image(url=map_image)
     embed.add_field(name="Location:", value=location, inline=True)
     embed.add_field(name="Hatch Time:", value=timer + "\n", inline=True)
@@ -986,7 +988,8 @@ async def exraid(ctx, pkmn, location, date, role="ex-raid"):
                           description=descrip)
     coords = get_gym_coords(location)
     if coords and GMAPS_KEY:
-        map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+        # map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+        map_image = get_open_static_map_url(coords[0], coords[1])
         embed.set_image(url=map_image)
     if thumb:
         embed.set_thumbnail(url=thumb)
@@ -1150,7 +1153,8 @@ async def notify_raid(msg, coords=None):
     embed = msg.embeds[0]
 
     if GMAPS_KEY and coords:
-        map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+        # map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+        map_image = get_open_static_map_url(coords[0], coords[1])
         embed.set_image(url=map_image)
 
     for i in range(0, len(embed.fields)):
@@ -1275,7 +1279,8 @@ async def notify_exraid(msg, coords=None):
     embed = msg.embeds[0]
 
     if GMAPS_KEY and coords and len(coords) == 2:
-        map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+        # map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+        map_image = get_open_static_map_url(coords[0], coords[1])
         embed.set_image(url=map_image)
 
     for i in range(0, len(embed.fields)):
