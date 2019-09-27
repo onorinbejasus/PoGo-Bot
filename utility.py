@@ -68,7 +68,7 @@ def get_open_static_map_url(lat, lng, zoom='15'):
 # Taken and modified from PokeAlarm
 def get_static_map_url(lat, lng, width='250', height='125',
                        maptype='roadmap', zoom='15', api_key=None):
-    center = '{},{}'.format(lat, lng)
+    center = '{},{}'.format(float(lat), float(lng))
     query_center = 'center={}'.format(center)
     query_markers = 'markers=color:red%7C{}'.format(center)
     query_size = 'size={}x{}'.format(width, height)
