@@ -593,8 +593,7 @@ async def raid(ctx, pkmn, *, locationtime):
     map_image = None
     map_dir = None
     if coords and GMAPS_KEY:
-        # map_image = get_static_map_url(coords[0], coords[1], api_key=
-        map_image = get_open_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+        map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
         if map_image is not None:
             embed.set_image(url=map_image)
         map_dir = get_map_dir_url(coords[0], coords[1])
