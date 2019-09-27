@@ -61,8 +61,7 @@ def deg2num(lat_deg, lon_deg, zoom):
 
 def get_open_static_map_url(lat, lng, zoom='15'):
     x, y = deg2num(float(lat), float(lng), int(zoom))
-    print('https://a.tile.openstreetmap.org/' + str(x) + '/' + str(y) + '/' + zoom)
-    return 'https://a.tile.openstreetmap.org/' + str(x) + '/' + str(y) + '/' + zoom
+    return 'https://a.tile.openstreetmap.org/' + str(x) + '/' + str(y) + '/' + zoom + '.png'
 
 
 # Returns a static map url with <lat> and <lng> parameters for dynamic test
