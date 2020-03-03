@@ -1314,7 +1314,7 @@ def getEmoji(name):
 
 if __name__ == "__main__":
     cfg = configparser.ConfigParser()
-    cfg.read('config.ini')
+    cfg.read('/var/opt/PoGo-Bot/config.ini')
     bot.command_prefix = cfg['PoGoBot']['BotPrefix'] or "!"
     MOD_ROLE_ID = cfg['PoGoBot'].get('ModRoleID') or -1
     RAID_ROLE_ID = cfg['PoGoBot'].get('RaidRoleID') or -1
