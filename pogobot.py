@@ -1315,7 +1315,7 @@ def getEmoji(name):
 if __name__ == "__main__":
 
     cfg = configparser.ConfigParser()
-    cfg.read('config.ini')
+    cfg.read(path+'config.ini')
 
 
     bot.command_prefix = cfg['PoGoBot']['BotPrefix'] or "!"
@@ -1339,7 +1339,7 @@ if __name__ == "__main__":
     load_base_stats(os.path.join('data', 'base_stats_revised.json'))
     load_cp_multipliers(os.path.join('data', 'cp_multipliers.json'))
 
-    if os.path.exists('gyms.json'):
-        load_gyms('gyms.json')
+    if os.path.exists(path+'gyms.json'):
+        load_gyms(path+'gyms.json')
 
     bot.run(cfg['PoGoBot']['BotToken'])
