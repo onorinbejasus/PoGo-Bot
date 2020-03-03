@@ -6799,8 +6799,8 @@
   },
   "642_": {
     "attack": 266,
-    "defense": 169,
-    "stamina": 158,
+    "defense": 164,
+    "stamina": 188,
     "type1": 13,
     "type2": 3,
     "legendary": true,
@@ -6832,8 +6832,8 @@
   },
   "645_": {
     "attack": 261,
-    "defense": 187,
-    "stamina": 178,
+    "defense": 182,
+    "stamina": 205,
     "type1": 5,
     "type2": 3,
     "legendary": true,
