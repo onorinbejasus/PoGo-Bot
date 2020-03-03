@@ -1336,7 +1336,7 @@ if __name__ == "__main__":
     load_base_stats(os.path.join('data', 'base_stats_revised.json'))
     load_cp_multipliers(os.path.join('data', 'cp_multipliers.json'))
 
-    if os.path.exists('gyms.json'):
-        load_gyms('gyms.json')
+    if os.path.exists('/var/opt/PoGo-Bot/gyms.json'):
+        load_gyms('/var/opt/PoGo-Bot/gyms.json')
 
     bot.run(cfg['PoGoBot']['BotToken'])
