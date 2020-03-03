@@ -1332,13 +1332,12 @@ if __name__ == "__main__":]
     IMAGE_URL = cfg['PoGoBot'].get('ImageURL') or None
     EGG_IMAGE_URL = cfg['PoGoBot'].get('EggImageURL') or None
     EX_RAID_CHANNEL = cfg['PoGoBot'].get('ExRaidChannel') or 0
-    GMAPS_KEY = cfg['PoGoBot'].get('GMapsKey') or None
-    load_locale(os.path.join('locales', '{}.json'
+    GMAPS_KEY = cfg['PoGoBot'].get('GMapsKey') or None    load_locale(os.path.join('locales', '{}.json'
                              .format(cfg['PoGoBot']['Locale'] or 'en')))
     load_base_stats(os.path.join('data', 'base_stats_revised.json'))
     load_cp_multipliers(os.path.join('data', 'cp_multipliers.json'))
 
-    if os.path.exists('gyms.json'):
-        load_gyms('gyms.json')
+    if os.path.exists(path+'gyms.json'):
+        load_gyms(path+'gyms.json')
 
     bot.run(cfg['PoGoBot']['BotToken'])
