@@ -1333,7 +1333,7 @@ if __name__ == "__main__":
     EGG_IMAGE_URL = cfg['PoGoBot'].get('EggImageURL') or None
     EX_RAID_CHANNEL = cfg['PoGoBot'].get('ExRaidChannel') or 0
     GMAPS_KEY = cfg['PoGoBot'].get('GMapsKey') or None
-    load_locale(os.path.join('locales', '{}.json'
+    load_locale(os.path.join(path+'locales', '{}.json'
                              .format(cfg['PoGoBot']['Locale'] or 'en')))
     load_base_stats(os.path.join('data', 'base_stats_revised.json'))
     load_cp_multipliers(os.path.join('data', 'cp_multipliers.json'))
