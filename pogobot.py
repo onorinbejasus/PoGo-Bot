@@ -1312,7 +1312,7 @@ def getEmoji(name):
     return discord.utils.get(bot.emojis, name=name)
 
 
-if __name__ == "__main__":]
+if __name__ == "__main__":
     path = '/var/opt/PoGo-Bot/'
     os.chdir(path)
     cfg = configparser.ConfigParser()
