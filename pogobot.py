@@ -1312,9 +1312,11 @@ def getEmoji(name):
     return discord.utils.get(bot.emojis, name=name)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":]
+    path = '/var/opt/PoGo-Bot/'
+    os.chdir(path)
     cfg = configparser.ConfigParser()
-    cfg.read('/var/opt/PoGo-Bot/config.ini')
+    cfg.read(path+'config.ini')
     bot.command_prefix = cfg['PoGoBot']['BotPrefix'] or "!"
     MOD_ROLE_ID = cfg['PoGoBot'].get('ModRoleID') or -1
     RAID_ROLE_ID = cfg['PoGoBot'].get('RaidRoleID') or -1
@@ -1336,7 +1338,7 @@ if __name__ == "__main__":
     load_base_stats(os.path.join('data', 'base_stats_revised.json'))
     load_cp_multipliers(os.path.join('data', 'cp_multipliers.json'))
 
-    if os.path.exists('/var/opt/PoGo-Bot/gyms.json'):
-        load_gyms('/var/opt/PoGo-Bot/gyms.json')
+    if os.path.exists('gyms.json'):
+        load_gyms('gyms.json')
 
     bot.run(cfg['PoGoBot']['BotToken'])
