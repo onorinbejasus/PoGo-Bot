@@ -124,7 +124,7 @@ def load_gyms(fp):
 def get_pokemon_id_from_name(pkmn):
     pid = locale['pokemon'].get(pkmn)
     if isinstance(pid, int):
-        pid = str(pid).zfill(3) + '_'
+        pid = str(pid).zfill(3)
     return pid
 
 
