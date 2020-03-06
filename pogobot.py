@@ -69,7 +69,7 @@ async def on_ready():
     printr('------')
 
     loop = asyncio.get_event_loop()
-    schedule.every().day.at("00:01").do(scheduled_purge, loop=loop)
+    schedule.every().day.at("06:01").do(scheduled_purge, loop=loop)
 
     # Start a new continuous run thread.
     schedule.run_continuously(0)
@@ -1335,7 +1335,7 @@ if __name__ == "__main__":
     GMAPS_KEY = cfg['PoGoBot'].get('GMapsKey') or None
     load_locale(os.path.join(path+'locales', '{}.json'
                              .format(cfg['PoGoBot']['Locale'] or 'en')))
-    load_base_stats(os.path.join(path+'data', 'base_stats_revised.json'))
+    load_base_stats(os.path.join(path+'data', 'base_stats_revised.json' ))
     load_cp_multipliers(os.path.join(path+'data', 'cp_multipliers.json'))
 
     if os.path.exists(path+'gyms.json'):
