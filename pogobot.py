@@ -1317,28 +1317,39 @@ if __name__ == "__main__":
     cfg = configparser.ConfigParser()
     cfg.read(path+'config.ini')
 
-    bot.command_prefix = cfg['PoGoBot']['BotPrefix'] or "!"
-    MOD_ROLE_ID = cfg['PoGoBot'].get('ModRoleID') or -1
-    RAID_ROLE_ID = cfg['PoGoBot'].get('RaidRoleID') or -1
-    BOT_ROLE_ID = cfg['PoGoBot'].get('BotRoleID') or -1
-    if ',' in str(RAID_ROLE_ID):
-        RAID_ROLE_ID = [x.strip() for x in RAID_ROLE_ID.split(",")]
+    try:
 
-    RAID_CHANNELS = cfg['PoGoBot'].get('RaidChannels') or 0
-    if ',' in str(RAID_CHANNELS):
-        RAID_CHANNELS = [x.strip() for x in RAID_CHANNELS.split(",")]
+        bot.command_prefix = cfg['PoGoBot']['BotPrefix'] or "!"
+        MOD_ROLE_ID = cfg['PoGoBot'].get('ModRoleID') or -1
+        RAID_ROLE_ID = cfg['PoGoBot'].get('RaidRoleID') or -1
+        BOT_ROLE_ID = cfg['PoGoBot'].get('BotRoleID') or -1
+        if ',' in str(RAID_ROLE_ID):
+            RAID_ROLE_ID = [x.strip() for x in RAID_ROLE_ID.split(",")]
 
-    ANYONE_RAID_POST = cfg['PoGoBot'].get('AnyoneRaidPost') or False
-    IMAGE_URL = cfg['PoGoBot'].get('ImageURL') or None
-    EGG_IMAGE_URL = cfg['PoGoBot'].get('EggImageURL') or None
-    EX_RAID_CHANNEL = cfg['PoGoBot'].get('ExRaidChannel') or 0
-    GMAPS_KEY = cfg['PoGoBot'].get('GMapsKey') or None
-    load_locale(os.path.join(path+'locales', '{}.json'
-                             .format(cfg['PoGoBot']['Locale'] or 'en')))
-    load_base_stats(os.path.join(path+'data', 'base_stats_revised.json' ))
-    load_cp_multipliers(os.path.join(path+'data', 'cp_multipliers.json'))
+        RAID_CHANNELS = cfg['PoGoBot'].get('RaidChannels') or 0
+        if ',' in str(RAID_CHANNELS):
+            RAID_CHANNELS = [x.strip() for x in RAID_CHANNELS.split(",")]
 
-    if os.path.exists(path+'gyms.json'):
-        load_gyms(path+'gyms.json')
+        ANYONE_RAID_POST = cfg['PoGoBot'].get('AnyoneRaidPost') or False
+        IMAGE_URL = cfg['PoGoBot'].get('ImageURL') or None
+        EGG_IMAGE_URL = cfg['PoGoBot'].get('EggImageURL') or None
+        EX_RAID_CHANNEL = cfg['PoGoBot'].get('ExRaidChannel') or 0
+        GMAPS_KEY = cfg['PoGoBot'].get('GMapsKey') or None
+        load_locale(os.path.join(path+'locales', '{}.json'
+                                 .format(cfg['PoGoBot']['Locale'] or 'en')))
+        load_base_stats(os.path.join(path+'data', 'base_stats_revised.json' ))
+        load_cp_multipliers(os.path.join(path+'data', 'cp_multipliers.json'))
 
-    bot.run(cfg['PoGoBot']['BotToken'])
+        if os.path.exists(path+'gyms.json'):
+            load_gyms(path+'gyms.json')
+
+        await bot.run(cfg['PoGoBot']['BotToken'])
+
+        time.sleep(5)
+
+        bot.logout()
+
+
+
+    except NameError:
+        print("I tried")
