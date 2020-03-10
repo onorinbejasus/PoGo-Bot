@@ -35,7 +35,7 @@ bot = commands.Bot(command_prefix=BOT_PREFIX, case_insensitive=True,
                    description='A bot that manages Pokemon Go Discord communities.')
 
 running_updater = False
-loop = None
+cease_flag = None
 
 reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍"]
 
@@ -57,7 +57,7 @@ def scheduled_purge(loop):
 @bot.event
 @asyncio.coroutine
 async def on_ready():
-    global running_updater, loop
+    global running_updater, cease_flag
 
     printr(discord.version_info)
     printr('Logged in as: {}'.format(bot.user.name))
@@ -69,13 +69,13 @@ async def on_ready():
     printr("GMaps Key: {}...".format(GMAPS_KEY[:10]))
     printr('------')
 
-#     loop = asyncio.get_event_loop()
-#     schedule.every().day.at("06:01").do(scheduled_purge, loop=loop)
-#
-#     # Start a new continuous run thread.
-#     schedule.run_continuously(0)
-#     # Allow a small time for separate thread to register time stamps.
-#     time.sleep(0.001)
+    loop = asyncio.get_event_loop()
+    schedule.every().day.at("06:01").do(scheduled_purge, loop=loop).tag('purge', 'friend')
+
+    # Start a new continuous run thread.
+    cease_flag = schedule.run_continuously(0)
+    # Allow a small time for separate thread to register time stamps.
+    time.sleep(0.001)
 
 @bot.event
 # Payload( PartialEmoji, Message_id, Channel_id, User_id)
@@ -1345,6 +1345,8 @@ if __name__ == "__main__":
             load_gyms(path+'gyms.json')
 
         bot.run(cfg['PoGoBot']['BotToken'])
+
+        cease_flag.set()
 
     except NameError:
         print("I tried")
