@@ -1050,9 +1050,13 @@ async def killscheduler(ctx):
             await ask.delete()
             return
 
-        print("killing the scheduler")
-        cease_flag.set()
-
+        try:
+            print("killing the scheduler")
+            await ask.delete()
+            await msg.delete()
+            cease_flag.set()
+        except Exception:
+            print("Unexpected error:", sys.exc_info()[0])
 
 @bot.command(aliases=["stats"],
              name="getstats",
