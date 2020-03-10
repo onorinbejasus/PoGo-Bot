@@ -1037,6 +1037,20 @@ async def editraidrole(message, role):
                    " ",
              pass_context=True)
 async def killscheduler(ctx, loc, *, message):
+    def confirm(m):
+        if m.author == ctx.message.author:
+            return True
+        return False
+
+    if await checkmod(ctx, MOD_ROLE_ID):
+        ask = await ctx.send("Are you sure you would like to stop the scheduler? (yes/no) " )
+        try:
+            msg = await bot.wait_for("message", timeout=30.0, check=confirm)
+        except asyncio.TimeoutError:
+            await ctx.message.delete()
+            await ask.delete()
+            return
+
     cease_flag.set()
 
 
