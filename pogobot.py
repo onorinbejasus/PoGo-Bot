@@ -1031,6 +1031,15 @@ async def editraidrole(message, role):
     return False
 
 
+@bot.command(aliases=["killscheduler"],
+             usage=" ",
+             brief=" "
+                   " ",
+             pass_context=True)
+async def killscheduler(ctx, loc, *, message):
+    cease_flag.set()
+
+
 @bot.command(aliases=["stats"],
              name="getstats",
              brief="Get Stats for a Pokemon. !getstats [pokemon]",
@@ -1345,8 +1354,6 @@ if __name__ == "__main__":
             load_gyms(path+'gyms.json')
 
         bot.run(cfg['PoGoBot']['BotToken'])
-
-        cease_flag.set()
 
     except NameError:
         print("I tried")
