@@ -1054,7 +1054,9 @@ async def killscheduler(ctx):
             print("killing the scheduler")
             await ask.delete()
             await msg.delete()
+            await ctx.message.delete()
             cease_flag.set()
+            time.sleep(0.01)
         except Exception:
             print("Unexpected error:", sys.exc_info()[0])
 
