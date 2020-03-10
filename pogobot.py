@@ -1048,7 +1048,8 @@ async def killscheduler(ctx):
             await ask.delete()
             return
 
-    cease_flag.set()
+        print("killing the scheduler")
+        cease_flag.set()
 
 
 @bot.command(aliases=["stats"],
