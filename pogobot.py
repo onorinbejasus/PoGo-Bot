@@ -1343,7 +1343,7 @@ if __name__ == "__main__":
         if os.path.exists(path+'gyms.json'):
             load_gyms(path+'gyms.json')
 
-        await bot.run(cfg['PoGoBot']['BotToken'])
+        bot.run(cfg['PoGoBot']['BotToken'])
 
         time.sleep(5)
 
