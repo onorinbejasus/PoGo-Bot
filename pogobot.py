@@ -35,8 +35,9 @@ bot = commands.Bot(command_prefix=BOT_PREFIX, case_insensitive=True,
                    description='A bot that manages Pokemon Go Discord communities.')
 
 running_updater = False
+loop = None
 
-reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍"]#, "🔃"]
+reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍"]
 
 
 async def raid_purge(channel, after=None):
@@ -56,7 +57,7 @@ def scheduled_purge(loop):
 @bot.event
 @asyncio.coroutine
 async def on_ready():
-    global running_updater
+    global running_updater, loop
 
     printr(discord.version_info)
     printr('Logged in as: {}'.format(bot.user.name))
@@ -1344,10 +1345,9 @@ if __name__ == "__main__":
             load_gyms(path+'gyms.json')
 
         bot.run(cfg['PoGoBot']['BotToken'])
-
         time.sleep(5)
 
-        sys.exit()
+        loop.stop()
 
 
 
