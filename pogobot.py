@@ -1345,11 +1345,8 @@ if __name__ == "__main__":
             load_gyms(path+'gyms.json')
 
         bot.run(cfg['PoGoBot']['BotToken'])
-        time.sleep(5)
 
         loop.close()
-
-
 
     except NameError:
         print("I tried")
