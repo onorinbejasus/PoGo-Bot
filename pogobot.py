@@ -1033,7 +1033,7 @@ async def editraidrole(message, role):
 
 @bot.command(aliases=["ks"],
              pass_context=True)
-async def killscheduler(ctx, message):
+async def killscheduler(ctx):
     def confirm(m):
         if m.author == ctx.message.author:
             return True
