@@ -1346,7 +1346,5 @@ if __name__ == "__main__":
 
         bot.run(cfg['PoGoBot']['BotToken'])
 
-        loop.close()
-
     except NameError:
         print("I tried")
