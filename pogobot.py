@@ -1347,7 +1347,7 @@ if __name__ == "__main__":
         bot.run(cfg['PoGoBot']['BotToken'])
         time.sleep(5)
 
-        loop.stop()
+        loop.close()
 
 
 
