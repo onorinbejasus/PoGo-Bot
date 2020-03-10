@@ -1032,9 +1032,6 @@ async def editraidrole(message, role):
 
 
 @bot.command(aliases=["killscheduler"],
-             usage=" ",
-             brief=" "
-                   " ",
              pass_context=True)
 async def killscheduler(ctx, loc, *, message):
     def confirm(m):
