@@ -70,7 +70,7 @@ async def on_ready():
     printr('------')
 
     loop = asyncio.get_event_loop()
-    schedule.every().day.at("06:01").do(scheduled_purge, loop=loop).tag('purge', 'friend')
+    schedule.every().day.at("06:01").do(scheduled_purge, loop=loop)
 
     # Start a new continuous run thread.
     cease_flag = schedule.run_continuously(0)
