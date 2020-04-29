@@ -255,27 +255,28 @@ async def on_reaction_add(message, emoji, user):
                 await ask.delete()
                 return
     if emoji.name == "🔈":
-        if message.embeds[0].author == user.name or \
-                check_roles(user, MOD_ROLE_ID) or \
-                check_roles(user, RAID_ROLE_ID):
-
-            ask = await channel.send("{}, message users for {}? (Type message below and hit send.)"
-                                     .format(user.mention, loc))
-            try:
-                msg = await bot.wait_for("message", timeout=30.0, check=confirm)
-
-                await ask.delete()
-                await msg.delete()
-
-
-                await message.remove_reaction(emoji, user)
-                return
-            except asyncio.TimeoutError:
-                await message.remove_reaction(emoji, user)
-                await channel.send("{} response timed out. Try again."
-                                   .format(user.mention), delete_after=20.0)
-                await ask.delete()
-                return
+        return
+        # if message.embeds[0].author == user.name or \
+        #         check_roles(user, MOD_ROLE_ID) or \
+        #         check_roles(user, RAID_ROLE_ID):
+        #
+        #     ask = await channel.send("{}, message users for {}? (Type message below and hit send.)"
+        #                              .format(user.mention, loc))
+        #     try:
+        #         msg = await bot.wait_for("message", timeout=30.0, check=confirm)
+        #
+        #         await ask.delete()
+        #         await msg.delete()
+        #
+        #
+        #         await message.remove_reaction(emoji, user)
+        #         return
+        #     except asyncio.TimeoutError:
+        #         await message.remove_reaction(emoji, user)
+        #         await channel.send("{} response timed out. Try again."
+        #                            .format(user.mention), delete_after=20.0)
+        #         await ask.delete()
+        #         return
 
     if message.embeds and check_footer(message, "raid"):
         printr("notifying raid {}: {}".format(loc, user.name))
