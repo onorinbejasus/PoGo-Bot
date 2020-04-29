@@ -90,13 +90,12 @@ async def on_raw_reaction_add(*payload):
         printr("Attribute not found")
         return
 
+    print(emoji.name)
     if not channel or (emoji and emoji.name not in reaction_list):
-        print("not in list")
         return
     try:
         message = await channel.fetch_message(mid)
         if message:
-            print("sending to add")
             await on_reaction_add(message, emoji, user)
     except discord.NotFound:
         printr("Message {} not found".format(mid))
@@ -140,9 +139,6 @@ async def on_reaction_add(message, emoji, user):
         return
     loc = get_field_by_name(message.embeds[0].fields, "Location")
     loc = loc.value if loc else "Unknown"
-
-    print(emoji.name)
-    print(emoji.name == "gauntlet️")
 
     if emoji.name == "❌":
         if check_roles(user, MOD_ROLE_ID) or \
@@ -286,7 +282,6 @@ async def on_reaction_add(message, emoji, user):
                 await ask.delete()
                 return
     if emoji.name == 'gauntlet':
-        print("gauntlet")
         if message.embeds[0].author == user.name or \
                 check_roles(user, MOD_ROLE_ID) or \
                 check_roles(user, RAID_ROLE_ID):
@@ -297,11 +292,10 @@ async def on_reaction_add(message, emoji, user):
                 return
             except asyncio.TimeoutError:
                 await message.remove_reaction(emoji, user)
-
                 return
 
     if message.embeds and check_footer(message, "raid"):
-        printr("notifying raid {}: {}".format(loc, user.name))
+        # printr("notifying raid {}: {}".format(loc, user.name))
         await notify_raid(message)
         if isinstance(emoji, str):
             await message.channel.send(
@@ -310,7 +304,7 @@ async def on_reaction_add(message, emoji, user):
         return
 
     if message.embeds and check_footer(message, "ex-raid"):
-        printr("notifying exraid {}: {}".format(loc, user.name))
+        # printr("notifying exraid {}: {}".format(loc, user.name))
         await notify_exraid(message)
         if isinstance(emoji, str):
             await message.channel.send(
@@ -331,8 +325,7 @@ async def on_reaction_remove(message, emoji, user):
             emoji.name not in reaction_list:
         return
     if check_footer(message, "raid"):
-        printr("Notifying raid: User {} has left {} with {}"
-               .format(user.name, loc, emoji.name))
+        # printr("Notifying raid: User {} has left {} with {}" .format(user.name, loc, emoji.name))
         await notify_raid(message)
     if check_footer(message, "ex-raid"):
         role_name = message.embeds[0].footer.text.split(":", 1)
@@ -346,9 +339,8 @@ async def on_reaction_remove(message, emoji, user):
                 if role.name == role_name:
                     await user.remove_roles(role)
                     await message.channel.send(
-                        "{} you have left *{}*".format(user.mention, role_name),
-                        delete_after=10)
-        printr("Notifying Ex-raid: User {} has left {}".format(user.name, loc))
+                        "{} you have left *{}*".format(user.mention, role_name), delete_after=10)
+        # printr("Notifying Ex-raid: User {} has left {}".format(user.name, loc))
         await notify_exraid(message)
         await asyncio.sleep(0.1)
 
@@ -920,7 +912,7 @@ async def sendraidmessage(loc, ctx, message):
                     await ctx.msg.delete()
                     return
 
-                await ctx.send("".join(map(lambda u: u.mention, registered)) + " " + message, delete_after=30.0)
+                await ctx.send(" ".join(map(lambda u: u.mention, registered)) + " " + message, delete_after=30.0)
                 await ctx.message.delete()
                 return
 
@@ -947,7 +939,7 @@ async def sendraidmessagechannel(loc, channel, message):
                         if user.mention not in registered:
                             registered.append(user)
 
-                await channel.send("".join(map(lambda u: u.mention, registered)) + " " + message, delete_after=30.0)
+                await channel.send(" ".join(map(lambda u: u.mention, registered)) + " " + message, delete_after=30.0)
                 return
 
 
