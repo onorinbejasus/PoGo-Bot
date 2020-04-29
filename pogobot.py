@@ -37,7 +37,7 @@ bot = commands.Bot(command_prefix=BOT_PREFIX, case_insensitive=True,
 running_updater = False
 cease_flag = None
 
-reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍", "🔈", "👍"]
+reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍", "🔈", "gauntlet"]
 
 
 async def raid_purge(channel, after=None):
@@ -89,8 +89,6 @@ async def on_raw_reaction_add(*payload):
     except AttributeError:
         printr("Attribute not found")
         return
-
-    print(emoji.name)
 
     if not channel or (emoji and emoji.name not in reaction_list):
         return
@@ -282,7 +280,7 @@ async def on_reaction_add(message, emoji, user):
                 await ask.delete()
                 return
 
-    if emoji.name == "👍️":
+    if emoji.name == "gauntlet️":
         if message.embeds[0].author == user.name or \
                 check_roles(user, MOD_ROLE_ID) or \
                 check_roles(user, RAID_ROLE_ID):
