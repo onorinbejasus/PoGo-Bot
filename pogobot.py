@@ -934,7 +934,7 @@ async def sendraidmessagechannel(loc, channel, message):
                     async for user in reaction.users():
                         if user == bot.user:
                             continue
-                        if user.mention not in registered:
+                        if user not in registered:
                             registered.append(user)
 
                 print(registered)
