@@ -280,6 +280,20 @@ async def on_reaction_add(message, emoji, user):
                 await ask.delete()
                 return
 
+    if emoji.name == "👍️":
+        if message.embeds[0].author == user.name or \
+                check_roles(user, MOD_ROLE_ID) or \
+                check_roles(user, RAID_ROLE_ID):
+
+            try:
+                await message.remove_reaction(emoji, user)
+                await sendraidmessagechannel(loc, channel, "Hop in")
+                return
+            except asyncio.TimeoutError:
+                await message.remove_reaction(emoji, user)
+
+                return
+
     if message.embeds and check_footer(message, "raid"):
         printr("notifying raid {}: {}".format(loc, user.name))
         await notify_raid(message)
