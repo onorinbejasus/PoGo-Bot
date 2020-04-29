@@ -142,6 +142,7 @@ async def on_reaction_add(message, emoji, user):
     loc = loc.value if loc else "Unknown"
 
     print(emoji.name)
+    print(emoji.name == "gauntlet️")
 
     if emoji.name == "❌":
         if check_roles(user, MOD_ROLE_ID) or \
