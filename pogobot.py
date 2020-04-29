@@ -267,11 +267,12 @@ async def on_reaction_add(message, emoji, user):
                 await ask.delete()
                 await msg.delete()
 
-                await sendraidmessagechannel(loc, channel, msg.content)
-
                 await message.remove_reaction(emoji, user)
 
+                await sendraidmessagechannel(loc, channel, msg.content)
+
                 return
+
             except asyncio.TimeoutError:
                 await message.remove_reaction(emoji, user)
                 await channel.send("{} response timed out. Try again."
@@ -873,40 +874,6 @@ async def editraidpokemon(msg, pkmn):
 
 async def sendraidmessage(loc, ctx, message):
     async for msg in ctx.message.channel.history(limit=1000):
-        if msg.author != bot.user or not msg.embeds:
-            continue
-        for field in msg.embeds[0].fields:
-
-            if field.name.startswith("Location") and \
-                    loc.lower() in field.value.lower():
-                registered = []
-
-                for reaction in msg.reactions:
-                    async for user in reaction.users():
-                        if user == bot.user:
-                            continue
-                        if user.mention not in registered:
-                            registered.append(user)
-
-                auth = ctx.message.author
-
-                if auth not in registered and \
-                        not check_roles(auth, RAID_ROLE_ID) and \
-                        msg.embeds[0].author.name != auth.name:
-                    await ctx.send("You are not involved with this raid.", delete_after=10.0)
-                    await ctx.msg.delete()
-                    return
-
-                await ctx.send("".join(map(lambda u: u.mention, registered)) + " " + message)
-                await ctx.message.delete()
-                return
-
-        await ctx.send("Cannot find raid *{}*".format(loc), delete_after=10.0)
-        await ctx.message.delete()
-
-
-async def sendraidmessage(loc, ctx, message):
-    async for msg in ctx.message.channel.history(limit=1000):
 
         if msg.author != bot.user or not msg.embeds:
             continue
@@ -962,6 +929,7 @@ async def sendraidmessagechannel(loc, channel, message):
 
                 await channel.send("".join(map(lambda u: u.mention, registered)) + " " + message, delete_after=30.0)
                 return
+
 
 @bot.command(aliases=["rm"],
              usage="!raidmessage [location] [msg]",
