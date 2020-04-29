@@ -140,6 +140,9 @@ async def on_reaction_add(message, emoji, user):
         return
     loc = get_field_by_name(message.embeds[0].fields, "Location")
     loc = loc.value if loc else "Unknown"
+
+    print(emoji.name)
+
     if emoji.name == "❌":
         if check_roles(user, MOD_ROLE_ID) or \
                 message.embeds[0].author == user.name:
