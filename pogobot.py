@@ -899,7 +899,7 @@ async def sendraidmessage(loc, ctx, message):
                     async for user in reaction.users():
                         if user == bot.user:
                             continue
-                        if user.mention not in registered:
+                        if user not in registered:
                             registered.append(user)
 
                 auth = ctx.message.author
@@ -936,8 +936,6 @@ async def sendraidmessagechannel(loc, channel, message):
                             continue
                         if user not in registered:
                             registered.append(user)
-
-                print(registered)
 
                 await channel.send(" ".join(map(lambda u: u.mention, registered)) + " " + message, delete_after=30.0)
                 return
