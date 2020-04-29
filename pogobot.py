@@ -279,8 +279,8 @@ async def on_reaction_add(message, emoji, user):
                                    .format(user.mention), delete_after=20.0)
                 await ask.delete()
                 return
-
     if emoji.name == "gauntlet️":
+        print("gauntlet")
         if message.embeds[0].author == user.name or \
                 check_roles(user, MOD_ROLE_ID) or \
                 check_roles(user, RAID_ROLE_ID):
