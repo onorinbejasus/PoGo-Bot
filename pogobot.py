@@ -255,28 +255,29 @@ async def on_reaction_add(message, emoji, user):
                 await ask.delete()
                 return
     if emoji.name == "🔈":
-        return
-        # if message.embeds[0].author == user.name or \
-        #         check_roles(user, MOD_ROLE_ID) or \
-        #         check_roles(user, RAID_ROLE_ID):
-        #
-        #     ask = await channel.send("{}, message users for {}? (Type message below and hit send.)"
-        #                              .format(user.mention, loc))
-        #     try:
-        #         msg = await bot.wait_for("message", timeout=30.0, check=confirm)
-        #
-        #         await ask.delete()
-        #         await msg.delete()
-        #
-        #
-        #         await message.remove_reaction(emoji, user)
-        #         return
-        #     except asyncio.TimeoutError:
-        #         await message.remove_reaction(emoji, user)
-        #         await channel.send("{} response timed out. Try again."
-        #                            .format(user.mention), delete_after=20.0)
-        #         await ask.delete()
-        #         return
+        if message.embeds[0].author == user.name or \
+                check_roles(user, MOD_ROLE_ID) or \
+                check_roles(user, RAID_ROLE_ID):
+
+            ask = await channel.send("{}, message users for {}? (Type message below and hit send.)"
+                                     .format(user.mention, loc))
+            try:
+                msg = await bot.wait_for("message", timeout=30.0, check=confirm)
+
+                await ask.delete()
+                await msg.delete()
+
+                await sendraidmessagechannel(loc, channel, msg)
+
+                await message.remove_reaction(emoji, user)
+
+                return
+            except asyncio.TimeoutError:
+                await message.remove_reaction(emoji, user)
+                await channel.send("{} response timed out. Try again."
+                                   .format(user.mention), delete_after=20.0)
+                await ask.delete()
+                return
 
     if message.embeds and check_footer(message, "raid"):
         printr("notifying raid {}: {}".format(loc, user.name))
@@ -875,30 +876,92 @@ async def sendraidmessage(loc, ctx, message):
         if msg.author != bot.user or not msg.embeds:
             continue
         for field in msg.embeds[0].fields:
+
             if field.name.startswith("Location") and \
                     loc.lower() in field.value.lower():
                 registered = []
+
                 for reaction in msg.reactions:
                     async for user in reaction.users():
                         if user == bot.user:
                             continue
                         if user.mention not in registered:
                             registered.append(user)
+
                 auth = ctx.message.author
+
                 if auth not in registered and \
                         not check_roles(auth, RAID_ROLE_ID) and \
                         msg.embeds[0].author.name != auth.name:
-                    await ctx.send("You are not involved with this raid.",
-                                   delete_after=10.0)
+                    await ctx.send("You are not involved with this raid.", delete_after=10.0)
                     await ctx.msg.delete()
                     return
-                await ctx.send("".join(map(lambda u: u.mention, registered)) +
-                               " " + message)
+
+                await ctx.send("".join(map(lambda u: u.mention, registered)) + " " + message)
                 await ctx.message.delete()
                 return
+
         await ctx.send("Cannot find raid *{}*".format(loc), delete_after=10.0)
         await ctx.message.delete()
 
+
+async def sendraidmessage(loc, ctx, message):
+    async for msg in ctx.message.channel.history(limit=1000):
+
+        if msg.author != bot.user or not msg.embeds:
+            continue
+
+        for field in msg.embeds[0].fields:
+
+            if field.name.startswith("Location") and \
+                    loc.lower() in field.value.lower():
+                registered = []
+
+                for reaction in msg.reactions:
+                    async for user in reaction.users():
+                        if user == bot.user:
+                            continue
+                        if user.mention not in registered:
+                            registered.append(user)
+
+                auth = ctx.message.author
+
+                if auth not in registered and \
+                        not check_roles(auth, RAID_ROLE_ID) and \
+                        msg.embeds[0].author.name != auth.name:
+                    await ctx.send("You are not involved with this raid.", delete_after=10.0)
+                    await ctx.msg.delete()
+                    return
+
+                await ctx.send("".join(map(lambda u: u.mention, registered)) + " " + message)
+                await ctx.message.delete()
+                return
+
+        await ctx.send("Cannot find raid *{}*".format(loc), delete_after=10.0)
+        await ctx.message.delete()
+
+
+async def sendraidmessagechannel(loc, channel, message):
+    async for msg in channel.history(limit=1000):
+
+        if msg.author != bot.user or not msg.embeds:
+            continue
+
+        for field in msg.embeds[0].fields:
+
+            if field.name.startswith("Location") and \
+                    loc.lower() in field.value.lower():
+                registered = []
+
+                for reaction in msg.reactions:
+                    async for user in reaction.users():
+                        if user == bot.user:
+                            continue
+                        if user.mention not in registered:
+                            registered.append(user)
+
+                await channel.send("".join(map(lambda u: u.mention, registered)) + " " + message)
+                return
 
 @bot.command(aliases=["rm"],
              usage="!raidmessage [location] [msg]",
@@ -906,7 +969,8 @@ async def sendraidmessage(loc, ctx, message):
                    "!raidmessage <location> <msg>",
              pass_context=True)
 async def raidmessage(ctx, loc, *, message):
-    await sendraidmessage(loc, ctx, message)
+    channel = ctx.message.channel
+    await sendraidmessage(loc, channel, message)
 
 
 @bot.command(aliases=["rc"],
