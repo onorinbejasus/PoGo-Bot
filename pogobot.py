@@ -90,7 +90,7 @@ async def on_raw_reaction_add(*payload):
         printr("Attribute not found")
         return
 
-    print(emoji.name)
+    print(emoji.name, emoji.id)
     if not channel or (emoji and emoji.name not in reaction_list):
         return
     try:
