@@ -90,7 +90,6 @@ async def on_raw_reaction_add(*payload):
         printr("Attribute not found")
         return
 
-    print(emoji.name, emoji.id)
     if not channel or (emoji and emoji.name not in reaction_list):
         return
     try:
@@ -928,8 +927,7 @@ async def sendraidmessagechannel(loc, channel, message):
 
         for field in msg.embeds[0].fields:
 
-            if field.name.startswith("Location") and \
-                    loc.lower() in field.value.lower():
+            if field.name.startswith("Location") and loc.lower() in field.value.lower():
                 registered = []
 
                 for reaction in msg.reactions:
@@ -938,6 +936,8 @@ async def sendraidmessagechannel(loc, channel, message):
                             continue
                         if user.mention not in registered:
                             registered.append(user)
+
+                print(registered)
 
                 await channel.send(" ".join(map(lambda u: u.mention, registered)) + " " + message, delete_after=30.0)
                 return
