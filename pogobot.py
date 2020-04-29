@@ -37,7 +37,7 @@ bot = commands.Bot(command_prefix=BOT_PREFIX, case_insensitive=True,
 running_updater = False
 cease_flag = None
 
-reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍", "🔈", "gauntlet"]
+reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍", "🔈", "gauntlet", "biga"]
 
 
 async def raid_purge(channel, after=None):
@@ -288,6 +288,18 @@ async def on_reaction_add(message, emoji, user):
             try:
                 await message.remove_reaction(emoji, user)
                 await sendraidmessagechannel(loc, channel, "Hop in")
+                return
+            except asyncio.TimeoutError:
+                await message.remove_reaction(emoji, user)
+                return
+    if emoji.name == 'biga':
+        if message.embeds[0].author == user.name or \
+                check_roles(user, MOD_ROLE_ID) or \
+                check_roles(user, RAID_ROLE_ID):
+
+            try:
+                await message.remove_reaction(emoji, user)
+                await sendraidmessagechannel(loc, channel, "Hop out")
                 return
             except asyncio.TimeoutError:
                 await message.remove_reaction(emoji, user)
