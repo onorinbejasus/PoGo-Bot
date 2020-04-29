@@ -870,8 +870,8 @@ async def editraidpokemon(msg, pkmn):
     return True
 
 
-async def sendraidmessage(loc, message):
-    channel = message.channel
+async def sendraidmessage(loc, ctx, str_msg):
+    channel = ctx.message.channel
     async for msg in channel.history(limit=1000):
         if msg.author != bot.user or not msg.embeds:
             continue
@@ -884,18 +884,18 @@ async def sendraidmessage(loc, message):
                             continue
                         if user.mention not in registered:
                             registered.append(user)
-                auth = message.author
+                auth = str_msg.author
                 if auth not in registered and \
                         not check_roles(auth, RAID_ROLE_ID) and \
                         msg.embeds[0].author.name != auth.name:
                     await channel.send("You are not involved with this raid.", delete_after=10.0)
                     await channel.msg.delete()
                     return
-                await channel.send("".join(map(lambda u: u.mention, registered)) + " " + message)
+                await channel.send("".join(map(lambda u: u.mention, registered)) + " " + str_msg)
                 await channel.message.delete()
                 return
         await channel.send("Cannot find raid *{}*".format(loc), delete_after=10.0)
-        await message.delete()
+        await str_msg.delete()
 
 
 @bot.command(aliases=["rm"],
@@ -904,7 +904,7 @@ async def sendraidmessage(loc, message):
                    "!raidmessage <location> <msg>",
              pass_context=True)
 async def raidmessage(ctx, loc, *, message):
-    await sendraidmessage(loc, message)
+    await sendraidmessage(loc, ctx, message)
 
 
 @bot.command(aliases=["rc"],
