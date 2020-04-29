@@ -37,7 +37,7 @@ bot = commands.Bot(command_prefix=BOT_PREFIX, case_insensitive=True,
 running_updater = False
 cease_flag = None
 
-reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍"]
+reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍", "🔈"]
 
 
 async def raid_purge(channel, after=None):
@@ -167,8 +167,6 @@ async def on_reaction_add(message, emoji, user):
                 check_roles(user, MOD_ROLE_ID) or \
                 check_roles(user, RAID_ROLE_ID):
 
-            print("ask")
-
             ask = await channel.send("{}, edit raid at {}? (delete, pokemon, "
                                      "location, time, role, cancel)"
                                      .format(user.mention, loc))
@@ -256,11 +254,19 @@ async def on_reaction_add(message, emoji, user):
                                    .format(user.mention), delete_after=20.0)
                 await ask.delete()
                 return
-    if emoji.name == "🔃":
+    if emoji.name == "🔈":
         if message.embeds[0].author == user.name or \
                 check_roles(user, MOD_ROLE_ID) or \
                 check_roles(user, RAID_ROLE_ID):
+
+            ask = await channel.send("{}, message users for {}? (Type message below and hit send.)"
+                                     .format(user.mention, loc))
             try:
+                msg = await bot.wait_for("message", timeout=30.0, check=confirm)
+
+                await ask.delete()
+                await msg.delete()
+
 
                 await message.remove_reaction(emoji, user)
                 return
@@ -268,6 +274,7 @@ async def on_reaction_add(message, emoji, user):
                 await message.remove_reaction(emoji, user)
                 await channel.send("{} response timed out. Try again."
                                    .format(user.mention), delete_after=20.0)
+                await ask.delete()
                 return
 
     if message.embeds and check_footer(message, "raid"):
@@ -297,7 +304,7 @@ async def on_reaction_remove(message, emoji, user):
         loc = loc.value
     else:
         loc = "Unknown"
-    if emoji.name == "❌" or emoji.name == "🖍" or emoji.name == "🔃" or \
+    if emoji.name == "❌" or emoji.name == "🖍" or emoji.name == "🔈" or \
             emoji.name not in reaction_list:
         return
     if check_footer(message, "raid"):
@@ -634,7 +641,7 @@ async def raid(ctx, pkmn, *, locationtime):
     await asyncio.sleep(0.1)
     await msg.add_reaction("🖍")
     await asyncio.sleep(0.1)
-    await msg.add_reaction("🔃")
+    await msg.add_reaction("🔈")
     await asyncio.sleep(0.1)
 
     await asyncio.sleep(7200)
@@ -861,19 +868,14 @@ async def editraidpokemon(msg, pkmn):
     await msg.edit(embed=msg.embeds[0])
     return True
 
-@bot.command(aliases=["rm"],
-             usage="!raidmessage [location] [msg]",
-             brief="Message members in raid "
-                   "!raidmessage <location> <msg>",
-             pass_context=True)
-async def raidmessage(ctx, loc, *, message):
 
-    async for msg in ctx.message.channel.history(limit=1000):
+async def sendraidmessage(loc, message):
+    channel = message.channel
+    async for msg in channel.history(limit=1000):
         if msg.author != bot.user or not msg.embeds:
             continue
         for field in msg.embeds[0].fields:
-            if field.name.startswith("Location") and \
-                    loc.lower() in field.value.lower():
+            if field.name.startswith("Location") and loc.lower() in field.value.lower():
                 registered = []
                 for reaction in msg.reactions:
                     async for user in reaction.users():
@@ -881,20 +883,27 @@ async def raidmessage(ctx, loc, *, message):
                             continue
                         if user.mention not in registered:
                             registered.append(user)
-                auth = ctx.message.author
+                auth = message.author
                 if auth not in registered and \
                         not check_roles(auth, RAID_ROLE_ID) and \
                         msg.embeds[0].author.name != auth.name:
-                    await ctx.send("You are not involved with this raid.",
-                                   delete_after=10.0)
-                    await ctx.msg.delete()
+                    await channel.send("You are not involved with this raid.", delete_after=10.0)
+                    await channel.msg.delete()
                     return
-                await ctx.send("".join(map(lambda u: u.mention, registered)) +
-                               " " + message)
-                await ctx.message.delete()
+                await channel.send("".join(map(lambda u: u.mention, registered)) + " " + message)
+                await channel.message.delete()
                 return
-        await ctx.send("Cannot find raid *{}*".format(loc), delete_after=10.0)
-        await ctx.message.delete()
+        await channel.send("Cannot find raid *{}*".format(loc), delete_after=10.0)
+        await message.delete()
+
+
+@bot.command(aliases=["rm"],
+             usage="!raidmessage [location] [msg]",
+             brief="Message members in raid "
+                   "!raidmessage <location> <msg>",
+             pass_context=True)
+async def raidmessage(ctx, loc, *, message):
+    await sendraidmessage(loc, message)
 
 
 @bot.command(aliases=["rc"],
