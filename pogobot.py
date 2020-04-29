@@ -267,7 +267,7 @@ async def on_reaction_add(message, emoji, user):
                 await ask.delete()
                 await msg.delete()
 
-                await sendraidmessagechannel(loc, channel, msg)
+                await sendraidmessagechannel(loc, channel, msg.content)
 
                 await message.remove_reaction(emoji, user)
 
