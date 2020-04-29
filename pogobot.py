@@ -870,13 +870,13 @@ async def editraidpokemon(msg, pkmn):
     return True
 
 
-async def sendraidmessage(loc, ctx, str_msg):
-    channel = ctx.message.channel
-    async for msg in channel.history(limit=1000):
+async def sendraidmessage(loc, ctx, message):
+    async for msg in ctx.message.channel.history(limit=1000):
         if msg.author != bot.user or not msg.embeds:
             continue
         for field in msg.embeds[0].fields:
-            if field.name.startswith("Location") and loc.lower() in field.value.lower():
+            if field.name.startswith("Location") and \
+                    loc.lower() in field.value.lower():
                 registered = []
                 for reaction in msg.reactions:
                     async for user in reaction.users():
@@ -884,18 +884,20 @@ async def sendraidmessage(loc, ctx, str_msg):
                             continue
                         if user.mention not in registered:
                             registered.append(user)
-                auth = str_msg.author
+                auth = ctx.message.author
                 if auth not in registered and \
                         not check_roles(auth, RAID_ROLE_ID) and \
                         msg.embeds[0].author.name != auth.name:
-                    await channel.send("You are not involved with this raid.", delete_after=10.0)
-                    await channel.msg.delete()
+                    await ctx.send("You are not involved with this raid.",
+                                   delete_after=10.0)
+                    await ctx.msg.delete()
                     return
-                await channel.send("".join(map(lambda u: u.mention, registered)) + " " + str_msg)
-                await channel.message.delete()
+                await ctx.send("".join(map(lambda u: u.mention, registered)) +
+                               " " + message)
+                await ctx.message.delete()
                 return
-        await channel.send("Cannot find raid *{}*".format(loc), delete_after=10.0)
-        await str_msg.delete()
+        await ctx.send("Cannot find raid *{}*".format(loc), delete_after=10.0)
+        await ctx.message.delete()
 
 
 @bot.command(aliases=["rm"],
