@@ -91,10 +91,12 @@ async def on_raw_reaction_add(*payload):
         return
 
     if not channel or (emoji and emoji.name not in reaction_list):
+        print("not in list")
         return
     try:
         message = await channel.fetch_message(mid)
         if message:
+            print("sending to add")
             await on_reaction_add(message, emoji, user)
     except discord.NotFound:
         printr("Message {} not found".format(mid))
