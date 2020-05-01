@@ -923,7 +923,7 @@ async def sendraidmessage(loc, ctx, message):
                     await ctx.msg.delete()
                     return
 
-                await ctx.send(" ".join(map(lambda u: u.mention, registered)) + " " + message, delete_after=30.0)
+                await ctx.send(" ".join(map(lambda u: u.mention, registered)) + " " + message, delete_after=90.0)
                 await ctx.message.delete()
                 return
 
@@ -949,7 +949,7 @@ async def sendraidmessagechannel(loc, channel, message):
                         if user not in registered:
                             registered.append(user)
 
-                await channel.send(" ".join(map(lambda u: u.mention, registered)) + " " + message, delete_after=30.0)
+                await channel.send(" ".join(map(lambda u: u.mention, registered)) + " " + message, delete_after=90.0)
                 return
 
 
