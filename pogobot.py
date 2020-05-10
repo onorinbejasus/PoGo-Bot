@@ -608,8 +608,7 @@ async def raid(ctx, pkmn, *, locationtime):
     pid = get_pokemon_id_from_name(pkmn.lower())
     if pid:
         if IMAGE_URL:
-            thumb = IMAGE_URL.format(pid[:-1])
-            print(thumb)
+            thumb = IMAGE_URL.format(pid)
         mincp20, maxcp20 = get_cp_range(pid, 20)
         mincp25, maxcp25 = get_cp_range(pid, 25)
         name = get_name(pid, pkmn)
@@ -877,7 +876,7 @@ async def editraidpokemon(msg, pkmn):
     pid = get_pokemon_id_from_name(pkmn.lower())
     if pid:
         if IMAGE_URL:
-            thumb = IMAGE_URL.format(pid[:-1])
+            thumb = IMAGE_URL.format(pid)
             msg.embeds[0].set_thumbnail(url=thumb)
         mincp20, maxcp20 = get_cp_range(pid, 20)
         mincp25, maxcp25 = get_cp_range(pid, 25)
@@ -1040,7 +1039,7 @@ async def exraid(ctx, pkmn, location, date, role="ex-raid"):
     pid = get_pokemon_id_from_name(pkmn.lower())
     if pid:
         if IMAGE_URL:
-            thumb = IMAGE_URL.format(pid[:-1])
+            thumb = IMAGE_URL.format(pid)
 
         mincp20, maxcp20 = get_cp_range(pid, 20)
         mincp25, maxcp25 = get_cp_range(pid, 25)
@@ -1143,7 +1142,7 @@ async def getstats(ctx, pkmn):
     pid = get_pokemon_id_from_name(pkmn.lower())
     if pid:
         if IMAGE_URL:
-            thumb = IMAGE_URL.format(pid[:-1])
+            thumb = IMAGE_URL.format(pid)
 
         mincp20, maxcp20 = get_cp_range(pid, 20)
         mincp25, maxcp25 = get_cp_range(pid, 25)
