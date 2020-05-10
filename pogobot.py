@@ -609,6 +609,7 @@ async def raid(ctx, pkmn, *, locationtime):
     if pid:
         if IMAGE_URL:
             thumb = IMAGE_URL.format(pid[:-1])
+            print(thumb)
         mincp20, maxcp20 = get_cp_range(pid, 20)
         mincp25, maxcp25 = get_cp_range(pid, 25)
         name = get_name(pid, pkmn)
