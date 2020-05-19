@@ -665,7 +665,7 @@ async def raid(ctx, pkmn, *, locationtime):
     await msg.add_reaction("🔈")
     await asyncio.sleep(0.1)
 
-    await asyncio.sleep(7200)
+    await asyncio.sleep(1000)
     await msg.unpin()
 
 
@@ -740,16 +740,16 @@ async def raidegg(ctx, level, *, locationtime):
     if coords and GMAPS_KEY:
         map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
         embed.set_image(url=map_image)
+
     embed.add_field(name="Location:", value=location, inline=True)
-    embed.add_field(name="Hatch Time:", value=timer + "\n", inline=True)
+    embed.add_field(name="Proposed Time:", value=timer + "\n", inline=True)
     embed.add_field(name="** **", value="** **", inline=False)
-    embed.add_field(name=str(getEmoji("mystic")) + "__Mystic (0)__", value="[]",
-                    inline=True)
-    embed.add_field(name=str(getEmoji("valor")) + "__Valor (0)__", value="[]",
-                    inline=True)
-    embed.add_field(name=str(getEmoji("instinct")) + "__Instinct (0)__",
-                    value="[]", inline=True)
-    embed.add_field(name="**Total:**", value="0", inline=False)
+    embed.add_field(name=str(getEmoji("mystic")) + "__Mystic (0)__", value="[]", inline=True)
+    embed.add_field(name=str(getEmoji("valor")) + "__Valor (0)__", value="[]", inline=True)
+    embed.add_field(name=str(getEmoji("instinct")) + "__Instinct (0)__", value="[]", inline=True)
+    embed.add_field(name="**Total:**", value="0", inline=True)
+    embed.add_field(name="**Remote:**", value="0", inline=True)
+
     embed.set_footer(text="raid")
     msg = await ctx.send(embed=embed)
     await asyncio.sleep(0.1)
@@ -761,6 +761,8 @@ async def raidegg(ctx, level, *, locationtime):
     await asyncio.sleep(0.1)
     await msg.add_reaction(getEmoji("instinct"))
     await asyncio.sleep(0.1)
+    await msg.add_reaction("🕹")
+    await asyncio.sleep(0.1)
     await msg.add_reaction("✅")
     await asyncio.sleep(0.1)
     await msg.add_reaction("1⃣")
@@ -770,6 +772,10 @@ async def raidegg(ctx, level, *, locationtime):
     await msg.add_reaction("3⃣")
     await asyncio.sleep(0.1)
     await msg.add_reaction("🖍")
+    await asyncio.sleep(0.1)
+    await msg.add_reaction("🔈")
+    await asyncio.sleep(0.1)
+
     await asyncio.sleep(7200)
     await msg.unpin()
 
@@ -918,8 +924,13 @@ async def sendraidmessage(loc, ctx, message):
                     await ctx.msg.delete()
                     return
 
-                await ctx.send(" ".join(map(lambda u: u.mention, registered)) + " " + message, delete_after=90.0)
-                await ctx.message.delete()
+                for user in registered:
+                    if user.dm_channel:
+                        await user.dm_channel.send(message)
+                    else:
+                        dm = await user.create_dm()
+                        await dm.send(message)
+
                 return
 
         await ctx.send("Cannot find raid *{}*".format(loc), delete_after=10.0)
@@ -927,6 +938,7 @@ async def sendraidmessage(loc, ctx, message):
 
 
 async def sendraidmessagechannel(loc, channel, message):
+    global bot
     async for msg in channel.history(limit=1000):
 
         if msg.author != bot.user or not msg.embeds:
@@ -944,7 +956,13 @@ async def sendraidmessagechannel(loc, channel, message):
                         if user not in registered:
                             registered.append(user)
 
-                await channel.send(" ".join(map(lambda u: u.mention, registered)) + " " + message, delete_after=90.0)
+                for user in registered:
+                    if user.dm_channel:
+                        await user.dm_channel.send(message)
+                    else:
+                        dm = await user.create_dm()
+                        await dm.send(message)
+
                 return
 
 
@@ -1169,7 +1187,7 @@ async def notify_raid(msg, coords=None):
     v_tot = 0
     i_tot = 0
     total = 0
-    remote = -1
+    remote = 0
     user_guests = {}
     user_ready = {}
     user_remote = {}
@@ -1193,12 +1211,11 @@ async def notify_raid(msg, coords=None):
             elif reaction.emoji == "✅":
                 users = await reaction.users().flatten()
                 for user in users:
-                    user_ready[user.name] = "(✓)"
+                    user_ready[user.name] = str(getEmoji("green_check"))
             elif reaction.emoji == "🕹":
                 users = await reaction.users().flatten()
                 for user in users:
                     user_remote[user.name] = "🕹"
-                    remote += 1
 
     for reaction in msg.reactions:
         if isinstance(reaction.emoji, str):
@@ -1208,6 +1225,8 @@ async def notify_raid(msg, coords=None):
             for user in users:
                 if user == bot.user:
                     continue
+                if user.name in user_remote:
+                    remote += 1
                 guest = ""
                 if user.name in user_guests:
                     guest = "+{}".format(user_guests.get(user.name), "")
@@ -1222,6 +1241,8 @@ async def notify_raid(msg, coords=None):
             for user in users:
                 if user == bot.user:
                     continue
+                if user.name in user_remote:
+                    remote += 1
                 guest = ""
                 if user.name in user_guests:
                     guest = "+{}".format(user_guests.get(user.name), "")
@@ -1236,6 +1257,8 @@ async def notify_raid(msg, coords=None):
             for user in users:
                 if user == bot.user:
                     continue
+                if user.name in user_remote:
+                    remote += 1
                 guest = ""
                 if user.name in user_guests:
                     guest = "+{}".format(user_guests.get(user.name), "")
@@ -1259,21 +1282,18 @@ async def notify_raid(msg, coords=None):
     for i in range(0, len(embed.fields)):
         if "Mystic" in embed.fields[i].name:
             embed.set_field_at(i, name=str(
-                getEmoji("mystic")) + "__Mystic ({})__".format(m_tot),
-                               value=mystic, inline=True)
+                getEmoji("mystic")) + "__Mystic ({})__".format(m_tot), value=mystic, inline=True)
         if "Valor" in embed.fields[i].name:
             embed.set_field_at(i, name=str(
-                getEmoji("valor")) + "__Valor ({})__".format(v_tot),
-                               value=valor, inline=True)
+                getEmoji("valor")) + "__Valor ({})__".format(v_tot), value=valor, inline=True)
         if "Instinct" in embed.fields[i].name:
-            msg.embeds[0].set_field_at(i, name=str(getEmoji("instinct")) + "__Instinct ({})__".format(i_tot),
-                                       value=instinct, inline=True)
+            msg.embeds[0].set_field_at(i, name=str(
+                getEmoji("instinct")) + "__Instinct ({})__".format(i_tot), value=instinct, inline=True)
+
         if "Total" in embed.fields[i].name:
-            msg.embeds[0].set_field_at(i, name="**Total:**",
-                                       value="**{}**".format(total), inline=True)
+            msg.embeds[0].set_field_at(i, name="**Total:**", value="**{}**".format(total), inline=True)
         if "Remote" in embed.fields[i].name:
-            msg.embeds[0].set_field_at(i, name="**Remote:**",
-                                       value="**{}**".format(remote), inline=True)
+            msg.embeds[0].set_field_at(i, name="**Remote:**", value="**{}**".format(remote), inline=True)
 
     await msg.edit(embed=embed)
 
