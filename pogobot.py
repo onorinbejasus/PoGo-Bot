@@ -1437,7 +1437,7 @@ def getEmoji(name):
 
 
 if __name__ == "__main__":
-    path = '/var/opt/PoGo-Bot'
+    path = '/var/opt/PoGo-Bot/'
     cfg = configparser.ConfigParser()
     cfg.read(path+'config.ini')
 
