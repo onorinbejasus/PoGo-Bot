@@ -574,7 +574,7 @@ async def raid(ctx, pkmn, *, locationtime):
     if len(lt) > 1:
         if re.search(r'[0-9]', str(lt[-1])):
             timer = lt[1].strip()
-            location =  lt[0].strip()
+            location = lt[0].strip()
         else:
             location = locationtime.strip()
             timer = "Unset"
@@ -587,12 +587,9 @@ async def raid(ctx, pkmn, *, locationtime):
     async for msg in ctx.message.channel.history():
         if msg.author == bot.user and msg.embeds:
             loc = get_field_by_name(msg.embeds[0].fields, "Location")
-            if loc and location.lower() == loc.value.lower() and pkmn.lower() \
-                    in msg.embeds[0].title.lower():
-                if (datetime.utcnow() - msg.created_at) < \
-                        timedelta(minutes=30):
-                    await ctx.send("Raid at {} already exists, please use "
-                                   "previous post".format(loc.value),
+            if loc and location.lower() == loc.value.lower() and pkmn.lower() in msg.embeds[0].title.lower():
+                if (datetime.utcnow() - msg.created_at) < timedelta(minutes=30):
+                    await ctx.send("Raid at {} already exists, please use previous post".format(loc.value),
                                    delete_after=10.0)
                     await ctx.message.delete()
                     return
@@ -623,7 +620,6 @@ async def raid(ctx, pkmn, *, locationtime):
     if thumb:
         embed.set_thumbnail(url=thumb)
     coords = get_gym_coords(location)
-    map_image = None
     map_dir = None
     if coords and GMAPS_KEY:
         map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
@@ -634,12 +630,9 @@ async def raid(ctx, pkmn, *, locationtime):
     embed.add_field(name="Location:", value=location, inline=True)
     embed.add_field(name="Proposed Time:", value=timer + "\n", inline=True)
     embed.add_field(name="** **", value="** **", inline=False)
-    embed.add_field(name=str(getEmoji("mystic")) + "__Mystic (0)__", value="[]",
-                    inline=True)
-    embed.add_field(name=str(getEmoji("valor")) + "__Valor (0)__", value="[]",
-                    inline=True)
-    embed.add_field(name=str(getEmoji("instinct")) + "__Instinct (0)__",
-                    value="[]", inline=True)
+    embed.add_field(name=str(getEmoji("mystic")) + "__Mystic (0)__", value="[]", inline=True)
+    embed.add_field(name=str(getEmoji("valor")) + "__Valor (0)__", value="[]", inline=True)
+    embed.add_field(name=str(getEmoji("instinct")) + "__Instinct (0)__", value="[]", inline=True)
     embed.add_field(name="**Total:**", value="0", inline=True)
     embed.add_field(name="**Remote:**", value="0", inline=True)
 
