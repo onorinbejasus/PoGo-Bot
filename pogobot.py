@@ -286,7 +286,7 @@ async def on_reaction_add(message, emoji, user):
 
             try:
                 await message.remove_reaction(emoji, user)
-                await sendraidmessagechannel(loc, channel, "Hop in")
+                await sendraidmessagechannel(loc, channel, "Hop in at {}".format(loc))
                 return
             except asyncio.TimeoutError:
                 await message.remove_reaction(emoji, user)
@@ -298,7 +298,7 @@ async def on_reaction_add(message, emoji, user):
 
             try:
                 await message.remove_reaction(emoji, user)
-                await sendraidmessagechannel(loc, channel, "Hop out")
+                await sendraidmessagechannel(loc, channel, "Hop out at {}".format(loc))
                 return
             except asyncio.TimeoutError:
                 await message.remove_reaction(emoji, user)
