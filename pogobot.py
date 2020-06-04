@@ -41,7 +41,10 @@ reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "
 
 
 async def raid_purge(channel, after=None):
-    return await channel.purge(after=after)
+    try:
+        return await channel.purge(after=after)
+    except Exception:
+        print("Unexpected error:", sys.exc_info()[0])
 
 
 def scheduled_purge(loop):
