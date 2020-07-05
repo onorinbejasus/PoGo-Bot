@@ -6842,9 +6842,9 @@
     "height": 1.5
   },
   "646_": {
-    "attack": 270,
-    "defense": 187,
-    "stamina": 250,
+    "attack": 246,
+    "defense": 170,
+    "stamina": 245,
     "type1": 16,
     "type2": 15,
     "legendary": true,
