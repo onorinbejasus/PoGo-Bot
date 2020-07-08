@@ -672,7 +672,7 @@ async def reloadgyms(ctx):
              pass_context=True)
 async def raid(ctx, pkmn, *, locationtime):
 
-    embed = await setup_raid(ctx, pkmn, locationtime)
+    embed = await setup_raid(ctx, locationtime, pkmn)
 
     embed.set_footer(text="raid")
     msg = await ctx.send(embed=embed)
