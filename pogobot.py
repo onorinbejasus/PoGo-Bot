@@ -687,6 +687,32 @@ async def raid(ctx, pkmn, *, locationtime):
     await msg.unpin()
 
 
+@bot.command(aliases=["train"],
+             usage="!raid [pokemon] [location] [time] [area]",
+             help="Create a new raid train posting for west campus. Users will also be listed in "
+                  "the post by team. Press 1, 2, or 3 to specify other teamless"
+                  "guests that will accompany you.",
+             brief="Create a new raid train post. !raid <pkmn> <location> <time> <area>",
+             pass_context=True)
+async def raidtrain(ctx, pkmn, *, locationtime):
+    lt = locationtime.rsplit(" ", 2)
+    print(lt)
+
+    # embed = await setup_raid(ctx, locationtime, pkmn)
+    #
+    # embed.set_footer(text="raid train west")
+    # msg = await ctx.send(embed=embed)
+    #
+    # await asyncio.sleep(0.1)
+    # await ctx.message.delete()
+    # await msg.pin()
+    #
+    # await setup_reactions(msg)
+    #
+    # await asyncio.sleep(1)
+    # await msg.unpin()
+
+
 async def editraidlocation(msg, location):
     for i in range(0, len(msg.embeds[0].fields)):
         field2 = msg.embeds[0].fields[i]
