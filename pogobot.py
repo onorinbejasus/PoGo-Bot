@@ -12,6 +12,8 @@ import asyncio
 import configparser
 from datetime import datetime, timedelta
 
+from concurrent.futures import CancelledError
+
 from utility import get_field_by_name, check_footer, \
     get_role_from_name, get_static_map_url, load_locale, load_base_stats, \
     load_cp_multipliers, load_gyms, get_gym_coords, get_cp_range, \
@@ -74,13 +76,21 @@ async def on_ready():
     printr("GMaps Key: {}...".format(GMAPS_KEY[:10]))
     printr('------')
 
-    loop = asyncio.get_event_loop()
-    schedule.every().day.at("00:15").do(scheduled_purge, loop=loop)
+    try:
+        loop = asyncio.get_event_loop()
+        schedule.every().day.at("00:15").do(scheduled_purge, loop=loop)
 
-    # Start a new continuous run thread.
-    cease_flag = schedule.run_continuously(0)
-    # Allow a small time for separate thread to register time stamps.
-    time.sleep(0.1)
+        # Start a new continuous run thread.
+        cease_flag = schedule.run_continuously(0)
+        # Allow a small time for separate thread to register time stamps.
+        time.sleep(0.1)
+    except CancelledError:
+        print('CancelledError')
+
+    finally:
+        loop.close()
+        sys.exit(1)
+
 
 @bot.event
 # Payload( PartialEmoji, Message_id, Channel_id, User_id)
