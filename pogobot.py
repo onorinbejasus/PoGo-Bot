@@ -440,7 +440,7 @@ async def setup_raid(ctx, locationtime, pkmn):
     return embed
 
 
-def setup_reactions(msg):
+async def setup_reactions(msg):
     await msg.add_reaction(getEmoji("mystic"))
     await asyncio.sleep(0.1)
     await msg.add_reaction(getEmoji("valor"))
