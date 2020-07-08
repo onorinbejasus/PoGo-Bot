@@ -1568,7 +1568,6 @@ if __name__ == "__main__":
         except CancelledError:
             print('CancelledError')
         finally:
-            loop.close()
             sys.exit(1)
 
     except NameError:
