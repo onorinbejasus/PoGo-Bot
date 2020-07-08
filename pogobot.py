@@ -8,6 +8,7 @@ import os, sys
 import schedule, time
 
 from discord.ext import commands
+from discord.ext.tasks import loop
 import asyncio
 import configparser
 from datetime import datetime, timedelta
@@ -36,7 +37,6 @@ PAYPAL_DONATION_LINK = "https://www.paypal.me/uicraids"
 bot = commands.Bot(command_prefix=BOT_PREFIX, case_insensitive=True,
                    description='A bot that manages Pokemon Go Discord communities.')
 
-loop = None
 
 running_updater = False
 cease_flag = None
@@ -77,8 +77,8 @@ async def on_ready():
     printr('------')
 
     try:
-        loop = asyncio.get_event_loop()
-        schedule.every().day.at("00:15").do(scheduled_purge, loop=loop)
+        scheduler_loop = asyncio.get_event_loop()
+        schedule.every().day.at("00:15").do(scheduled_purge, loop=scheduler_loop)
 
         # Start a new continuous run thread.
         cease_flag = schedule.run_continuously(0)
@@ -1211,10 +1211,9 @@ async def editraidrole(message, role):
     return False
 
 
-@bot.command(aliases=["ks"],
-             pass_context=True)
+@bot.command(aliases=["ks"], pass_context=True)
 async def killscheduler(ctx):
-    global cease_flag, loop
+    global cease_flag
 
     def confirm(m):
         if m.author == ctx.message.author:
@@ -1235,6 +1234,8 @@ async def killscheduler(ctx):
             await ask.delete()
             await msg.delete()
             await ctx.message.delete()
+
+            loop.stop()
 
             for task in asyncio.Task.all_tasks():
                 task.cancel()
