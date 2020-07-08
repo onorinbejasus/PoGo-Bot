@@ -4,7 +4,7 @@ import re
 import string
 
 import discord
-import os, sys
+import os, sys, traceback
 import schedule, time
 
 from discord.ext import commands
@@ -64,7 +64,7 @@ def scheduled_purge(loop):
 @bot.event
 @asyncio.coroutine
 async def on_ready():
-    global running_updater, cease_flag, loop
+    global running_updater, cease_flag
 
     printr(discord.version_info)
     printr('Logged in as: {}'.format(bot.user.name))
@@ -1235,13 +1235,16 @@ async def killscheduler(ctx):
             await msg.delete()
             await ctx.message.delete()
 
-            loop.stop()
+            cease_flag.set()
 
             for task in asyncio.Task.all_tasks():
                 task.cancel()
 
         except Exception:
-            print("Unexpected error:", sys.exc_info()[0])
+            traceback.print_exc(file=sys.stdout)
+
+        finally:
+            os.system("sudo reboot now")
 
 
 @bot.command(aliases=["stats"],
@@ -1534,7 +1537,7 @@ def getEmoji(name):
 
 
 if __name__ == "__main__":
-    path = '/var/opt/PoGo-Bot/'
+    path = '/var/opt/PoGo-Bot'
     cfg = configparser.ConfigParser()
     cfg.read(path+'config.ini')
 
@@ -1567,8 +1570,6 @@ if __name__ == "__main__":
             bot.run(cfg['PoGoBot']['BotToken'])
         except CancelledError:
             print('CancelledError')
-        finally:
-            sys.exit(1)
 
     except NameError:
         print("I tried")
