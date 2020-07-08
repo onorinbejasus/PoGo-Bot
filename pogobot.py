@@ -1230,9 +1230,8 @@ async def killscheduler(ctx):
             await msg.delete()
             await ctx.message.delete()
 
-            cease_flag.set()
-            loop.stop()
-            time.sleep(0.01)
+            for task in asyncio.Task.all_tasks():
+                task.cancel()
 
         except Exception:
             print("Unexpected error:", sys.exc_info()[0])
