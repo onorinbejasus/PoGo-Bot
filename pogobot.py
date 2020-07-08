@@ -358,6 +358,111 @@ async def on_reaction_remove(message, emoji, user):
         await asyncio.sleep(0.1)
 
 
+def setup_raid(ctx, locationtime, pkmn):
+    if not ANYONE_RAID_POST or not check_roles(ctx.message.author, RAID_ROLE_ID):
+        await ctx.send("{}, you are not allowed to post raids."
+                       .format(ctx.message.author.mention), delete_after=10.0)
+        await ctx.message.delete()
+        return
+
+    lt = locationtime.rsplit(" ", 1)
+    if len(lt) > 1:
+        if re.search(r'[0-9]', str(lt[-1])):
+            timer = lt[1].strip()
+            location = lt[0].strip()
+        else:
+            location = locationtime.strip()
+            timer = "Unset"
+    else:
+        location = locationtime.strip()
+        timer = "Unset"
+
+    location = string.capwords(location)
+
+    async for msg in ctx.message.channel.history():
+        if msg.author == bot.user and msg.embeds:
+            loc = get_field_by_name(msg.embeds[0].fields, "Location")
+            if loc and location.lower() == loc.value.lower() and pkmn.lower() in msg.embeds[0].title.lower():
+                if (datetime.utcnow() - msg.created_at) < timedelta(minutes=30):
+                    await ctx.send("Raid at {} already exists, please use previous post".format(loc.value),
+                                   delete_after=10.0)
+                    await ctx.message.delete()
+                    return
+
+    thumb = None
+    descrip = ""
+    match = pokemon_match(pkmn)
+    name = ""
+
+    if match:
+        pkmn = match
+    pkmn = string.capwords(pkmn, "-")
+    pid = get_pokemon_id_from_name(pkmn.lower())
+
+    if pid:
+        if IMAGE_URL:
+            thumb = IMAGE_URL.format(pid)
+        mincp20, maxcp20 = get_cp_range(pid, 20)
+        mincp25, maxcp25 = get_cp_range(pid, 25)
+        name = get_name(pid, pkmn)
+
+        descrip = "CP: ({}-{})\nWB: ({}-{})".format(mincp20, maxcp20,
+                                                    mincp25, maxcp25)
+    else:
+        printr("Pokemon id not found for {}".format(pkmn))
+
+    embed = discord.Embed(title="Raid - {}".format(name), description=descrip)
+    embed.set_author(name=ctx.message.author.name)
+
+    if thumb:
+        embed.set_thumbnail(url=thumb)
+    coords = get_gym_coords(location)
+    map_dir = None
+
+    if coords and GMAPS_KEY:
+        map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+        if map_image is not None:
+            embed.set_image(url=map_image)
+        map_dir = get_map_dir_url(coords[0], coords[1])
+
+    embed.add_field(name="Location:", value=location, inline=True)
+    embed.add_field(name="Proposed Time:", value=timer + "\n", inline=True)
+    embed.add_field(name="** **", value="** **", inline=False)
+    embed.add_field(name=str(getEmoji("mystic")) + "__Mystic (0)__", value="[]", inline=True)
+    embed.add_field(name=str(getEmoji("valor")) + "__Valor (0)__", value="[]", inline=True)
+    embed.add_field(name=str(getEmoji("instinct")) + "__Instinct (0)__", value="[]", inline=True)
+    embed.add_field(name="**Total:**", value="0", inline=True)
+    embed.add_field(name="**Remote:**", value="0", inline=True)
+
+    if map_dir is not None:
+        embed.add_field(name="**Directions**", value="[Map Link](" + map_dir + ")", inline=False)
+
+    return embed
+
+
+def setup_reactions(msg):
+    await msg.add_reaction(getEmoji("mystic"))
+    await asyncio.sleep(0.1)
+    await msg.add_reaction(getEmoji("valor"))
+    await asyncio.sleep(0.1)
+    await msg.add_reaction(getEmoji("instinct"))
+    await asyncio.sleep(0.1)
+    await msg.add_reaction("🕹")
+    await asyncio.sleep(0.1)
+    await msg.add_reaction("✅")
+    await asyncio.sleep(0.1)
+    await msg.add_reaction("1⃣")
+    await asyncio.sleep(0.1)
+    await msg.add_reaction("2⃣")
+    await asyncio.sleep(0.1)
+    await msg.add_reaction("3⃣")
+    await asyncio.sleep(0.1)
+    await msg.add_reaction("🖍")
+    await asyncio.sleep(0.1)
+    await msg.add_reaction("🔈")
+    await asyncio.sleep(0.1)
+
+
 @bot.command(pass_context=True)
 async def info(ctx):
     embed = discord.Embed(title="PoGo Bot",
@@ -567,108 +672,18 @@ async def reloadgyms(ctx):
              pass_context=True)
 async def raid(ctx, pkmn, *, locationtime):
 
-    if not ANYONE_RAID_POST or not check_roles(ctx.message.author, RAID_ROLE_ID):
-        await ctx.send("{}, you are not allowed to post raids."
-                       .format(ctx.message.author.mention), delete_after=10.0)
-        await ctx.message.delete()
-        return
-
-    lt = locationtime.rsplit(" ", 1)
-    if len(lt) > 1:
-        if re.search(r'[0-9]', str(lt[-1])):
-            timer = lt[1].strip()
-            location = lt[0].strip()
-        else:
-            location = locationtime.strip()
-            timer = "Unset"
-    else:
-        location = locationtime.strip()
-        timer = "Unset"
-
-    location = string.capwords(location)
-
-    async for msg in ctx.message.channel.history():
-        if msg.author == bot.user and msg.embeds:
-            loc = get_field_by_name(msg.embeds[0].fields, "Location")
-            if loc and location.lower() == loc.value.lower() and pkmn.lower() in msg.embeds[0].title.lower():
-                if (datetime.utcnow() - msg.created_at) < timedelta(minutes=30):
-                    await ctx.send("Raid at {} already exists, please use previous post".format(loc.value),
-                                   delete_after=10.0)
-                    await ctx.message.delete()
-                    return
-
-    thumb = None
-    descrip = ""
-    match = pokemon_match(pkmn)
-    name = ""
-    if match:
-        pkmn = match
-    pkmn = string.capwords(pkmn, "-")
-    pid = get_pokemon_id_from_name(pkmn.lower())
-    if pid:
-        if IMAGE_URL:
-            thumb = IMAGE_URL.format(pid)
-        mincp20, maxcp20 = get_cp_range(pid, 20)
-        mincp25, maxcp25 = get_cp_range(pid, 25)
-        name = get_name(pid, pkmn)
-
-        descrip = "CP: ({}-{})\nWB: ({}-{})".format(mincp20, maxcp20,
-                                                    mincp25, maxcp25)
-    else:
-        printr("Pokemon id not found for {}".format(pkmn))
-
-    embed = discord.Embed(title="Raid - {}".format(name),
-                          description=descrip)
-    embed.set_author(name=ctx.message.author.name)
-    if thumb:
-        embed.set_thumbnail(url=thumb)
-    coords = get_gym_coords(location)
-    map_dir = None
-    if coords and GMAPS_KEY:
-        map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
-        if map_image is not None:
-            embed.set_image(url=map_image)
-        map_dir = get_map_dir_url(coords[0], coords[1])
-
-    embed.add_field(name="Location:", value=location, inline=True)
-    embed.add_field(name="Proposed Time:", value=timer + "\n", inline=True)
-    embed.add_field(name="** **", value="** **", inline=False)
-    embed.add_field(name=str(getEmoji("mystic")) + "__Mystic (0)__", value="[]", inline=True)
-    embed.add_field(name=str(getEmoji("valor")) + "__Valor (0)__", value="[]", inline=True)
-    embed.add_field(name=str(getEmoji("instinct")) + "__Instinct (0)__", value="[]", inline=True)
-    embed.add_field(name="**Total:**", value="0", inline=True)
-    embed.add_field(name="**Remote:**", value="0", inline=True)
-
-    if map_dir is not None:
-        embed.add_field(name="**Directions**", value="[Map Link](" + map_dir + ")", inline=False)
+    embed = setup_raid(ctx, pkmn, locationtime)
 
     embed.set_footer(text="raid")
     msg = await ctx.send(embed=embed)
+
     await asyncio.sleep(0.1)
     await ctx.message.delete()
     await msg.pin()
-    await msg.add_reaction(getEmoji("mystic"))
-    await asyncio.sleep(0.1)
-    await msg.add_reaction(getEmoji("valor"))
-    await asyncio.sleep(0.1)
-    await msg.add_reaction(getEmoji("instinct"))
-    await asyncio.sleep(0.1)
-    await msg.add_reaction("🕹")
-    await asyncio.sleep(0.1)
-    await msg.add_reaction("✅")
-    await asyncio.sleep(0.1)
-    await msg.add_reaction("1⃣")
-    await asyncio.sleep(0.1)
-    await msg.add_reaction("2⃣")
-    await asyncio.sleep(0.1)
-    await msg.add_reaction("3⃣")
-    await asyncio.sleep(0.1)
-    await msg.add_reaction("🖍")
-    await asyncio.sleep(0.1)
-    await msg.add_reaction("🔈")
-    await asyncio.sleep(0.1)
 
-    await asyncio.sleep(1000)
+    setup_reactions(msg)
+
+    await asyncio.sleep(1)
     await msg.unpin()
 
 
