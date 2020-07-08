@@ -1566,7 +1566,13 @@ if __name__ == "__main__":
         if os.path.exists(path+'gyms.json'):
             load_gyms(path+'gyms.json')
 
-        bot.run(cfg['PoGoBot']['BotToken'])
+        try:
+            bot.run(cfg['PoGoBot']['BotToken'])
+        except CancelledError:
+            print('CancelledError')
+        finally:
+            loop.close()
+            sys.exit(1)
 
     except NameError:
         print("I tried")
