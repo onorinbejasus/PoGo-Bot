@@ -681,7 +681,7 @@ async def raid(ctx, pkmn, *, locationtime):
     await ctx.message.delete()
     await msg.pin()
 
-    setup_reactions(msg)
+    await setup_reactions(msg)
 
     await asyncio.sleep(1)
     await msg.unpin()
