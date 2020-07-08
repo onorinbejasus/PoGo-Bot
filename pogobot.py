@@ -87,10 +87,6 @@ async def on_ready():
     except CancelledError:
         print('CancelledError')
 
-    finally:
-        loop.close()
-        sys.exit(1)
-
 
 @bot.event
 # Payload( PartialEmoji, Message_id, Channel_id, User_id)
