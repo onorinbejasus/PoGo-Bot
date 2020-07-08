@@ -358,7 +358,7 @@ async def on_reaction_remove(message, emoji, user):
         await asyncio.sleep(0.1)
 
 
-def setup_raid(ctx, locationtime, pkmn):
+async def setup_raid(ctx, locationtime, pkmn):
     if not ANYONE_RAID_POST or not check_roles(ctx.message.author, RAID_ROLE_ID):
         await ctx.send("{}, you are not allowed to post raids."
                        .format(ctx.message.author.mention), delete_after=10.0)
@@ -672,7 +672,7 @@ async def reloadgyms(ctx):
              pass_context=True)
 async def raid(ctx, pkmn, *, locationtime):
 
-    embed = setup_raid(ctx, pkmn, locationtime)
+    embed = await setup_raid(ctx, pkmn, locationtime)
 
     embed.set_footer(text="raid")
     msg = await ctx.send(embed=embed)
