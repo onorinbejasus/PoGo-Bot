@@ -41,7 +41,7 @@ bot = commands.Bot(command_prefix=BOT_PREFIX, case_insensitive=True,
 running_updater = False
 cease_flag = None
 
-reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍", "🔈", '🕹', "gauntlet", "biga"]
+reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍", "🔈", "🥊", '🕹', "gauntlet", "biga"]
 
 
 async def raid_purge(channel, after=None):
@@ -406,7 +406,7 @@ async def setup_raid(ctx, pkmn, loc, timer):
         await ctx.send("{}, you are not allowed to post raids."
                        .format(ctx.message.author.mention), delete_after=10.0)
         await ctx.message.delete()
-        return
+        return None
 
     location = string.capwords(loc)
 
@@ -418,7 +418,7 @@ async def setup_raid(ctx, pkmn, loc, timer):
                     await ctx.send("Raid at {} already exists, please use previous post".format(loc.value),
                                    delete_after=10.0)
                     await ctx.message.delete()
-                    return
+                    return None
 
     thumb = None
     descrip = ""
@@ -491,6 +491,8 @@ async def setup_reactions(msg):
     await msg.add_reaction("🖍")
     await asyncio.sleep(0.1)
     await msg.add_reaction("🔈")
+    await asyncio.sleep(0.1)
+    await msg.add_reaction("🥊")
     await asyncio.sleep(0.1)
 
 
@@ -717,18 +719,18 @@ async def raid(ctx, pkmn, *, locationtime):
         timer = "Unset"
 
     embed = await setup_raid(ctx, pkmn, location, timer)
-
-    embed.set_footer(text="raid")
-    msg = await ctx.send(embed=embed)
-
-    await asyncio.sleep(0.1)
     await ctx.message.delete()
-    await msg.pin()
+    if embed is not None:
+        embed.set_footer(text="raid")
+        msg = await ctx.send(embed=embed)
 
-    await setup_reactions(msg)
+        await asyncio.sleep(0.1)
+        await msg.pin()
 
-    await asyncio.sleep(1)
-    await msg.unpin()
+        await setup_reactions(msg)
+
+        await asyncio.sleep(1)
+        await msg.unpin()
 
 
 @bot.command(aliases=["train"],
@@ -1245,6 +1247,15 @@ async def killscheduler(ctx):
 
         finally:
             os.system("sudo reboot now")
+
+
+@bot.command(aliases=["pb"],
+             usage="",
+             brief=""
+                   "!",
+             pass_context=True)
+async def pokebattler(ctx):
+    return
 
 
 @bot.command(aliases=["stats"],
