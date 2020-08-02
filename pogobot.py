@@ -354,10 +354,12 @@ async def setup_raid(ctx, pkmn, loc, timer):
 
     async for msg in ctx.message.channel.history():
         if msg.author == bot.user and msg.embeds:
-            loc = get_field_by_name(msg.embeds[0].fields, "**Location")
-            t_loc = loc.value.lower().split(" @ ")[0]
-            if loc and location.lower() == t_loc and pkmn.lower() in msg.embeds[0].title.lower():
-                if (datetime.utcnow() - msg.created_at) < timedelta(minutes=30):
+            o_loc = get_field_by_name(msg.embeds[0].fields, "**Location")
+            t_loc = o_loc.value.lower().split(" @ ")
+            o_old = t_loc[0]
+            o_time = t_loc[1]
+            if o_loc and location.lower() == o_old and pkmn.lower() in msg.embeds[0].title.lower():
+                if o_time == timer:
                     await ctx.send("Raid at {} already exists, please use previous post".format(location), delete_after=10.0)
                     return None
 
@@ -420,7 +422,7 @@ async def setup_raid(ctx, pkmn, loc, timer):
     total_value = "**{}**".format(0) + value_space + "**{}**".format(0)
 
     location_time_header = "**Location @ Time**"
-    location_time_value = "{} @ {}".format(loc, timer)
+    location_time_value = "{} @ {}".format(location, timer)
 
     # embed.add_field(name="Proposed Time:", value=timer + "\n", inline=True)
     # embed.add_field(name="** **", value="** **", inline=False)
@@ -637,7 +639,7 @@ async def clearraids(ctx):
     def raid(msg):
         return msg.author == bot.user and (check_footer(msg, "raid") or check_footer(msg, "raid-train"))
 
-    if not await checkmod(ctx,MOD_ROLE_ID):
+    if not await checkmod(ctx, MOD_ROLE_ID):
         return
     await ctx.message.channel.purge(limit=500, check=raid)
     await ctx.send("Cleared all raid posts", delete_after=10)
@@ -739,7 +741,7 @@ async def raidtrain(ctx, pkmn, *, locationtimearea):
 async def editraidlocation(msg, location):
     for i in range(0, len(msg.embeds[0].fields)):
         field2 = msg.embeds[0].fields[i]
-        if "Location:" in field2.name:
+        if "**Location:" in field2.name:
             timer = field2.value.split(" ")[-1]
             location = string.capwords(location)
             location_time_value = "{} @ {}".format(location, timer)
@@ -781,15 +783,18 @@ async def raidegg(ctx, level, *, locationtime):
 
     location = string.capwords(location)
 
+
     async for msg in ctx.message.channel.history():
         if msg.author == bot.user and msg.embeds:
-            loc = get_field_by_name(msg.embeds[0].fields, "**Location")
-            t_loc = loc.value.lower().split(" @ ")[0]
-            if loc and location.lower() == t_loc and level.lower() in msg.embeds[0].title.lower():
-                if (datetime.utcnow() - msg.created_at) < timedelta(minutes=30):
+            o_loc = get_field_by_name(msg.embeds[0].fields, "**Location")
+            t_loc = o_loc.value.lower().split(" @ ")
+            o_old = t_loc[0]
+            o_time = t_loc[1]
+            if o_loc and location.lower() == o_old and level.lower() in msg.embeds[0].title.lower():
+                if o_time == timer:
                     await ctx.send("Raid at {} already exists, please use previous post".format(location), delete_after=10.0)
-                    await ctx.message.delete()
                     return None
+
     thumb = None
     descrip = ""
     if EGG_IMAGE_URL:
@@ -890,7 +895,7 @@ async def raidpokemon(ctx, loc, pkmn):
         if msg.author != bot.user or not msg.embeds:
             continue
         for field in msg.embeds[0].fields:
-            if field.name.startswith("Location") and loc.lower() in field.value.lower():
+            if field.name.startswith("**Location") and loc.lower() in field.value.lower():
                 if ctx.message.author.name != msg.embeds[
                     0].author.name and not check_roles(ctx.message.author,
                                                        RAID_ROLE_ID):
@@ -950,14 +955,12 @@ async def editraidpokemon(msg, pkmn, user):
 
 
 async def sendraidmessage(loc, ctx, message):
-    async for msg in ctx.message.channel.history(limit=1000):
-
+    async for msg in ctx.message.channel.history(limit=100):
         if msg.author != bot.user or not msg.embeds:
             continue
 
         for field in msg.embeds[0].fields:
-
-            if field.name.startswith("Location") and loc.lower() in field.value.lower():
+            if field.name.startswith("**Location") and loc.lower() in field.value.lower():
                 registered = []
 
                 for reaction in msg.reactions:
@@ -996,7 +999,7 @@ async def sendraidmessagechannel(loc, channel, message):
 
         for field in msg.embeds[0].fields:
 
-            if field.name.startswith("Location") and loc.lower() in field.value.lower():
+            if field.name.startswith("**Location") and loc.lower() in field.value.lower():
                 registered = []
 
                 for reaction in msg.reactions:
@@ -1043,7 +1046,7 @@ async def raidcoords(ctx, loc, *, coords):
         if msg.author != bot.user or not msg.embeds:
             continue
         for field in msg.embeds[0].fields:
-            if field.name.startswith("Location") and loc.lower() in field.value.lower():
+            if field.name.startswith("**Location") and loc.lower() in field.value.lower():
                 if msg.embeds[0].author.name != ctx.message.author.name and not check_roles(ctx.message.author, RAID_ROLE_ID):
                     await ctx.send("You cannot set coordinates for this raid!", delete_after=10.0)
                     await ctx.message.delete()
@@ -1114,7 +1117,7 @@ async def exraid(ctx, pkmn, location, date, role="ex-raid"):
         embed.set_image(url=map_image)
     if thumb:
         embed.set_thumbnail(url=thumb)
-    embed.add_field(name="Location:", value=location, inline=True)
+    embed.add_field(name="**Location:", value=location, inline=True)
     embed.add_field(name="Date:", value=date + "\n", inline=True)
     embed.add_field(name="** **", value="** **", inline=False)
     embed.add_field(name=str(getEmoji("mystic")) + "__Mystic (0)__",
@@ -1519,8 +1522,7 @@ if __name__ == "__main__":
         EGG_IMAGE_URL = cfg['PoGoBot'].get('EggImageURL') or None
         EX_RAID_CHANNEL = cfg['PoGoBot'].get('ExRaidChannel') or 0
         GMAPS_KEY = cfg['PoGoBot'].get('GMapsKey') or None
-        load_locale(os.path.join(path+'locales', '{}.json'
-                                 .format(cfg['PoGoBot']['Locale'] or 'en')))
+        load_locale(os.path.join(path+'locales', '{}.json'.format(cfg['PoGoBot']['Locale'] or 'en')))
         load_base_stats(os.path.join(path+'data', 'base_stats_revised.json'))
         load_cp_multipliers(os.path.join(path+'data', 'cp_multipliers.json'))
 
