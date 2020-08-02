@@ -13,13 +13,14 @@ import asyncio
 import configparser
 from datetime import datetime, timedelta
 
+
 from concurrent.futures import CancelledError
 
 from utility import get_field_by_name, check_footer, \
     get_static_map_url, load_locale, load_base_stats, \
     load_cp_multipliers, load_gyms, get_gym_coords, get_cp_range, \
     get_pokemon_id_from_name, printr, pokemon_match, check_roles, get_types, get_name, \
-    get_map_dir_url, get_role, checkmod, get_db_stats, parse_weather
+    get_map_dir_url, get_role, checkmod, get_db_stats, parse_weather, write_gyms
 
 BOT_PREFIX = "!"
 BOT_TOKEN = None
@@ -42,7 +43,8 @@ running_updater = False
 cease_flag = None
 
 reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍", "🔈", "🥊", '🕹', "🙏", "gauntlet", "biga"]
-
+gyms = {}
+path = ""
 
 async def raid_purge(channel, after=None):
     try:
@@ -490,10 +492,75 @@ async def beast(ctx):
 
 
 @bot.command(aliases=["ag"],
-             brief="Add a new gym to the bot. !addgym [gym_name] [latitude] [longitude]", pass_context=True)
-async def addgym(ctx):
+             brief="Add a new gym to the bot. !addgym [latitude] [longitude] [gym_name]", pass_context=True)
+async def addgym(ctx, lat, lon, *, desc):
+    global gyms
+
+    def confirm(m):
+        if m.author == ctx.message.author:
+            return True
+        return False
+
+    await ctx.message.delete()
+
     if not await checkmod(ctx, MOD_ROLE_ID):
+        ctx.send("{}, you are not allowed to add a new gym.".format(ctx.message.author.mention), delete_after=10.0)
         return
+    try:
+        lat = float(lat)
+        lon = float(lon)
+    except ValueError:
+        ctx.send("The latitude or longitude you entered was not valid. Make sure to use the format !addgym [latitude] [longitude] [gym_name] ",
+                 delete_after=20.0)
+        return
+
+    for gym in gyms:
+        if gym["name"] == desc:
+            await ctx.send("{} is already a gym.".format(desc), delete_after=10.0)
+            return
+
+    map_image = get_static_map_url(lat, lon, api_key=GMAPS_KEY)
+    map = await ctx.send(map_image)
+    name = await ctx.send(desc)
+    ask = await ctx.send("Is this information correct? (yes/no)")
+    try:
+        msg = await bot.wait_for("message", timeout=30.0, check=confirm)
+    except asyncio.TimeoutError:
+        await ctx.message.delete()
+        await ask.delete()
+        await map.delete()
+        await name.delete()
+        return
+
+    try:
+        if msg.content.lower().startswith("y"):
+            await msg.delete()
+            await ask.delete()
+            await name.delete()
+            await map.delete()
+
+            new_gym = {
+                "name": desc,
+                "latitude": str(lat),
+                "longitude": str(lon),
+                "description": "",
+                "url": ""
+            }
+            gyms.append(new_gym)
+            write_gyms(path+"gyms.json", gyms)
+            load_gyms(path+'gyms.json')
+
+            await ctx.send("{} was successfully added.".format(desc), delete_after=10.0)
+
+        else:
+            await ctx.send("Gym not added..", delete_after=10.0)
+            await msg.delete()
+            await ask.delete()
+            await name.delete()
+            await map.delete()
+
+    except Exception:
+        traceback.print_exc(file=sys.stdout)
 
 
 @bot.command(aliases=["clr"],
@@ -538,8 +605,7 @@ async def purge(ctx, pinned=False, limit=100, after=None):
         return False
 
     if await checkmod(ctx, MOD_ROLE_ID):
-        ask = await ctx.send("Are you sure you would like to clear the last 100"
-                             " messages? (yes/no)")
+        ask = await ctx.send("Are you sure you would like to clear the last 100 messages? (yes/no)")
         try:
             msg = await bot.wait_for("message", timeout=30.0, check=confirm)
         except asyncio.TimeoutError:
@@ -651,11 +717,10 @@ async def reloadgyms(ctx):
             load_gyms('gyms.json')
             await ctx.send("Gyms successfully loaded!", delete_after=30.0)
         except:
-            await ctx.send("There was an issue reloading the gyms!",
-                           delete_after=30.0)
+            await ctx.send("There was an issue reloading the gyms!", delete_after=30.0)
     else:
-        ctx.send("gyms.json does not exist!", delete_after=30.0)
-    ctx.message.delete()
+        await ctx.send("gyms.json does not exist!", delete_after=30.0)
+    await ctx.message.delete()
 
 
 @bot.command(aliases=["r"],
@@ -1524,7 +1589,7 @@ if __name__ == "__main__":
         load_cp_multipliers(os.path.join(path+'data', 'cp_multipliers.json'))
 
         if os.path.exists(path+'gyms.json'):
-            load_gyms(path+'gyms.json')
+            gyms = load_gyms(path+'gyms.json')
 
         try:
             bot.run(cfg['PoGoBot']['BotToken'])

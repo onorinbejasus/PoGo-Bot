@@ -94,7 +94,6 @@ def get_static_map_url(lat, lng, width='250', height='125', maptype='roadmap', z
 
     if api_key is not None:
         map_ += ('&key=%s' % api_key)
-    print(map_)
     return map_
 
 
@@ -133,6 +132,12 @@ def load_gyms(fp):
     for d in gyms:
         if 'name' in d:
             gym_names.append(d['name'])
+    return gyms
+
+
+def write_gyms(fp, gym_list):
+    with open(fp, 'w') as f:
+        json.dump(gym_list, f, indent=4)
 
 
 def get_pokemon_id_from_name(pkmn):
