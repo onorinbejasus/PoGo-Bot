@@ -1,4 +1,5 @@
 import asyncio
+import requests
 import json
 import re
 from fuzzywuzzy import fuzz, process
@@ -22,6 +23,19 @@ def check_roles(member, roles):
     return False
 
 
+async def get_role(msg):
+    role_name = msg.embeds[0].footer.text.split(":", 1)
+    if role_name and len(role_name) > 1:
+        role_name = role_name[1].strip()
+    else:
+        role_name = None
+    role = None
+    if role_name and role_name != "ex-raid":
+        role = await get_role_from_name(msg.guild, role_name, True)
+
+    return role_name, role
+
+
 async def get_role_from_name(guild, role_name, create_new_role=False):
     roles = guild.roles
     role = None
@@ -38,7 +52,7 @@ async def get_role_from_name(guild, role_name, create_new_role=False):
 
 def get_field_by_name(fields, name):
     for field in fields:
-        if name.lower() in field.name.lower():
+        if field.name.startswith(name):
             return field
     return None
 
@@ -66,8 +80,7 @@ def get_open_static_map_url(lat, lng, zoom='15'):
 
 # Returns a static map url with <lat> and <lng> parameters for dynamic test
 # Taken and modified from PokeAlarm
-def get_static_map_url(lat, lng, width='250', height='125',
-                       maptype='roadmap', zoom='15', api_key=None):
+def get_static_map_url(lat, lng, width='250', height='125', maptype='roadmap', zoom='15', api_key=None):
     center = '{},{}'.format(lat, lng)
     query_center = 'center={}'.format(center)
     query_markers = 'markers=color:red%7C{}'.format(center)
@@ -83,6 +96,7 @@ def get_static_map_url(lat, lng, width='250', height='125',
         map_ += ('&key=%s' % api_key)
     print(map_)
     return map_
+
 
 # Returns a direction url with <lat> and <lng> parameters
 # Taken and modified from PokeAlarm
@@ -192,6 +206,35 @@ def get_gym_coords(gn):
             return [d.get("latitude"), d.get("longitude")]
 
     return None
+
+
+async def checkmod(ctx, role):
+    if not check_roles(ctx.message.author, role):
+        await ctx.send("You must be a mod in order to use " +
+                       "this command!", delete_after=10)
+        await ctx.message.delete()
+        return False
+    return True
+
+
+async def get_db_stats(pid):
+    r = requests.get("https://db.pokemongohub.net/api/pokemon/{}".format(pid))
+    return r.json()
+
+
+def parse_weather(weather):
+    if weather == "snow":
+        return "☃️"
+    elif weather == "windy":
+        return "🪁"
+    elif weather == "cloudy":
+        return "☁️"
+    elif weather == "partlyCloudy":
+        return "⛅"
+    elif weather == "sunny":
+        return "☀️"
+    elif weather == "rain":
+        return "🌧️"
 
 
 # Replace non-ascii characters with '?' and print
