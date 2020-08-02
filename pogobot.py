@@ -199,7 +199,7 @@ async def on_reaction_add(message, emoji, user):
                         await channel.send("{}, unable to process pokemon!".format(user.mention), delete_after=20.0)
                 elif msg.content.lower().startswith("l"):  # change location
                     if " " in msg.content:
-                        new_loc = loc = msg.content.split(' ', 1)[1].strip()
+                        new_loc = msg.content.split(' ', 1)[1].strip()
                         await editraidlocation(message, new_loc)
                         await channel.send("Updated Raid at {} to **{}**".format(loc if loc else "Unknown", new_loc), delete_after=20.0)
                     else:
