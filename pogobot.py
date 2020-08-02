@@ -51,13 +51,13 @@ async def raid_purge(channel, after=None):
         print("Unexpected error:", sys.exc_info()[0])
 
 
-def scheduled_purge(loop):
+def scheduled_purge(loopy):
     global bot
     # Purge messages from the last 2 days
     after = datetime.now() - timedelta(days=2)
     for channel_id in RAID_CHANNELS:
         channel = bot.get_channel(int(channel_id))
-        loop.create_task(raid_purge(channel, after))
+        loopy.create_task(raid_purge(channel, after))
         time.sleep(0.01)
 
 
@@ -479,8 +479,7 @@ async def info(ctx):
 
 
 @bot.command(aliases=[],
-             brief="Send BEAST message",
-             pass_context=True)
+             brief="Send BEAST message",  pass_context=True)
 async def beast(ctx):
     embed = discord.Embed(title=":regional_indicator_b: :regional_indicator_e: "
                                 ":regional_indicator_a: :regional_indicator_s: "
@@ -490,9 +489,15 @@ async def beast(ctx):
     await ctx.message.delete()
 
 
+@bot.command(aliases=["ag"],
+             brief="Add a new gym to the bot. !addgym [gym_name] [latitude] [longitude]", pass_context=True)
+async def addgym(ctx):
+    if not await checkmod(ctx, MOD_ROLE_ID):
+        return
+
+
 @bot.command(aliases=["clr"],
-             brief="[MOD] Clear all members from role. !clearrole [role_name]",
-             pass_context=True)
+             brief="[MOD] Clear all members from role. !clearrole [role_name]", pass_context=True)
 async def clearrole(ctx, rolex=None):
     if not await checkmod(ctx, MOD_ROLE_ID):
         return
@@ -563,16 +568,14 @@ async def purge(ctx, pinned=False, limit=100, after=None):
 
 
 @bot.command(aliases=[],
-             brief="Messages the donation link",
-             pass_context=True)
+             brief="Messages the donation link",  pass_context=True)
 async def donate(ctx):
     await ctx.send("You can donate by Paypal at {}".format(PAYPAL_DONATION_LINK))
     await ctx.message.delete()
 
 
 @bot.command(aliases=["sex"],
-             brief="[MOD] Manually scan channel for ex-raid posts. !scanex ",
-             pass_context=True)
+             brief="[MOD] Manually scan channel for ex-raid posts. !scanex ", pass_context=True)
 async def scanex(ctx):
     if not await checkmod(ctx, MOD_ROLE_ID):
         return
@@ -583,9 +586,7 @@ async def scanex(ctx):
 
 
 @bot.command(aliases=["exu"],
-             brief="[MOD] Continuously update ex-raid channel manually. "
-                   "!exupdater [minutes]",
-             pass_context=True)
+             brief="[MOD] Continuously update ex-raid channel manually. !exupdater [minutes]", pass_context=True)
 async def exupdater(ctx, minutes=5):
     global running_updater
     if not await checkmod(ctx,MOD_ROLE_ID):
@@ -605,9 +606,7 @@ async def exupdater(ctx, minutes=5):
 
 
 @bot.command(aliases=["eo"],
-             brief="[MOD] Send message tagging @everyone "
-                   "!everyone [message]",
-             pass_context=True)
+             brief="[MOD] Send message tagging @everyone. !everyone [message]", pass_context=True)
 async def everyone(ctx, *, message):
     await ctx.send("@everyone {}".format(message))
     await ctx.message.delete()
@@ -633,8 +632,7 @@ async def manualexscan(channel):
 
 
 @bot.command(aliases=[],
-             brief="[MOD] Clear raid posts from channel. !clearraids",
-             pass_context=True)
+             brief="[MOD] Clear raid posts from channel. !clearraids", pass_context=True)
 async def clearraids(ctx):
     def raid(msg):
         return msg.author == bot.user and (check_footer(msg, "raid") or check_footer(msg, "raid-train"))
@@ -646,8 +644,7 @@ async def clearraids(ctx):
 
 
 @bot.command(aliases=["rg"],
-             brief="[MOD] Reload gyms from file. !reloadgyms",
-             pass_context=True)
+             brief="[MOD] Reload gyms from file. !reloadgyms", pass_context=True)
 async def reloadgyms(ctx):
     if os.path.exists('gyms.json'):
         try:
@@ -741,7 +738,7 @@ async def raidtrain(ctx, pkmn, *, locationtimearea):
 async def editraidlocation(msg, location):
     for i in range(0, len(msg.embeds[0].fields)):
         field2 = msg.embeds[0].fields[i]
-        if "**Location:" in field2.name:
+        if "**Location" in field2.name:
             timer = field2.value.split(" ")[-1]
             location = string.capwords(location)
             location_time_value = "{} @ {}".format(location, timer)
@@ -858,7 +855,7 @@ async def raidtime(ctx, loc, timer=None):
                 else:
                     total = get_field_by_name(msg.embeds[0].fields, "**Location")
                     total = total.value.split(" ")[0] if total else 0
-                    time_field = get_field_by_name(msg.embeds[0].fields, "**Location:") or get_field_by_name(msg.embeds[0].fields, "Date:")
+                    time_field = get_field_by_name(msg.embeds[0].fields, "**Location") or get_field_by_name(msg.embeds[0].fields, "Date:")
                     raid_time = time_field.value.split(" ")[-1]
                     raid_loc = time_field.value.split(" ")[0:-1]
                     await ctx.send(
@@ -1117,7 +1114,7 @@ async def exraid(ctx, pkmn, location, date, role="ex-raid"):
         embed.set_image(url=map_image)
     if thumb:
         embed.set_thumbnail(url=thumb)
-    embed.add_field(name="**Location:", value=location, inline=True)
+    embed.add_field(name="**Location", value=location, inline=True)
     embed.add_field(name="Date:", value=date + "\n", inline=True)
     embed.add_field(name="** **", value="** **", inline=False)
     embed.add_field(name=str(getEmoji("mystic")) + "__Mystic (0)__",
