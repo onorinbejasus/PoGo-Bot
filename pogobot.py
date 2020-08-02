@@ -712,9 +712,9 @@ async def clearraids(ctx):
 @bot.command(aliases=["rg"],
              brief="[MOD] Reload gyms from file. !reloadgyms", pass_context=True)
 async def reloadgyms(ctx):
-    if os.path.exists('gyms.json'):
+    if os.path.exists(path+'gyms.json'):
         try:
-            load_gyms('gyms.json')
+            load_gyms(path+'gyms.json')
             await ctx.send("Gyms successfully loaded!", delete_after=30.0)
         except:
             await ctx.send("There was an issue reloading the gyms!", delete_after=30.0)
