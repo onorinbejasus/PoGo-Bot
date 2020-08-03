@@ -46,6 +46,7 @@ reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "
 gyms = {}
 path = ""
 
+
 async def raid_purge(channel, after=None):
     try:
         return await channel.purge(after=after)
