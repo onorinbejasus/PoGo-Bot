@@ -78,16 +78,16 @@ async def on_ready():
     printr("GMaps Key: {}...".format(GMAPS_KEY[:10]))
     printr('------')
 
-    try:
-        scheduler_loop = asyncio.get_event_loop()
-        schedule.every().day.at("00:15").do(scheduled_purge, loop=scheduler_loop)
-
-        # Start a new continuous run thread.
-        cease_flag = schedule.run_continuously(0)
-        # Allow a small time for separate thread to register time stamps.
-        time.sleep(0.1)
-    except CancelledError:
-        print('CancelledError')
+    # try:
+    #     scheduler_loop = asyncio.get_event_loop()
+    #     schedule.every().day.at("00:15").do(scheduled_purge, loop=scheduler_loop)
+    #
+    #     # Start a new continuous run thread.
+    #     cease_flag = schedule.run_continuously(0)
+    #     # Allow a small time for separate thread to register time stamps.
+    #     time.sleep(0.1)
+    # except CancelledError:
+    #     print('CancelledError')
 
 
 @bot.event
@@ -802,6 +802,7 @@ async def raidtrain(ctx, pkmn, *, locationtimearea):
 
 
 async def editraidlocation(msg, location):
+    map_dir = None
     for i in range(0, len(msg.embeds[0].fields)):
         field2 = msg.embeds[0].fields[i]
         if "**Location" in field2.name:
@@ -810,13 +811,23 @@ async def editraidlocation(msg, location):
             location_time_value = "{} @ {}".format(location, timer)
 
             msg.embeds[0].set_field_at(i, name=field2.name, value=location_time_value, inline=False)
-
             coords = get_gym_coords(location)
+            map_dir = get_map_dir_url(coords[0], coords[1])
+
             if coords and GMAPS_KEY:
                 map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
                 msg.embeds[0].set_image(url=map_image)
+
+        if map_dir and "**Directions" in field2.name:
+            msg.embeds[0].set_field_at(i, name="**Directions**", value="[Map Link](" + map_dir + ")", inline=False)
             await msg.edit(embed=msg.embeds[0])
             return True
+
+    if map_dir:
+        msg.embeds[0].add_field(name="**Directions**", value="[Map Link](" + map_dir + ")", inline=False)
+
+    await msg.edit(embed=msg.embeds[0])
+
     return False
 
 
@@ -1563,8 +1574,8 @@ def getEmoji(name):
 
 
 if __name__ == "__main__":
-    path = '/var/opt/PoGo-Bot/'
-    # path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
+    # path = '/var/opt/PoGo-Bot/'
+    path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
     cfg = configparser.ConfigParser()
     cfg.read(path+'config.ini')
 
