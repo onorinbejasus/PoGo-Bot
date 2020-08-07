@@ -358,6 +358,8 @@ async def setup_raid(ctx, pkmn, loc, timer):
     async for msg in ctx.message.channel.history():
         if msg.author == bot.user and msg.embeds:
             o_loc = get_field_by_name(msg.embeds[0].fields, "**Location")
+            if o_loc is None:
+                return
             t_loc = o_loc.value.lower().split(" @ ")
             o_old = t_loc[0]
             o_time = t_loc[1]
@@ -857,7 +859,6 @@ async def raidegg(ctx, level, *, locationtime):
         timer = "Unset"
 
     location = string.capwords(location)
-
 
     async for msg in ctx.message.channel.history():
         if msg.author == bot.user and msg.embeds:
