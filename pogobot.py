@@ -380,7 +380,7 @@ async def setup_raid(ctx, pkmn, loc, timer):
     weather = []
     if pid:
         stats = await get_db_stats(str(pid)[:-1])
-        if stats["weatherInfluences"]:
+        if stats and stats["weatherInfluences"]:
             for i in range(0, len(stats["weatherInfluences"])):
                 emoji = parse_weather(stats["weatherInfluences"][i])
                 weather.append(emoji)
@@ -1576,8 +1576,8 @@ def getEmoji(name):
 
 
 if __name__ == "__main__":
-    path = '/var/opt/PoGo-Bot/'
-    # path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
+    # path = '/var/opt/PoGo-Bot/'
+    path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
     cfg = configparser.ConfigParser()
     cfg.read(path+'config.ini')
 
