@@ -186,7 +186,7 @@ async def on_reaction_add(message, emoji, user):
     elif emoji.name == "🖍":
         if message.embeds[0].author == user.name or check_roles(user, MOD_ROLE_ID) or check_roles(user, RAID_ROLE_ID):
 
-            ask = await channel.send("{}, edit raid at {}? (delete, pokemon, location, time, role, cancel)".format(user.mention, loc), delete=60)
+            ask = await channel.send("{}, edit raid at {}? (delete, pokemon, location, time, role, cancel)".format(user.mention, loc), delete_after=60)
             try:
                 msg = await bot.wait_for("message", timeout=30.0, check=confirm)
                 if msg.content.lower().startswith("del"):    # delete post
@@ -1584,8 +1584,8 @@ def getEmoji(name):
 
 
 if __name__ == "__main__":
-    path = '/var/opt/PoGo-Bot/'
-    # path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
+    # path = '/var/opt/PoGo-Bot/'
+    path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
     cfg = configparser.ConfigParser()
     cfg.read(path+'config.ini')
 
