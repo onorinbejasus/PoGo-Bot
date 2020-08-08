@@ -186,7 +186,7 @@ async def on_reaction_add(message, emoji, user):
     elif emoji.name == "🖍":
         if message.embeds[0].author == user.name or check_roles(user, MOD_ROLE_ID) or check_roles(user, RAID_ROLE_ID):
 
-            ask = await channel.send("{}, edit raid at {}? (delete, pokemon, location, time, role, cancel)".format(user.mention, loc))
+            ask = await channel.send("{}, edit raid at {}? (delete, pokemon, location, time, role, cancel)".format(user.mention, loc), delete=60)
             try:
                 msg = await bot.wait_for("message", timeout=30.0, check=confirm)
                 if msg.content.lower().startswith("del"):    # delete post
@@ -230,14 +230,16 @@ async def on_reaction_add(message, emoji, user):
                         await channel.send("{}, unable to process role!" .format(user.mention), delete_after=30.0)
                 else:
                     await channel.send("{}, I do not understand that option." .format(user.mention), delete_after=20.0)
+
                 await ask.delete()
                 await msg.delete()
                 await message.remove_reaction(emoji, user)
                 return
             except asyncio.TimeoutError:
+                await ask.delete()
                 await message.remove_reaction(emoji, user)
                 await channel.send("{} response timed out. Try again.".format(user.mention), delete_after=20.0)
-                await ask.delete()
+
                 return
     elif emoji.name == "🔈":
         if message.embeds[0].author == user.name or check_roles(user, MOD_ROLE_ID) or check_roles(user, RAID_ROLE_ID):
@@ -735,6 +737,7 @@ async def reloadgyms(ctx):
              brief="Create a new raid post. !raid <pkmn> <location> <time>",
              pass_context=True)
 async def raid(ctx, pkmn, *, locationtime):
+    await ctx.message.delete()
 
     lt = locationtime.rsplit(" ", 1)
     if len(lt) > 1:
@@ -748,7 +751,6 @@ async def raid(ctx, pkmn, *, locationtime):
         location = locationtime.strip()
         timer = "Unset"
 
-    await ctx.message.delete()
     embed = await setup_raid(ctx, pkmn, location, timer)
 
     if embed is not None:
@@ -1435,6 +1437,9 @@ async def notify_raid(msg, coords=None):
     #     map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
     #     embed.set_image(url=map_image)
 
+    total_idx = -1
+    invite_idx = -1
+
     for i in range(0, len(embed.fields)):
         if "Mystic" in embed.fields[i].name:
             embed.set_field_at(i, name=str(
@@ -1444,15 +1449,18 @@ async def notify_raid(msg, coords=None):
         elif "Instinct" in embed.fields[i].name:
             embed.set_field_at(i, name=str(getEmoji("instinct")) + "__Instinct ({})__".format(i_tot), value=instinct, inline=True)
         elif "Total" in embed.fields[i].name:
+            total_idx = i
             embed.set_field_at(i, name=total_field, value=total_value.format(total), inline=True)
-        elif "Needs Invite" in embed.fields[i].name and len(user_invite) > 0:
-            embed.set_field_at(i, name="**🙏Needs Invite🙏**", value=invite, inline=False)
+        elif "Needs Invite" in embed.fields[i].name:
+            invite_idx = i
+            if len(user_invite) > 0:
+                embed.set_field_at(i, name="**🙏Needs Invite🙏**", value=invite, inline=False)
 
-    # Remove the Needs Invite field if no users ask
-    if len(embed.fields) > 6 and len(user_invite) == 0:
-        embed.remove_field(4)
-    elif len(embed.fields) == 6 and len(user_invite) > 0:
-        embed.insert_field_at(4, name="**🙏Needs Invite🙏**", value=invite, inline=False)
+    if invite_idx > 0 and len(user_invite) == 0:
+        embed.remove_field(invite_idx)
+
+    elif invite_idx == -1 and len(user_invite) > 0:
+        embed.insert_field_at(total_idx, name="**🙏Needs Invite🙏**", value=invite, inline=False)
 
     await msg.edit(embed=embed)
 
