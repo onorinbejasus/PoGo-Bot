@@ -54,13 +54,13 @@ async def raid_purge(channel, after=None):
         print("Unexpected error:", sys.exc_info()[0])
 
 
-def scheduled_purge(loopy):
+def scheduled_purge(loop):
     global bot
     # Purge messages from the last 2 days
     after = datetime.now() - timedelta(days=2)
     for channel_id in RAID_CHANNELS:
         channel = bot.get_channel(int(channel_id))
-        loopy.create_task(raid_purge(channel, after))
+        loop.create_task(raid_purge(channel, after))
         time.sleep(0.01)
 
 
