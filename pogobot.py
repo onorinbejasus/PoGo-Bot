@@ -229,7 +229,7 @@ async def on_reaction_add(message, emoji, user):
                     else:
                         await channel.send("{}, unable to process role!" .format(user.mention), delete_after=30.0)
                 else:
-                    await channel.send("{}, I do not understand that option." .format(user.mention), delete_after=20.0)
+                    await channel.send("{}, I do not understand that option." .format(user.mention), delete_after=10.0)
 
                 await ask.delete()
                 await msg.delete()
@@ -238,7 +238,7 @@ async def on_reaction_add(message, emoji, user):
             except asyncio.TimeoutError:
                 await ask.delete()
                 await message.remove_reaction(emoji, user)
-                await channel.send("{} response timed out. Try again.".format(user.mention), delete_after=20.0)
+                await channel.send("{} response timed out. Try again.".format(user.mention), delete_after=10.0)
 
                 return
     elif emoji.name == "🔈":
@@ -1584,8 +1584,8 @@ def getEmoji(name):
 
 
 if __name__ == "__main__":
-    # path = '/var/opt/PoGo-Bot/'
-    path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
+    path = '/var/opt/PoGo-Bot/'
+    # path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
     cfg = configparser.ConfigParser()
     cfg.read(path+'config.ini')
 
