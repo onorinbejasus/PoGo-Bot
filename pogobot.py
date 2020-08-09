@@ -52,6 +52,7 @@ async def raid_purge(channel, after=None):
         return await channel.purge(after=after)
     except Exception:
         print("Unexpected error:", sys.exc_info()[0])
+        traceback.print_exc()
 
 
 def scheduled_purge(loop):
@@ -89,7 +90,7 @@ async def on_ready():
         time.sleep(0.1)
     except CancelledError:
         print('CancelledError')
-
+        traceback.print_exc()
 
 @bot.event
 # Payload( PartialEmoji, Message_id, Channel_id, User_id)
