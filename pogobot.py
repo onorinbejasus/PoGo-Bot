@@ -150,10 +150,13 @@ async def on_reaction_add(message, emoji, user):
 
     channel = message.channel
 
-    if message.content.find("mega") > -1 and message.content.find(str(user.mention)) > -1:
+    if user == bot.user or message.author != bot.user:
+        return
+
+    if message.author.bot and emoji.name.find("Mega") > -1:
         return await setup_mega(channel, emoji, message, user)
 
-    if user == bot.user or message.author != bot.user or not message.embeds:
+    if not message.embeds:
         return
 
     loc = get_field_by_name(message.embeds[0].fields, "**Location")
@@ -386,7 +389,7 @@ async def setup_raid(ctx, pkmn, loc, timer):
 
     location = string.capwords(loc)
 
-    async for msg in ctx.message.channel.history():
+    async for msg in ctx.message.channel.history(limit=25):
         if msg.author == bot.user and msg.embeds:
             o_loc = get_field_by_name(msg.embeds[0].fields, "**Location")
             if o_loc is None:
@@ -508,7 +511,7 @@ async def setup_mega(channel, emoji, message, user):
     info = message.content[info_start+1:info_end]
     egg_message = None
 
-    async for msg in channel.history():
+    async for msg in channel.history(limit=25):
         if egg_message is None and msg.author == bot.user and msg.embeds:
             o_loc = get_field_by_name(msg.embeds[0].fields, "**Location")
             if o_loc is None:
@@ -742,7 +745,7 @@ async def exupdaterloop(channel, minutes):
 
 async def manualexscan(channel):
     try:
-        async for msg in channel.history(limit=500):
+        async for msg in channel.history(limit=50):
             if msg.author != bot.user:
                 continue
             if msg.embeds and msg.embeds[0].footer and msg.embeds[0].footer.text.startswith("ex-"):
@@ -909,7 +912,7 @@ async def raidegg(ctx, level, *, locationtime):
 
     location = string.capwords(location)
 
-    async for msg in ctx.message.channel.history():
+    async for msg in ctx.message.channel.history(limit=25):
         if msg.author == bot.user and msg.embeds:
             o_loc = get_field_by_name(msg.embeds[0].fields, "**Location")
             t_loc = o_loc.value.lower().split(" @ ")
@@ -987,7 +990,7 @@ async def mega(ctx, *, locationtime):
 
     location = string.capwords(location)
 
-    async for msg in ctx.message.channel.history():
+    async for msg in ctx.message.channel.history(limit=25):
         if msg.author == bot.user and msg.embeds:
             o_loc = get_field_by_name(msg.embeds[0].fields, "**Location")
             t_loc = o_loc.value.lower().split(" @ ")
@@ -1043,7 +1046,7 @@ async def mega(ctx, *, locationtime):
                    "!raidtime <location> <time>",
              pass_context=True)
 async def raidtime(ctx, loc, timer=None):
-    async for msg in ctx.message.channel.history():
+    async for msg in ctx.message.channel.history(limit=25):
         if msg.author != bot.user or not msg.embeds:
             continue
         for field in msg.embeds[0].fields:
@@ -1095,7 +1098,7 @@ async def editraidtime(msg, timer):
              pass_context=True)
 async def raidpokemon(ctx, loc, pkmn):
 
-    async for msg in ctx.message.channel.history():
+    async for msg in ctx.message.channel.history(limit=25):
         if msg.author != bot.user or not msg.embeds:
             continue
         for field in msg.embeds[0].fields:
@@ -1155,10 +1158,10 @@ async def editmegapokemon(msg, pkmn, user):
         printr("Pokemon id not found for {}".format(pkmn))
         msg.embeds[0].set_thumbnail(None)
     if check_footer(msg, "raid") or check_footer(msg, "raid-train"):
-        msg.embeds[0].title ="Raid - {} ({})".format(pkmn, user)
+        msg.embeds[0].title ="Raid - {} ({})".format(" ".join(parsed_name), user.name)
 
     elif check_footer(msg, "ex-raid"):
-        msg.embeds[0].title ="Raid - {} ({})".format(pkmn, user)
+        msg.embeds[0].title ="Raid - {} ({})".format(pkmn, user.name)
 
     msg.embeds[0].description = descrip
     await msg.edit(embed=msg.embeds[0])
@@ -1209,7 +1212,7 @@ async def editraidpokemon(msg, pkmn, user):
 
 
 async def sendraidmessage(loc, ctx, message):
-    async for msg in ctx.message.channel.history(limit=100):
+    async for msg in ctx.message.channel.history(limit=25):
         if msg.author != bot.user or not msg.embeds:
             continue
 
@@ -1246,7 +1249,7 @@ async def sendraidmessage(loc, ctx, message):
 
 async def sendraidmessagechannel(loc, channel, message):
     global bot
-    async for msg in channel.history(limit=1000):
+    async for msg in channel.history(limit=25):
 
         if msg.author != bot.user or not msg.embeds:
             continue
@@ -1296,7 +1299,7 @@ async def raidcoords(ctx, loc, *, coords):
             await ctx.send("Unable to process coordinates.", delete_after=10.0)
             await ctx.message.delete()
             return
-    async for msg in ctx.message.channel.history():
+    async for msg in ctx.message.channel.history(limit=25):
         if msg.author != bot.user or not msg.embeds:
             continue
         for field in msg.embeds[0].fields:
