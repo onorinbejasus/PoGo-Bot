@@ -42,7 +42,8 @@ bot = commands.Bot(command_prefix=BOT_PREFIX, case_insensitive=True,
 running_updater = False
 cease_flag = None
 
-reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍", "🔈", "🥊", '🕹', "🙏", "gauntlet", "biga"]
+reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍", "🔈", "🥊", '🕹', "🙏", "gauntlet", "biga", "Raid_Emblem",
+                 "Mega_Venusaur", "Mega_Blastoise", "Mega_Charizard_X", "Mega_Charizard_Y"]
 gyms = {}
 path = ""
 
@@ -148,6 +149,10 @@ async def on_reaction_add(message, emoji, user):
         return False
 
     channel = message.channel
+
+    if message.content.find("mega") > -1 and message.content.find(str(user.mention)) > -1:
+        return await setup_mega(channel, emoji, message, user)
+
     if user == bot.user or message.author != bot.user or not message.embeds:
         return
 
@@ -214,7 +219,7 @@ async def on_reaction_add(message, emoji, user):
                         await editraidtime(message, timer)
                         await channel.send("Updated Raid at *{}* to time: **{}**" .format(loc if loc else "Unknown", timer), delete_after=20.0)
                     else:
-                        await channel.send("{}, unable to process time!" .format(user.mention), delete_after=30.0)
+                        await channel.send("{}, unable to process time!".format(user.mention), delete_after=30.0)
                     await message.remove_reaction(emoji, user)
 
                 elif msg.content.lower().startswith("r"):  # change role
@@ -243,6 +248,7 @@ async def on_reaction_add(message, emoji, user):
 
                 return
     elif emoji.name == "🔈":
+
         if message.embeds[0].author == user.name or check_roles(user, MOD_ROLE_ID) or check_roles(user, RAID_ROLE_ID):
 
             ask = await channel.send("{}, message users for {}? (Type message below and hit send.)"
@@ -254,7 +260,6 @@ async def on_reaction_add(message, emoji, user):
                 await msg.delete()
 
                 await message.remove_reaction(emoji, user)
-
                 await sendraidmessagechannel(loc, channel, msg.content)
 
                 return
@@ -265,6 +270,7 @@ async def on_reaction_add(message, emoji, user):
                                    .format(user.mention), delete_after=20.0)
                 await ask.delete()
                 return
+
     elif emoji.name == 'gauntlet':
         if message.embeds[0].author == user.name or check_roles(user, MOD_ROLE_ID) or check_roles(user, RAID_ROLE_ID):
             try:
@@ -274,6 +280,7 @@ async def on_reaction_add(message, emoji, user):
             except asyncio.TimeoutError:
                 await message.remove_reaction(emoji, user)
                 return
+
     elif emoji.name == 'biga':
         if message.embeds[0].author == user.name or check_roles(user, MOD_ROLE_ID) or check_roles(user, RAID_ROLE_ID):
 
@@ -284,9 +291,31 @@ async def on_reaction_add(message, emoji, user):
             except asyncio.TimeoutError:
                 await message.remove_reaction(emoji, user)
                 return
+    elif emoji.name == 'Raid_Emblem':
+        if message.embeds[0].author == user.name or check_roles(user, MOD_ROLE_ID) or check_roles(user, RAID_ROLE_ID):
+            try:
+                if message.embeds and check_footer(message, "raid"):
+
+                    tloc = get_field_by_name(message.embeds[0].fields, "**Location")
+
+                    await message.remove_reaction(emoji, user)
+
+                    ask = await channel.send("{}, which mega hatched at ({})?".format(user.mention, tloc.value), delete_after=60)
+                    await ask.add_reaction(getEmoji("Mega_Blastoise"))
+                    time.sleep(0.01)
+                    await ask.add_reaction(getEmoji("Mega_Venusaur"))
+                    time.sleep(0.01)
+                    await ask.add_reaction(getEmoji("Mega_Charizard_X"))
+                    time.sleep(0.01)
+                    await ask.add_reaction(getEmoji("Mega_Charizard_Y"))
+                time.sleep(0.01)
+
+                return
+            except asyncio.TimeoutError:
+                await message.remove_reaction(emoji, user)
+                return
 
     if message.embeds and check_footer(message, "raid-train"):
-        # printr("notifying exraid {}: {}".format(loc, user.name))
         role_name, role = await get_role(message)
 
         if role and role not in user.roles:
@@ -301,7 +330,6 @@ async def on_reaction_add(message, emoji, user):
         await notify_raid(message)
 
     if message.embeds and check_footer(message, "raid"):
-        # printr("notifying raid {}: {}".format(loc, user.name))
         await notify_raid(message)
 
 
@@ -406,7 +434,6 @@ async def setup_raid(ctx, pkmn, loc, timer):
         printr("Pokemon id not found for {}".format(pkmn))
 
     embed = discord.Embed(title="Raid - {} ({})".format(name, ctx.message.author.name), description=descrip)
-    # embed.set_author(name=ctx.message.author.name)
 
     if thumb:
         embed.set_thumbnail(url=thumb)
@@ -432,14 +459,11 @@ async def setup_raid(ctx, pkmn, loc, timer):
     location_time_header = "**Location @ Time**"
     location_time_value = "{} @ {}".format(location, timer)
 
-    # embed.add_field(name="Proposed Time:", value=timer + "\n", inline=True)
-    # embed.add_field(name="** **", value="** **", inline=False)
     embed.add_field(name=location_time_header, value=location_time_value, inline=False)
     embed.add_field(name=mystic, value="[]", inline=True)
     embed.add_field(name=valor, value="[]", inline=True)
     embed.add_field(name=instinct, value="[]", inline=True)
     embed.add_field(name=total_field, value=total_value, inline=False)
-    # embed.add_field(name="**Remote:**", value="0", inline=True)
 
     if map_dir is not None:
         embed.add_field(name="**Directions**", value="[Map Link](" + map_dir + ")", inline=False)
@@ -472,6 +496,34 @@ async def setup_reactions(msg):
     await asyncio.sleep(0.1)
     # await msg.add_reaction("🥊")
     # await asyncio.sleep(0.1)
+
+
+async def setup_mega(channel, emoji, message, user):
+    info_start = message.content.find('(')
+    info_end = message.content.find(')')
+
+    if info_start < 0 or info_end < 0:
+        return
+
+    info = message.content[info_start+1:info_end]
+    egg_message = None
+
+    async for msg in channel.history():
+        if egg_message is None and msg.author == bot.user and msg.embeds:
+            o_loc = get_field_by_name(msg.embeds[0].fields, "**Location")
+            if o_loc is None:
+                return
+            if info == o_loc.value:
+                egg_message = msg
+
+    await message.delete()
+
+    if egg_message is None:
+        return
+
+    await editmegapokemon(egg_message, emoji.name, user)
+
+    return
 
 
 @bot.command(pass_context=True)
@@ -599,8 +651,7 @@ async def clearrole(ctx, rolex=None):
     await ctx.message.delete()
 
 
-@bot.command(aliases=[],
-             brief="[MOD] Purge messages from channel. !purge [pinned]", pass_context=True)
+@bot.command(aliases=[], brief="[MOD] Purge messages from channel. !purge [pinned]", pass_context=True)
 async def purge(ctx, pinned=False, limit=100, after=None):
     def notpinned(message):
         return not message.pinned
@@ -639,15 +690,13 @@ async def purge(ctx, pinned=False, limit=100, after=None):
             print("Unexpected error:", sys.exc_info()[0])
 
 
-@bot.command(aliases=[],
-             brief="Messages the donation link",  pass_context=True)
+@bot.command(aliases=[], brief="Messages the donation link",  pass_context=True)
 async def donate(ctx):
     await ctx.send("You can donate by Paypal at {}".format(PAYPAL_DONATION_LINK))
     await ctx.message.delete()
 
 
-@bot.command(aliases=["sex"],
-             brief="[MOD] Manually scan channel for ex-raid posts. !scanex ", pass_context=True)
+@bot.command(aliases=["sex"], brief="[MOD] Manually scan channel for ex-raid posts. !scanex ", pass_context=True)
 async def scanex(ctx):
     if not await checkmod(ctx, MOD_ROLE_ID):
         return
@@ -677,8 +726,7 @@ async def exupdater(ctx, minutes=5):
     await exupdaterloop(ctx.message.channel, minutes)
 
 
-@bot.command(aliases=["eo"],
-             brief="[MOD] Send message tagging @everyone. !everyone [message]", pass_context=True)
+@bot.command(aliases=["eo"], brief="[MOD] Send message tagging @everyone. !everyone [message]", pass_context=True)
 async def everyone(ctx, *, message):
     await ctx.send("@everyone {}".format(message))
     await ctx.message.delete()
@@ -703,8 +751,7 @@ async def manualexscan(channel):
         pass
 
 
-@bot.command(aliases=[],
-             brief="[MOD] Clear raid posts from channel. !clearraids", pass_context=True)
+@bot.command(aliases=[], brief="[MOD] Clear raid posts from channel. !clearraids", pass_context=True)
 async def clearraids(ctx):
     def raid(msg):
         return msg.author == bot.user and (check_footer(msg, "raid") or check_footer(msg, "raid-train"))
@@ -715,8 +762,7 @@ async def clearraids(ctx):
     await ctx.send("Cleared all raid posts", delete_after=10)
 
 
-@bot.command(aliases=["rg"],
-             brief="[MOD] Reload gyms from file. !reloadgyms", pass_context=True)
+@bot.command(aliases=["rg"], brief="[MOD] Reload gyms from file. !reloadgyms", pass_context=True)
 async def reloadgyms(ctx):
     global gyms
     if os.path.exists(path+'gyms.json'):
@@ -912,6 +958,85 @@ async def raidegg(ctx, level, *, locationtime):
     await setup_reactions(msg)
 
 
+@bot.command(aliases=["me"],
+             usage="!mega [location] [hatch_time]",
+             help="Create a new mega raid egg posting. Users will also be listed in the post by team. Press 1, 2, or 3 to specify other teammate"
+                  " guests that will accompany you.",
+             brief="Create a new mega egg post. !mega <location> <time>",
+             pass_context=True)
+async def mega(ctx, *, locationtime):
+
+    if not ANYONE_RAID_POST or not check_roles(ctx.message.author, RAID_ROLE_ID):
+        await ctx.send("{}, you are not allowed to post raids.".format(ctx.message.author.mention), delete_after=10.0)
+        await ctx.message.delete()
+        return
+
+    lt = locationtime.rsplit(" ", 1)
+    if len(lt) > 1:
+        if re.search(r'[0-9]', str(lt[-1])):
+            location = lt[0].strip()
+            timer = lt[1].strip()
+        else:
+            location = locationtime.strip()
+            timer = "Unset"
+    else:
+        location = locationtime.strip()
+        timer = "Unset"
+
+    location = string.capwords(location)
+
+    location = string.capwords(location)
+
+    async for msg in ctx.message.channel.history():
+        if msg.author == bot.user and msg.embeds:
+            o_loc = get_field_by_name(msg.embeds[0].fields, "**Location")
+            t_loc = o_loc.value.lower().split(" @ ")
+            o_old = t_loc[0]
+            o_time = t_loc[1]
+            if o_loc and location.lower() == o_old and o_time == timer:
+                await ctx.send("Raid at {} already exists, please use previous post".format(location), delete_after=10.0)
+                return None
+
+    thumb = None
+    descrip = ""
+    if EGG_IMAGE_URL:
+        thumb = EGG_IMAGE_URL.format('mega_egg')
+    embed = discord.Embed(title="Megs Egg - ({})".format(ctx.message.author.name), description=descrip)
+    # embed.set_author(name=ctx.message.author.name)
+
+    if thumb:
+        embed.set_thumbnail(url=thumb)
+    coords = get_gym_coords(location)
+    if coords and GMAPS_KEY:
+        map_image = get_static_map_url(coords[0], coords[1], api_key=GMAPS_KEY)
+        embed.set_image(url=map_image)
+
+    header_space = " ".join(["\u200a" for i in range(0, 20)])
+    value_space = " ".join(["\u200a" for i in range(0, 28)])
+    total_field = "**Total:**" + header_space + "**Remote:**"
+    total_value = "**{}**".format(0) + value_space + "**{}**".format(0)
+
+    location_time_header = "**Location @ Time**"
+    location_time_value = "{} @ {}".format(location, timer)
+
+    embed.add_field(name=location_time_header, value=location_time_value, inline=False)
+    # embed.add_field(name="Proposed Time:", value=timer + "\n", inline=True)
+    embed.add_field(name="** **", value="** **", inline=False)
+    embed.add_field(name=str(getEmoji("mystic")) + "__Mystic (0)__", value="[]", inline=True)
+    embed.add_field(name=str(getEmoji("valor")) + "__Valor (0)__", value="[]", inline=True)
+    embed.add_field(name=str(getEmoji("instinct")) + "__Instinct (0)__", value="[]", inline=True)
+    embed.add_field(name=total_field, value=total_value, inline=False)
+    # embed.add_field(name="**Remote:**", value="0", inline=True)
+
+    embed.set_footer(text="raid")
+    msg = await ctx.send(embed=embed)
+    await asyncio.sleep(0.1)
+    await ctx.message.delete()
+    await setup_reactions(msg)
+    await msg.add_reaction(getEmoji("Raid_Emblem"))
+    await asyncio.sleep(0.1)
+
+
 @bot.command(aliases=["rt"],
              usage="!raidtime [location] [time]",
              brief="Edit the time on a previous raid post. "
@@ -990,6 +1115,56 @@ async def raidpokemon(ctx, loc, pkmn):
     await ctx.send("Unable to find Raid at {}".format(loc), delete_after=30)
 
 
+async def editmegapokemon(msg, pkmn, user):
+    descrip = msg.embeds[0].description
+
+    parsed_name = pkmn.split("_")
+    name = parsed_name[1]
+
+    match = pokemon_match(name)
+    if match:
+        pkmn = match
+    pkmn = string.capwords(pkmn, "-")
+    pid = get_pokemon_id_from_name(pkmn.lower())
+    weather = []
+    if pid:
+        stats = await get_db_stats(str(pid)[:-1])
+        if stats["weatherInfluences"]:
+            for i in range(0, len(stats["weatherInfluences"])):
+                emoji = parse_weather(stats["weatherInfluences"][i])
+                weather.append(emoji)
+
+        if IMAGE_URL:
+            if len(parsed_name) > 2:
+                thumb = IMAGE_URL.format("{}M_{}".format(pid, parsed_name[2]))
+                print(thumb)
+            else:
+                thumb = IMAGE_URL.format("{}M".format(pid))
+            msg.embeds[0].set_thumbnail(url=thumb)
+
+        mincp20, maxcp20 = get_cp_range(pid, 20)
+        mincp25, maxcp25 = get_cp_range(pid, 25)
+
+        if len(weather) > 1:
+            descrip = "**CP**: {}-{} \u200a \u200a {}{}: {}-{}".format(mincp20, maxcp20, weather[0], weather[1], mincp25, maxcp25)
+        elif len(weather) > 0:
+            descrip = "**CP**: {}-{} \u200a \u200a {}: {}-{}".format(mincp20, maxcp20, weather[0], mincp25, maxcp25)
+        else:
+            descrip = "**CP**: {}-{} \u200a \u200a WB: {}-{}".format(mincp20, maxcp20, mincp25, maxcp25)
+    else:
+        printr("Pokemon id not found for {}".format(pkmn))
+        msg.embeds[0].set_thumbnail(None)
+    if check_footer(msg, "raid") or check_footer(msg, "raid-train"):
+        msg.embeds[0].title ="Raid - {} ({})".format(pkmn, user)
+
+    elif check_footer(msg, "ex-raid"):
+        msg.embeds[0].title ="Raid - {} ({})".format(pkmn, user)
+
+    msg.embeds[0].description = descrip
+    await msg.edit(embed=msg.embeds[0])
+    return True
+
+
 async def editraidpokemon(msg, pkmn, user):
     descrip = msg.embeds[0].description
     match = pokemon_match(pkmn)
@@ -1000,7 +1175,7 @@ async def editraidpokemon(msg, pkmn, user):
     weather = []
     if pid:
 
-        stats = await get_db_stats(str(pid)[:-1])
+        stats = {}#await get_db_stats(str(pid)[:-1])
         if stats["weatherInfluences"]:
             for i in range(0, len(stats["weatherInfluences"])):
                 emoji = parse_weather(stats["weatherInfluences"][i])
