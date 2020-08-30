@@ -1004,7 +1004,7 @@ async def mega(ctx, *, locationtime):
     descrip = ""
     if EGG_IMAGE_URL:
         thumb = EGG_IMAGE_URL.format('mega_egg')
-    embed = discord.Embed(title="Megs Egg - ({})".format(ctx.message.author.name), description=descrip)
+    embed = discord.Embed(title="Mega Egg - ({})".format(ctx.message.author.name), description=descrip)
     # embed.set_author(name=ctx.message.author.name)
 
     if thumb:
