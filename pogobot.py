@@ -1766,7 +1766,7 @@ def getEmoji(name):
 
 if __name__ == "__main__":
     path = '/var/opt/PoGo-Bot/'
-    #path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
+    # path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
     cfg = configparser.ConfigParser()
     cfg.read(path+'config.ini')
 
@@ -1778,7 +1778,7 @@ if __name__ == "__main__":
         if ',' in str(RAID_ROLE_ID):
             RAID_ROLE_ID = [x.strip() for x in RAID_ROLE_ID.split(",")]
 
-        RAID_CHANNELS = cfg['PoGoBot'].get('RaidChannels') or
+        RAID_CHANNELS = cfg['PoGoBot'].get('RaidChannels') or 0
         if ',' in str(RAID_CHANNELS):
             RAID_CHANNELS = [x.strip() for x in RAID_CHANNELS.split(",")]
 
