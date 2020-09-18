@@ -43,7 +43,7 @@ running_updater = False
 cease_flag = None
 
 reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍", "🔈", "🥊", '🕹', "🙏", "gauntlet", "biga", "Raid_Emblem",
-                 "Mega_Venusaur", "Mega_Blastoise", "Mega_Charizard_X", "Mega_Charizard_Y"]
+                 "Mega_Venusaur", "Mega_Blastoise", "Mega_Charizard_X", "Mega_Charizard_Y", "Mega_Pidgeot"]
 gyms = {}
 path = ""
 
@@ -311,7 +311,9 @@ async def on_reaction_add(message, emoji, user):
                     await ask.add_reaction(getEmoji("Mega_Charizard_X"))
                     time.sleep(0.01)
                     await ask.add_reaction(getEmoji("Mega_Charizard_Y"))
-                time.sleep(0.01)
+                    time.sleep(0.01)
+                    await ask.add_reaction(getEmoji("Mega_Pidgeot"))
+                    time.sleep(0.01)
 
                 return
             except asyncio.TimeoutError:
@@ -1764,7 +1766,7 @@ def getEmoji(name):
 
 if __name__ == "__main__":
     path = '/var/opt/PoGo-Bot/'
-    # path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
+    #path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
     cfg = configparser.ConfigParser()
     cfg.read(path+'config.ini')
 
@@ -1776,7 +1778,7 @@ if __name__ == "__main__":
         if ',' in str(RAID_ROLE_ID):
             RAID_ROLE_ID = [x.strip() for x in RAID_ROLE_ID.split(",")]
 
-        RAID_CHANNELS = cfg['PoGoBot'].get('RaidChannels') or 0
+        RAID_CHANNELS = cfg['PoGoBot'].get('RaidChannels') or
         if ',' in str(RAID_CHANNELS):
             RAID_CHANNELS = [x.strip() for x in RAID_CHANNELS.split(",")]
 
