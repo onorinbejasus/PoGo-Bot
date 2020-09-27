@@ -43,7 +43,7 @@ running_updater = False
 cease_flag = None
 
 reaction_list = ["mystic", "valor", "instinct", "1⃣", "2⃣", "3⃣", "❌", "✅", "🖍", "🔈", "🥊", '🕹', "🙏", "gauntlet", "biga", "Raid_Emblem",
-                 "Mega_Venusaur", "Mega_Blastoise", "Mega_Charizard_X", "Mega_Charizard_Y", "Mega_Pidgeot"]
+                 "Mega_Venusaur", "Mega_Blastoise", "Mega_Charizard_X", "Mega_Charizard_Y", "Mega_Pidgeot", "Mega_Houndoom", "Mega_Gengar"]
 gyms = {}
 path = ""
 
@@ -313,6 +313,10 @@ async def on_reaction_add(message, emoji, user):
                     await ask.add_reaction(getEmoji("Mega_Charizard_Y"))
                     time.sleep(0.01)
                     await ask.add_reaction(getEmoji("Mega_Pidgeot"))
+                    time.sleep(0.01)
+                    await ask.add_reaction(getEmoji("Mega_Houndoom"))
+                    time.sleep(0.01)
+                    await ask.add_reaction(getEmoji("Mega_Gengar"))
                     time.sleep(0.01)
 
                 return
