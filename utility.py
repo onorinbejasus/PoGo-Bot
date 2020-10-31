@@ -240,7 +240,8 @@ def parse_weather(weather):
         return "☀️"
     elif weather == "rain":
         return "🌧️"
-
+    elif weather == "fog":
+        return "🌫️"
 
 # Replace non-ascii characters with '?' and print
 def printr(s):
