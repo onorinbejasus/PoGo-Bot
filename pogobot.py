@@ -102,6 +102,8 @@ async def on_raw_reaction_add(*payload):
         mid = m_payload.message_id
         channel = bot.get_channel(m_payload.channel_id)
         user = channel.guild.get_member(m_payload.user_id) if channel else bot.get_user(m_payload.user_id)
+        if not user:
+            user = await channel.guild.fetch_member(m_payload.user_id) if channel else bot.get_user(m_payload.user_id)
     except AttributeError:
         printr("Attribute not found")
         return
@@ -1769,8 +1771,8 @@ def getEmoji(name):
 
 
 if __name__ == "__main__":
-    path = '/var/opt/PoGo-Bot/'
-    # path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
+    # path = '/var/opt/PoGo-Bot/'
+    path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
     cfg = configparser.ConfigParser()
     cfg.read(path+'config.ini')
 
