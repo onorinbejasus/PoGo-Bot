@@ -1771,8 +1771,8 @@ def getEmoji(name):
 
 
 if __name__ == "__main__":
-    # path = '/var/opt/PoGo-Bot/'
-    path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
+    path = '/var/opt/PoGo-Bot/'
+    # path = '/Users/tluciani/WebstormProjects/PoGo-Bot/'
     cfg = configparser.ConfigParser()
     cfg.read(path+'config.ini')
 
