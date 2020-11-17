@@ -1186,7 +1186,7 @@ async def editraidpokemon(msg, pkmn, user):
     weather = []
     if pid:
 
-        stats = {}#await get_db_stats(str(pid)[:-1])
+        stats = await get_db_stats(str(pid)[:-1])
         if stats["weatherInfluences"]:
             for i in range(0, len(stats["weatherInfluences"])):
                 emoji = parse_weather(stats["weatherInfluences"][i])
